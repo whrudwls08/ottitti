@@ -62,7 +62,7 @@ function crawlPublicOtt() {
         followRedirects: true,
         headers: {
           "User-Agent":
-            "Mozilla/5.0 (compatible; OttittiBot/1.1; +https://github.com/; public-help-pages-daily)",
+            "Mozilla/5.0 (compatible; OttiHaejiBot/1.1; +https://github.com/; public-help-pages-daily)",
           Accept: "text/html,application/xhtml+xml",
         },
       });

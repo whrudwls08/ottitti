@@ -22,7 +22,7 @@
       .join("");
 
     const ott = otts.find((o) => o.id === selected) || otts[0];
-    document.title = `${ott.name} 해지 방법 · 오띠띠`;
+    document.title = `${ott.name} 해지 방법 · 오티티 해지`;
 
     const paths = ott.cancelPaths
       .map(

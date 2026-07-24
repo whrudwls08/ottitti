@@ -91,19 +91,16 @@ img {
 .brand {
   display: inline-block;
   flex-shrink: 0;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 1.45rem;
-  letter-spacing: -0.12em;
-  line-height: 1;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.05rem, 3.5vw, 1.35rem);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
   white-space: nowrap;
 }
 
 .brand span {
   color: var(--cut);
-  letter-spacing: -0.12em;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-links {
