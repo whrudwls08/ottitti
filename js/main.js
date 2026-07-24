@@ -234,8 +234,8 @@
             <div class="price">${won(item.plan.price)} <small>/월 · ${item.plan.name}</small></div>
             <p style="margin:0;color:var(--muted)">${item.ott.tagline}. ${item.plan.note || item.ott.strengths.join(" · ")}</p>
             <div class="cta-row">
-              <a class="btn btn-primary" href="cancel.html?ott=${item.ott.id}">해지·결제경로 안내</a>
-              <a class="btn btn-ghost" href="${item.ott.site}" target="_blank" rel="noopener">공식 요금 확인</a>
+              <a class="btn btn-primary" href="cancel.html?ott=${item.ott.id}">해지 방법 보기</a>
+              <a class="btn btn-ghost" href="pay.html">결제처 확인</a>
             </div>
           </article>`;
         })
