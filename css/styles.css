@@ -89,18 +89,21 @@ img {
 }
 
 .brand {
-  display: inline-block;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.28em;
   flex-shrink: 0;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(1.05rem, 3.5vw, 1.35rem);
-  letter-spacing: -0.04em;
-  line-height: 1.1;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(1.05rem, 3.5vw, 1.28rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
   white-space: nowrap;
 }
 
 .brand span {
   color: var(--cut);
+  font-weight: 800;
 }
 
 .nav-links {
