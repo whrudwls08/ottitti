@@ -6,17 +6,6 @@
     return n.toLocaleString("ko-KR") + "원";
   }
 
-  function daysAgoLabel(isoDate) {
-    const collected = new Date(isoDate + "T00:00:00+09:00");
-    const now = new Date();
-    const start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    const c0 = new Date(collected.getFullYear(), collected.getMonth(), collected.getDate());
-    const diff = Math.round((start - c0) / 86400000);
-    if (diff <= 0) return "오늘 기준";
-    if (diff === 1) return "1일 전 수집";
-    return diff + "일 전 수집";
-  }
-
   function soloSum(ids) {
     let sum = 0;
     const lines = [];
@@ -43,29 +32,6 @@
       }
     });
     return best;
-  }
-
-  function paintFreshness() {
-    const el = document.getElementById("deals-freshness");
-    if (!el) return;
-    el.innerHTML = `<strong>데이터 기준일 ${D.collectedAt}</strong> · ${daysAgoLabel(D.collectedAt)} · 수집방식: 공개 출처 스냅샷(크롤 아님)`;
-  }
-
-  function paintPolicy() {
-    const el = document.getElementById("deals-policy");
-    if (!el) return;
-    const p = D.crawlPolicy;
-    el.innerHTML = `
-      <h3 style="margin:0 0 0.5rem;font-family:var(--font-display)">수집·크롤 정책</h3>
-      <p style="margin:0 0 0.75rem;color:var(--muted)">${p.reason}</p>
-      <p style="margin:0 0 0.35rem"><span class="tag best">현재 허용</span></p>
-      <ul style="margin:0 0 0.75rem;color:var(--muted);padding-left:1.1rem">
-        ${p.allowedNow.map((x) => `<li>${x}</li>`).join("")}
-      </ul>
-      <p style="margin:0 0 0.35rem"><span class="tag">향후 검토</span></p>
-      <ul style="margin:0;color:var(--muted);padding-left:1.1rem">
-        ${p.futureSafe.map((x) => `<li>${x}</li>`).join("")}
-      </ul>`;
   }
 
   function paintBundles() {
@@ -203,8 +169,6 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    paintFreshness();
-    paintPolicy();
     paintBundles();
     paintGuides();
     paintShopping();
@@ -212,7 +176,6 @@
   });
 
   document.addEventListener("ottitti-sheet-loaded", () => {
-    paintFreshness();
     paintBundles();
   });
 })();

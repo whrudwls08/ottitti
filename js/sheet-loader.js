@@ -56,22 +56,6 @@ window.KKUNSUB_SHEET = {
         b.sourceUrl = r.source_url || b.sourceUrl;
       }
     });
-
-    var el = document.getElementById("deals-freshness");
-    if (!el) return;
-    var collected = new Date(latest.date + "T00:00:00+09:00");
-    var now = new Date();
-    var start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    var c0 = new Date(collected.getFullYear(), collected.getMonth(), collected.getDate());
-    var diff = Math.round((start - c0) / 86400000);
-    var ago = diff <= 0 ? "오늘 기준" : diff === 1 ? "1일 전 수집" : diff + "일 전 수집";
-    el.innerHTML =
-      "<strong>데이터 기준일 " +
-      latest.date +
-      "</strong> · " +
-      ago +
-      " · 수집방식: " +
-      (mode || "csv");
   }
 
   function tryFetch(url) {

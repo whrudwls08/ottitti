@@ -13,12 +13,14 @@
     const selected = getParam("ott") || otts[0].id;
 
     nav.innerHTML = otts
-      .map(
-        (ott) =>
-          `<a href="?ott=${ott.id}" class="${ott.id === selected ? "active" : ""}" ${
-            ott.id === selected ? 'aria-current="page"' : ""
-          }>${ott.name}</a>`
-      )
+      .map((ott) => {
+        const logo = ott.logo
+          ? `<img class="ott-logo ott-logo-sm" src="${ott.logo}" alt="" width="28" height="28" />`
+          : "";
+        return `<a href="?ott=${ott.id}" class="${ott.id === selected ? "active" : ""}" ${
+          ott.id === selected ? 'aria-current="page"' : ""
+        }>${logo}<span>${ott.name}</span></a>`;
+      })
       .join("");
 
     const ott = otts.find((o) => o.id === selected) || otts[0];
@@ -40,11 +42,17 @@
       .join("");
 
     const tips = ott.tips.map((t) => `<li>${t}</li>`).join("");
+    const headLogo = ott.logo
+      ? `<img class="ott-logo" src="${ott.logo}" alt="${ott.name}" width="48" height="48" />`
+      : "";
 
     main.innerHTML = `
       <article class="cancel-article active">
         <div class="kicker">해지 가이드</div>
-        <h2 style="margin:0;font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-0.04em">${ott.name} 끊는 법</h2>
+        <div class="result-ott" style="margin-bottom:0.5rem">
+          ${headLogo}
+          <h2 style="margin:0;font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-0.04em">${ott.name} 끊는 법</h2>
+        </div>
         <p style="margin:0;color:var(--muted)">${ott.tagline}. 결제했던 경로가 다르면 해지 창구도 다릅니다. 아래 중 본인 결제 경로를 고르세요.</p>
         ${paths}
         <div class="panel">

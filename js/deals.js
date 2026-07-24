@@ -1,20 +1,5 @@
 window.KKUNSUB_DEALS = {
   collectedAt: "2026-07-24",
-  collectionMode: "manual_public_sources",
-  crawlPolicy: {
-    shoppingPortals: "deferred",
-    reason:
-      "쇼핑 포털 전면 자동 수집은 약관·부하 이슈로 보류했습니다. 공식 공개 요금·번들만 스냅샷합니다.",
-    allowedNow: [
-      "공개 요금·번들 안내 기반 스냅샷",
-      "공식 고객센터·보도 결합 상품 요금",
-      "이용자 조건 기반 경로 비교",
-    ],
-    futureSafe: [
-      "공식 API·제휴 피드가 있을 때만 자동 수집",
-      "직접 운영 시트·페이지 일 1회 갱신",
-    ],
-  },
   soloRef: {
     disney: { name: "디즈니+", plan: "스탠다드", price: 9900 },
     tving: { name: "티빙", plan: "스탠다드", price: 13500 },
@@ -67,7 +52,7 @@ window.KKUNSUB_DEALS = {
     {
       id: "telecom",
       title: "통신사 결합·구독패스",
-      summary: "SKT·KT·LG U+ 요금제/패스에 OTT가 묶이면 체감 단가가 낮아질 수 있습니다. 상품·가격은 통신사·시점에 따라 달라 자동 수집하지 않습니다.",
+      summary: "SKT·KT·LG U+ 요금제/패스에 OTT가 묶이면 체감 단가가 낮아질 수 있습니다.",
       when: "이미 해당 통신사를 쓰거나 요금제 변경을 검토할 때",
       action: "T 우주 / KT 초이스·결합 / U+ 유독 등 공식 앱·상담으로 본인 요금제 혜택 확인",
       evidence: "check_carrier",
@@ -97,10 +82,6 @@ window.KKUNSUB_DEALS = {
     {
       title: "멤버십·와우·네이버플러스 등",
       body: "쇼핑 멤버십은 배송·포인트와 묶입니다. ‘상품가만’이 아니라 월 멤버십비 포함 총비용으로 비교하세요.",
-    },
-    {
-      title: "쇼핑 전면 크롤 미실시",
-      body: "쿠팡·네이버 등 가격을 일 1회 자동 수집하는 기능은 약관·로봇 배제·부하 이슈로 보류했습니다. 공식 API·제휴가 열리면 재검토합니다.",
     },
   ],
 };

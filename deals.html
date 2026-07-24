@@ -33,7 +33,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Syne:wght@700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css?v=20260724g" />
+    <link rel="stylesheet" href="css/styles.css?v=20260724h" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -49,8 +49,9 @@
   <body>
     <header class="site-header">
       <div class="wrap nav">
-        <a class="brand" href="index.html" aria-label="오티티 해지">오티티<span>해지</span></a>
+        <a class="brand" href="index.html">오티티 <span>해지</span></a>
         <nav class="nav-links" aria-label="주요 메뉴">
+          <a href="index.html">홈</a>
           <a href="cancel.html">해지 방법</a>
           <a href="compare.html">요금 비교</a>
           <a href="deals.html" aria-current="page">더 싸게</a>
@@ -68,7 +69,6 @@
             광고형 · 공식 번들 · 통신사 결합 · 멤버십 포함 경로를 나눠 참고 비교합니다.
             표시 금액은 스냅샷이며, 가입 전 각사·통신사 공식을 확인하세요.
           </p>
-          <p id="deals-freshness" class="notice" style="margin-top:0.75rem"></p>
         </section>
 
         <section style="padding-top:0">
@@ -118,19 +118,17 @@
         <section>
           <div class="section-head">
             <div>
-              <h2>쇼핑 · 멤버십 (크롤 없음)</h2>
-              <p>전면 가격 크롤 없이, 총비용 관점의 점검 항목만 제공합니다.</p>
+              <h2>쇼핑 · 멤버십 점검</h2>
+              <p>총비용 관점에서 확인할 항목입니다.</p>
             </div>
           </div>
           <div id="deals-shopping" class="ott-grid"></div>
         </section>
 
         <section>
-          <div id="deals-policy" class="panel"></div>
           <p class="notice" style="margin-top:1rem">
             본 페이지는 비공식 참고 자료입니다. 번들·결합 상품의 가입 자격, 기존 구독자 전환, 해지
-            창구는 결제처에 따라 다릅니다. 통신사 상품 가격은 자동 수집하지 않으므로 공식 채널에서
-            확인하세요.
+            창구는 결제처에 따라 다릅니다. 통신사 상품 가격은 공식 채널에서 확인하세요.
           </p>
         </section>
       </div>
@@ -146,9 +144,9 @@
       </div>
     </footer>
 
-    <script src="js/deals.js?v=20260724g"></script>
-    <script src="js/sheet-loader.js?v=20260724g"></script>
-    <script src="js/deals-app.js?v=20260724g"></script>
+    <script src="js/deals.js?v=20260724h"></script>
+    <script src="js/sheet-loader.js?v=20260724h"></script>
+    <script src="js/deals-app.js?v=20260724h"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         if (window.KKUNSUB_loadSheetSnapshot) {

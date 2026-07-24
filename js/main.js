@@ -9,18 +9,23 @@
     return ott.plans.reduce((a, b) => (a.price <= b.price ? a : b));
   }
 
+  function logoHtml(ott, cls) {
+    const src = ott.logo || "";
+    if (!src) {
+      return `<div class="badge ${cls || ""}" style="background:${ott.color}">${ott.short.slice(0, 1)}</div>`;
+    }
+    return `<img class="ott-logo ${cls || ""}" src="${src}" alt="${ott.name}" width="48" height="48" loading="lazy" />`;
+  }
+
   function renderOttCards(root) {
     if (!root) return;
     root.innerHTML = otts
       .map((ott) => {
         const cheapest = minPlan(ott);
-        const initial = ott.short.slice(0, 1);
         return `
         <article class="ott-card">
           <div class="top">
-            <div>
-              <div class="badge" style="background:${ott.color}">${initial}</div>
-            </div>
+            ${logoHtml(ott)}
             <span class="tag">${cheapest.ads ? "광고형 있음" : "광고 없음 중심"}</span>
           </div>
           <div>
@@ -222,7 +227,10 @@
           const label = idx === 0 ? "우선 후보" : `후보 ${idx + 1}`;
           return `<article class="result-card">
             <div class="label">${label}</div>
-            <h3>${item.ott.name}</h3>
+            <div class="result-ott">
+              ${logoHtml(item.ott, "ott-logo-sm")}
+              <h3>${item.ott.name}</h3>
+            </div>
             <div class="price">${won(item.plan.price)} <small>/월 · ${item.plan.name}</small></div>
             <p style="margin:0;color:var(--muted)">${item.ott.tagline}. ${item.plan.note || item.ott.strengths.join(" · ")}</p>
             <div class="cta-row">

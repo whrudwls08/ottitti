@@ -8,6 +8,7 @@ window.KKUNSUB = {
       name: "쿠팡플레이",
       short: "쿠플",
       color: "#c2410c",
+      logo: "img/otts/coupangplay.svg",
       tagline: "와우 멤버십에 붙는 가성비 스트리밍",
       site: "https://www.coupangplay.com/",
       plans: [
@@ -60,6 +61,7 @@ window.KKUNSUB = {
       name: "티빙",
       short: "티빙",
       color: "#ff2d55",
+      logo: "img/otts/tving.svg",
       tagline: "국내 예능·드라마·스포츠 중심",
       site: "https://www.tving.com/",
       plans: [
@@ -133,6 +135,7 @@ window.KKUNSUB = {
       name: "Apple TV+",
       short: "애플TV+",
       color: "#8b8b8b",
+      logo: "img/otts/appletv.svg",
       tagline: "단일 요금·오리지널 중심",
       site: "https://tv.apple.com/kr",
       plans: [
@@ -164,6 +167,7 @@ window.KKUNSUB = {
       name: "넷플릭스",
       short: "넷플",
       color: "#e50914",
+      logo: "img/otts/netflix.svg",
       tagline: "글로벌·K-오리지널 카탈로그",
       site: "https://www.netflix.com/kr/",
       plans: [
@@ -221,6 +225,7 @@ window.KKUNSUB = {
       name: "웨이브",
       short: "웨이브",
       color: "#1a6dff",
+      logo: "img/otts/wavve.svg",
       tagline: "지상파·국내 콘텐츠",
       site: "https://www.wavve.com/",
       plans: [
@@ -285,6 +290,7 @@ window.KKUNSUB = {
       name: "왓챠",
       short: "왓챠",
       color: "#ff0558",
+      logo: "img/otts/watcha.svg",
       tagline: "취향·독립·예술 영화",
       site: "https://watcha.com/",
       plans: [
@@ -330,6 +336,7 @@ window.KKUNSUB = {
       name: "디즈니+",
       short: "디즈니+",
       color: "#113ccf",
+      logo: "img/otts/disney.svg",
       tagline: "디즈니·마블·픽사·스타워즈",
       site: "https://www.disneyplus.com/ko-kr",
       plans: [
@@ -378,6 +385,7 @@ window.KKUNSUB = {
       name: "유튜브 프리미엄",
       short: "유프",
       color: "#ff0033",
+      logo: "img/otts/youtube.svg",
       tagline: "광고 제거·백그라운드·뮤직",
       site: "https://www.youtube.com/premium",
       plans: [
