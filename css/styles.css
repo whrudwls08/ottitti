@@ -644,8 +644,31 @@ td strong {
   font-size: 0.88rem;
 }
 
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.footer p {
+  margin: 0;
+  max-width: 42rem;
+}
+
 .footer strong {
   color: var(--text);
+}
+
+.footer a {
+  color: var(--cheap);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.footer-contact {
+  white-space: nowrap;
 }
 
 .kicker {
