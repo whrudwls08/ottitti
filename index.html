@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>오띠띠 — OTT 해지 가이드 · 요금 조건 비교</title>
+    <meta
+      name="description"
+      content="국내 OTT 해지 경로를 결제처별로 정리하고, 조건에 맞는 요금제를 참고 안내합니다."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap nav">
+        <a class="brand" href="index.html">오띠띠</a>
+        <nav class="nav-links" aria-label="주요 메뉴">
+          <a href="index.html" aria-current="page">홈</a>
+          <a href="#cheap">요금 조건</a>
+          <a href="compare.html">요금 비교</a>
+          <a href="deals.html">더 싸게</a>
+          <a href="cancel.html">해지 가이드</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="wrap">
+        <section class="hero fade-up">
+          <div class="kicker">구독·해지 안내</div>
+          <h1>결제 경로와<br /><em>요금 조건</em>을 먼저 확인하세요</h1>
+          <p>
+            오띠띠는 OTT별 해지 경로를 결제처 기준으로 정리하고, 선택 조건에 맞는 요금제를
+            참고 순위로 안내합니다. 일괄 원격 해지는 제공하지 않으며, 최종 확인은 각사 공식
+            안내를 따릅니다.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-cheap" href="#cheap">요금 조건 조회</a>
+            <a class="btn btn-primary" href="deals.html">더 싸게 (결합·할인)</a>
+            <a class="btn btn-ghost" href="cancel.html">해지 가이드</a>
+          </div>
+        </section>
+
+        <section id="cheap">
+          <div class="section-head">
+            <div>
+              <h2>요금 조건 조회</h2>
+              <p>아래 조건을 선택하면 참고 요금 기준으로 후보 요금제를 정렬합니다.</p>
+            </div>
+          </div>
+          <form id="cheap-quiz" class="panel quiz">
+            <fieldset class="quiz-q">
+              <legend>광고 여부</legend>
+              <div class="chips">
+                <button type="button" class="chip" data-group="ads" data-value="ok" aria-pressed="true">광고 포함 허용</button>
+                <button type="button" class="chip" data-group="ads" data-value="no" aria-pressed="false">광고 없음만</button>
+              </div>
+            </fieldset>
+            <fieldset class="quiz-q">
+              <legend>동시 시청 대수</legend>
+              <div class="chips">
+                <button type="button" class="chip" data-group="screens" data-value="1" aria-pressed="true">1대</button>
+                <button type="button" class="chip" data-group="screens" data-value="2" aria-pressed="false">2대 이상</button>
+                <button type="button" class="chip" data-group="screens" data-value="4" aria-pressed="false">4대 (가족)</button>
+              </div>
+            </fieldset>
+            <fieldset class="quiz-q">
+              <legend>화질</legend>
+              <div class="chips">
+                <button type="button" class="chip" data-group="quality" data-value="hd" aria-pressed="true">HD / FHD</button>
+                <button type="button" class="chip" data-group="quality" data-value="4k" aria-pressed="false">4K</button>
+              </div>
+            </fieldset>
+            <fieldset class="quiz-q">
+              <legend>이용 목적</legend>
+              <div class="chips">
+                <button type="button" class="chip" data-group="need" data-value="kr" aria-pressed="true">국내 예능·드라마</button>
+                <button type="button" class="chip" data-group="need" data-value="global" aria-pressed="false">해외·시리즈</button>
+                <button type="button" class="chip" data-group="need" data-value="delivery" aria-pressed="false">배송 멤버십·영상</button>
+                <button type="button" class="chip" data-group="need" data-value="youtube" aria-pressed="false">유튜브 광고 제거</button>
+              </div>
+            </fieldset>
+            <fieldset class="quiz-q">
+              <legend>예산 기준</legend>
+              <div class="chips">
+                <button type="button" class="chip" data-group="budget" data-value="min" aria-pressed="true">월요금 최소</button>
+                <button type="button" class="chip" data-group="budget" data-value="bal" aria-pressed="false">조건·요금 균형</button>
+              </div>
+            </fieldset>
+            <button class="btn btn-cheap" type="submit">조건에 맞는 요금제 보기</button>
+            <div id="quiz-result" class="result" aria-live="polite"></div>
+          </form>
+          <p class="notice" data-disclaimer></p>
+        </section>
+
+        <section>
+          <div class="section-head">
+            <div>
+              <h2>서비스별 안내</h2>
+              <p>서비스를 선택하면 해지 가이드로 이동합니다.</p>
+            </div>
+            <a class="btn btn-ghost" href="compare.html">요금 비교표</a>
+          </div>
+          <div id="ott-grid" class="ott-grid"></div>
+        </section>
+
+        <section>
+          <div class="section-head">
+            <div>
+              <h2>이용 시 참고사항</h2>
+              <p>해지·요금 확인 전에 아래 항목을 확인하시기 바랍니다.</p>
+            </div>
+          </div>
+          <div class="ott-grid">
+            <article class="panel">
+              <h3 style="margin-top:0;font-family:var(--font-display)">1. 결제 경로 확인</h3>
+              <p style="color:var(--muted);margin:0">웹 직접결제, 앱스토어, 통신사·번들 등 결제처에 따라 해지 위치가 다릅니다.</p>
+            </article>
+            <article class="panel">
+              <h3 style="margin-top:0;font-family:var(--font-display)">2. 단기 이용 후 해지</h3>
+              <p style="color:var(--muted);margin:0">광고형·멤버십 포함 요금제로 고정비를 낮추고, 이용 종료 시 해지 가이드를 참고하세요.</p>
+            </article>
+            <article class="panel">
+              <h3 style="margin-top:0;font-family:var(--font-display)">3. 자동이체 보조 조회</h3>
+              <p style="color:var(--muted);margin:0">계좌·카드 자동납부는 <a href="https://www.payinfo.or.kr/" target="_blank" rel="noopener" style="color:var(--cheap)">payinfo.or.kr</a>에서 조회할 수 있습니다. OTT 전 항목이 표시되지는 않습니다.</p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <strong>오띠띠</strong> · 비공식 참고 가이드.
+        요금·정책은 각사 공식 기준이 우선입니다. 참고일 <span data-checked></span>
+      </div>
+    </footer>
+
+    <script src="js/data.js?v=20260724c"></script>
+    <script src="js/main.js?v=20260724c"></script>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+window.KKUNSUB_DEALS = {
+  collectedAt: "2026-07-24",
+  collectionMode: "manual_public_sources",
+  crawlPolicy: {
+    shoppingPortals: "deferred",
+    reason:
+      "쇼핑 포털 전면 자동 수집은 약관·부하 이슈로 보류했습니다. 공식 공개 요금·번들만 스냅샷합니다.",
+    allowedNow: [
+      "공개 요금·번들 안내 기반 스냅샷",
+      "공식 고객센터·보도 결합 상품 요금",
+      "이용자 조건 기반 경로 비교",
+    ],
+    futureSafe: [
+      "공식 API·제휴 피드가 있을 때만 자동 수집",
+      "직접 운영 시트·페이지 일 1회 갱신",
+    ],
+  },
+  soloRef: {
+    disney: { name: "디즈니+", plan: "스탠다드", price: 9900 },
+    tving: { name: "티빙", plan: "스탠다드", price: 13500 },
+    wavve: { name: "웨이브", plan: "스탠다드", price: 10900 },
+    netflix: { name: "넷플릭스", plan: "스탠다드", price: 13500 },
+    netflix_ad: { name: "넷플릭스", plan: "광고형 스탠다드", price: 7000 },
+    tving_ad: { name: "티빙", plan: "광고형 스탠다드", price: 5500 },
+    coupang_wow: { name: "쿠팡플레이", plan: "로켓와우 포함(참고)", price: 7890 },
+    appletv: { name: "Apple TV+", plan: "월간", price: 6500 },
+  },
+  bundles: [
+    {
+      id: "dplus-tving",
+      name: "디즈니+ · 티빙 번들",
+      includes: ["disney", "tving"],
+      planNote: "각 스탠다드",
+      price: 18000,
+      sourceLabel: "디즈니+ 고객센터",
+      sourceUrl: "https://help.disneyplus.com/ko/article/disneyplus-tving-wavve-bundle",
+      evidence: "official",
+    },
+    {
+      id: "dplus-tving-wavve",
+      name: "디즈니+ · 티빙 · 웨이브 번들",
+      includes: ["disney", "tving", "wavve"],
+      planNote: "각 스탠다드",
+      price: 21500,
+      sourceLabel: "디즈니+ 고객센터",
+      sourceUrl: "https://help.disneyplus.com/ko/article/disneyplus-tving-wavve-bundle",
+      evidence: "official",
+    },
+  ],
+  pathGuides: [
+    {
+      id: "ad-tier",
+      title: "광고형 요금제",
+      summary: "한 서비스만 필요할 때 월 고정비를 낮추는 1순위 경로입니다.",
+      when: "광고 허용 · 동시시청·화질 요구가 높지 않을 때",
+      action: "각사 웹에서 광고형(또는 라이트) 요금제 가입 가능 여부 확인",
+      evidence: "reference",
+    },
+    {
+      id: "ott-bundle",
+      title: "OTT 공식 번들",
+      summary: "디즈니+·티빙(·웨이브)을 함께 쓸 때 개별 스탠다드 합산보다 저렴한 공식 결합이 있습니다.",
+      when: "위 서비스 중 2~3개를 동시에 구독할 때",
+      action: "디즈니+ 또는 티빙에서 번들 멤버십 가입·변경 (결제처에 따라 옵션 상이)",
+      evidence: "official",
+    },
+    {
+      id: "telecom",
+      title: "통신사 결합·구독패스",
+      summary: "SKT·KT·LG U+ 요금제/패스에 OTT가 묶이면 체감 단가가 낮아질 수 있습니다. 상품·가격은 통신사·시점에 따라 달라 자동 수집하지 않습니다.",
+      when: "이미 해당 통신사를 쓰거나 요금제 변경을 검토할 때",
+      action: "T 우주 / KT 초이스·결합 / U+ 유독 등 공식 앱·상담으로 본인 요금제 혜택 확인",
+      evidence: "check_carrier",
+    },
+    {
+      id: "wow",
+      title: "로켓와우 + 쿠팡플레이",
+      summary: "배송 멤버십이 필요하면 쿠플이 ‘덤’으로 붙는 구조라 OTT만의 비용과 단순 비교하면 안 됩니다.",
+      when: "쿠팡 배송을 정기적으로 쓸 때",
+      action: "와우 혜택·패스 여부를 쿠팡에서 확인 후, OTT 전용 구독과 총비용 비교",
+      evidence: "reference",
+    },
+    {
+      id: "annual",
+      title: "연간 결제",
+      summary: "일부 서비스는 연간이 월간보다 저렴할 수 있으나, 중도 해지·환불 조건이 다릅니다.",
+      when: "1년 이상 확정 이용·약관 확인 후",
+      action: "각사 연간 요금·중도 해지 정책을 공식에서 확인",
+      evidence: "reference",
+    },
+  ],
+  shoppingSafeTips: [
+    {
+      title: "카드사 청구할인·캐시백",
+      body: "OTT·쇼핑 가맹점 청구할인은 카드 상품마다 다릅니다. 카드사 앱 ‘할인받는 가맹점’에서 확인하세요.",
+    },
+    {
+      title: "멤버십·와우·네이버플러스 등",
+      body: "쇼핑 멤버십은 배송·포인트와 묶입니다. ‘상품가만’이 아니라 월 멤버십비 포함 총비용으로 비교하세요.",
+    },
+    {
+      title: "쇼핑 전면 크롤 미실시",
+      body: "쿠팡·네이버 등 가격을 일 1회 자동 수집하는 기능은 약관·로봇 배제·부하 이슈로 보류했습니다. 공식 API·제휴가 열리면 재검토합니다.",
+    },
+  ],
+};

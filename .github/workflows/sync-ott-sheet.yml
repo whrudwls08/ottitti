@@ -1,0 +1,62 @@
+name: sync-ott-sheet
+
+on:
+  schedule:
+    - cron: "0 15 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch sheet to CSV
+        env:
+          SHEET_ID: ${{ secrets.SHEET_ID }}
+          SHEETS_API_KEY: ${{ secrets.SHEETS_API_KEY }}
+          SHEET_RANGE: ${{ vars.SHEET_RANGE || 'ott_snapshots!A:I' }}
+          SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL }}
+        run: |
+          mkdir -p data
+          if [ -n "$SHEET_CSV_URL" ]; then
+            curl -fsSL "$SHEET_CSV_URL" -o data/ott_snapshots.latest.csv
+            echo "Fetched via published CSV URL"
+          elif [ -n "$SHEET_ID" ] && [ -n "$SHEETS_API_KEY" ]; then
+            ENC_RANGE=$(python -c "import urllib.parse,os; print(urllib.parse.quote(os.environ['SHEET_RANGE'], safe=''))")
+            URL="https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${ENC_RANGE}?key=${SHEETS_API_KEY}"
+            curl -fsSL "$URL" -o /tmp/sheet.json
+            python - <<'PY'
+          import json, csv
+          from pathlib import Path
+          data = json.load(open("/tmp/sheet.json", encoding="utf-8"))
+          values = data.get("values") or []
+          if not values:
+              raise SystemExit("empty sheet values")
+          out = Path("data/ott_snapshots.latest.csv")
+          with out.open("w", encoding="utf-8", newline="") as f:
+              w = csv.writer(f)
+              for row in values:
+                  w.writerow(row)
+          print(f"wrote {out} rows={len(values)}")
+          PY
+          else
+            echo "Need secrets: SHEET_CSV_URL  OR  (SHEET_ID + SHEETS_API_KEY)"
+            exit 1
+          fi
+          head -n 5 data/ott_snapshots.latest.csv
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ott_snapshots.latest.csv
+          if git diff --staged --quiet; then
+            echo "No changes"
+          else
+            git commit -m "chore: sync ott snapshots from Google Sheet"
+            git push
+          fi

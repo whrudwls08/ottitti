@@ -1,0 +1,10 @@
+TAB_NAME=ott_snapshots
+RANGE=ott_snapshots!A:I
+
+# GitHub Secrets (레포에 커밋하지 말 것)
+# SHEET_ID=
+# SHEETS_API_KEY=
+# 또는 SHEET_CSV_URL=
+
+# 헤더
+# collected_at,source_id,item_key,item_name,price_krw,currency,raw_note,source_url,status
