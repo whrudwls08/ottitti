@@ -2,7 +2,6 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QW08MY30CQ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -13,45 +12,48 @@
       gtag("config", "G-QW08MY30CQ");
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>OTT 해지 방법 — 결제처별 안내 | 오티티 해지</title>
+    <title>OTT 해지 방법 모음 — 결제처별 안내 | 오티티 해지</title>
     <meta
       name="description"
-      content="넷플릭스·티빙·디즈니+·웨이브·쿠팡플레이 등 결제처(웹·앱스토어·통신사)별 OTT 해지 방법. 문의: sun84897@gmail.com"
+      content="넷플릭스·티빙·디즈니+·웨이브·쿠팡플레이·왓챠·유튜브 프리미엄 등 OTT 해지 방법을 결제처별로 정리한 목록입니다. 문의: sun84897@gmail.com"
     />
-    <meta name="robots" content="index,follow" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
     <meta name="theme-color" content="#07080b" />
     <link rel="canonical" href="https://whrudwls08.github.io/ottitti/cancel.html" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ko_KR" />
     <meta property="og:site_name" content="오티티 해지" />
-    <meta property="og:title" content="OTT 해지 방법 — 결제처별 안내 | 오티티 해지" />
+    <meta property="og:title" content="OTT 해지 방법 모음 — 오티티 해지" />
     <meta
       property="og:description"
-      content="결제처가 다르면 해지 경로도 다릅니다. 서비스별로 바로 확인하세요."
+      content="서비스별 OTT 해지 안내 페이지로 바로 이동합니다."
     />
     <meta property="og:url" content="https://whrudwls08.github.io/ottitti/cancel.html" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="OTT 해지 방법 — 결제처별 안내 | 오티티 해지" />
-    <meta
-      name="twitter:description"
-      content="결제처가 다르면 해지 경로도 다릅니다. 서비스별로 바로 확인하세요."
-    />
+    <meta property="og:image" content="https://whrudwls08.github.io/ottitti/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="OTT 해지 방법 모음 — 오티티 해지" />
+    <meta name="twitter:description" content="서비스별 OTT 해지 안내 페이지로 바로 이동합니다." />
+    <meta name="twitter:image" content="https://whrudwls08.github.io/ottitti/og-image.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Syne:wght@700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css?v=20260724h" />
+    <link rel="stylesheet" href="css/styles.css?v=20260727a" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "OTT 해지 방법",
+        "@type": "CollectionPage",
+        "name": "OTT 해지 방법 모음",
         "url": "https://whrudwls08.github.io/ottitti/cancel.html",
-        "isPartOf": { "@type": "WebSite", "name": "오티티 해지", "url": "https://whrudwls08.github.io/ottitti/" },
-        "description": "결제처별 OTT 해지 방법 안내",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "오티티 해지",
+          "url": "https://whrudwls08.github.io/ottitti/"
+        },
+        "description": "서비스별 OTT 해지 안내 목록",
         "inLanguage": "ko-KR"
       }
     </script>
@@ -73,15 +75,91 @@
 
     <main>
       <div class="wrap">
-        <section class="hero" style="max-width:none;padding-bottom:1.5rem">
+        <section class="hero" style="max-width:40rem;padding-bottom:1rem">
           <div class="kicker">해지 방법</div>
-          <h1 style="max-width:18ch">서비스 고르고<br /><em>결제처</em>만 맞추세요</h1>
-          <p>왼쪽(모바일은 위)에서 OTT를 고르면 결제처별 해지 절차가 나옵니다. 결제처가 헷갈리면 <a href="pay.html" style="color:var(--cheap)">결제처 확인</a>을 먼저 보세요.</p>
+          <h1>서비스별 <em>해지</em> 안내</h1>
+          <div class="hero-lead">
+            <p>결제처(웹·앱스토어·통신사·번들)에 따라 해지 창구가 다릅니다.</p>
+            <p>서비스를 고르면 고정 URL의 상세 안내로 이동합니다.</p>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-ghost" href="pay.html">결제처 먼저 확인</a>
+          </div>
         </section>
 
-        <section class="cancel-layout" style="padding-top:0">
-          <nav id="cancel-nav" class="cancel-nav panel" aria-label="OTT 목록"></nav>
-          <div id="cancel-main"></div>
+        <section style="padding-top:0">
+          <div class="section-head">
+            <div>
+              <h2>서비스 선택</h2>
+              <p>검색·공유에 유리한 전용 해지 페이지입니다.</p>
+            </div>
+          </div>
+          <div class="ott-grid">
+            <article class="ott-card">
+              <div class="top">
+                <img class="ott-logo" src="img/otts/netflix.svg" alt="넷플릭스" width="48" height="48" />
+              </div>
+              <h3>넷플릭스</h3>
+              <p class="meta">직접결제 · 결제 파트너</p>
+              <div class="actions"><a href="netflix-haeji.html">해지 방법 보기</a></div>
+            </article>
+            <article class="ott-card">
+              <div class="top">
+                <img class="ott-logo" src="img/otts/tving.svg" alt="티빙" width="48" height="48" />
+              </div>
+              <h3>티빙</h3>
+              <p class="meta">직접결제 · 스토어 · 통신사</p>
+              <div class="actions"><a href="tving-haeji.html">해지 방법 보기</a></div>
+            </article>
+            <article class="ott-card">
+              <div class="top">
+                <img class="ott-logo" src="img/otts/disney.svg" alt="디즈니+" width="48" height="48" />
+              </div>
+              <h3>디즈니+</h3>
+              <p class="meta">직접결제 · 타사·번들</p>
+              <div class="actions"><a href="disneyplus-haeji.html">해지 방법 보기</a></div>
+            </article>
+            <article class="ott-card">
+              <div class="top">
+                <img class="ott-logo" src="img/otts/wavve.svg" alt="웨이브" width="48" height="48" />
+              </div>
+              <h3>웨이브</h3>
+              <p class="meta">직접결제 · 스토어 · 통신사</p>
+              <div class="actions"><a href="wavve-haeji.html">해지 방법 보기</a></div>
+            </article>
+            <article class="ott-card">
+              <div class="top">
+                <img class="ott-logo" src="img/otts/coupangplay.svg" alt="쿠팡플레이" width="48" height="48" />
+              </div>
+              <h3>쿠팡플레이</h3>
+              <p class="meta">와우 · 패스</p>
+              <div class="actions"><a href="coupangplay-haeji.html">해지 방법 보기</a></div>
+            </article>
+            <article class="ott-card">
+              <div class="top">
+                <img class="ott-logo" src="img/otts/watcha.svg" alt="왓챠" width="48" height="48" />
+              </div>
+              <h3>왓챠</h3>
+              <p class="meta">직접결제 · 스토어</p>
+              <div class="actions"><a href="watcha-haeji.html">해지 방법 보기</a></div>
+            </article>
+            <article class="ott-card">
+              <div class="top">
+                <img class="ott-logo" src="img/otts/appletv.svg" alt="Apple TV+" width="48" height="48" />
+              </div>
+              <h3>Apple TV+</h3>
+              <p class="meta">Apple 구독</p>
+              <div class="actions"><a href="appletv-haeji.html">해지 방법 보기</a></div>
+            </article>
+            <article class="ott-card">
+              <div class="top">
+                <img class="ott-logo" src="img/otts/youtube.svg" alt="유튜브 프리미엄" width="48" height="48" />
+              </div>
+              <h3>유튜브 프리미엄</h3>
+              <p class="meta">YouTube · Play · Apple</p>
+              <div class="actions"><a href="youtube-premium-haeji.html">해지 방법 보기</a></div>
+            </article>
+          </div>
         </section>
       </div>
     </main>
@@ -96,7 +174,13 @@
       </div>
     </footer>
 
-    <script src="js/data.js?v=20260724h"></script>
-    <script src="js/cancel.js?v=20260724h"></script>
+    <script src="js/ott-slugs.js?v=20260727a"></script>
+    <script>
+      (function () {
+        var id = new URLSearchParams(location.search).get("ott");
+        var map = window.KKUNSUB_SLUGS || {};
+        if (id && map[id]) location.replace(map[id]);
+      })();
+    </script>
   </body>
 </html>

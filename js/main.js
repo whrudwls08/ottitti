@@ -34,7 +34,7 @@
           </div>
           <div class="from">월 <span class="price-num">${won(cheapest.price)}</span>~ <small style="color:var(--muted);font-weight:500">${cheapest.name}</small></div>
           <div class="actions">
-            <a href="cancel.html?ott=${ott.id}">해지 방법</a>
+            <a href="${(window.KKUNSUB_SLUGS && window.KKUNSUB_SLUGS[ott.id]) || "cancel.html?ott=" + ott.id}">해지 방법</a>
             <a href="${ott.site}" target="_blank" rel="noopener">공식 사이트</a>
           </div>
         </article>`;
@@ -234,7 +234,7 @@
             <div class="price">${won(item.plan.price)} <small>/월 · ${item.plan.name}</small></div>
             <p style="margin:0;color:var(--muted)">${item.ott.tagline}. ${item.plan.note || item.ott.strengths.join(" · ")}</p>
             <div class="cta-row">
-              <a class="btn btn-primary" href="cancel.html?ott=${item.ott.id}">해지 방법 보기</a>
+              <a class="btn btn-primary" href="${(window.KKUNSUB_SLUGS && window.KKUNSUB_SLUGS[item.ott.id]) || "cancel.html?ott=" + item.ott.id}">해지 방법 보기</a>
               <a class="btn btn-ghost" href="pay.html">결제처 확인</a>
             </div>
           </article>`;
