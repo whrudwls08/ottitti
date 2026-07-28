@@ -10,7 +10,9 @@ eval(
 );
 
 const BASE = "https://whrudwls08.github.io/ottitti";
-const V = "20260727a";
+const V = "20260728a";
+const FONT =
+  "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap";
 
 const SLUG = {
   coupangplay: "coupangplay-haeji",
@@ -34,7 +36,6 @@ function esc(s) {
 function nav(active) {
   const items = [
     ["index.html", "홈"],
-    ["pay.html", "결제처 확인"],
     ["cancel.html", "해지 방법"],
     ["compare.html", "요금 비교"],
     ["deals.html", "더 싸게"],
@@ -50,20 +51,20 @@ function nav(active) {
 
 function pageHtml(ott, slug, allLinks) {
   const url = `${BASE}/${slug}.html`;
-  const title = `${ott.name} 해지 방법 — 결제처별 안내 | 오티티 해지`;
-  const desc = `${ott.name} 해지 방법. 웹·앱스토어·통신사 등 결제처별 절차를 정리했습니다. ${ott.tagline}. 문의: sun84897@gmail.com`;
+  const title = `${ott.name} 해지 방법 — 오티티 해지`;
+  const desc = `${ott.name} 해지를 도와드릴게요. 웹·앱스토어·통신사 등 결제하신 곳별 절차를 안내합니다.`;
 
   const pathsHtml = ott.cancelPaths
     .map((p, i) => {
       const steps = p.steps.map((s) => `<li>${esc(s)}</li>`).join("\n            ");
       return `
         <section class="panel path-block" id="path-${i}">
-          <h2 style="margin:0 0 0.75rem;font-size:1.15rem;font-family:var(--font-display)">${esc(p.path)}</h2>
+          <h2 style="margin:0 0 0.75rem;font-size:1.15rem">${esc(p.path)}</h2>
           <ol class="steps">
             ${steps}
           </ol>
           <p style="margin:0.9rem 0 0">
-            <a class="btn btn-ghost" href="${esc(p.official)}" target="_blank" rel="noopener">공식/관련 안내 열기</a>
+            <a class="btn btn-ghost" href="${esc(p.official)}" target="_blank" rel="noopener">공식 안내 보기</a>
           </p>
         </section>`;
     })
@@ -79,15 +80,15 @@ function pageHtml(ott, slug, allLinks) {
   const faqMain = [
     {
       q: `${ott.name} 해지는 어디서 하나요?`,
-      a: `${ott.name}는 결제처(웹 직접결제·앱스토어·통신사·번들)에 따라 해지 메뉴가 다릅니다. 이 페이지의 결제처별 절차를 확인하세요.`,
+      a: `${ott.name} 해지는 결제하신 곳(웹, 앱스토어, 통신사, 번들)에 따라 메뉴가 달라요. 아래에서 본인 결제 경로를 골라 따라가 주세요.`,
     },
     {
       q: `${ott.name} 앱만 지우면 해지되나요?`,
-      a: `앱 삭제만으로는 구독·자동결제가 종료되지 않는 경우가 많습니다. 결제처의 구독/멤버십 메뉴에서 해지해야 합니다.`,
+      a: `앱만 삭제해서는 구독이 끝나지 않는 경우가 많아요. 결제하신 곳의 구독·멤버십 메뉴에서 해지해 주세요.`,
     },
     {
-      q: `결제처를 모르겠으면?`,
-      a: `카드 내역, App Store/Google Play 구독, 통신사 명세서, 또는 오티티 해지 결제처 확인 페이지에서 먼저 확인하세요.`,
+      q: `어디서 결제했는지 모르겠어요`,
+      a: `카드 이용내역, App Store/Google Play 구독 목록, 통신사 명세서를 먼저 확인해 보시면 결제하신 곳을 찾는 데 도움이 됩니다.`,
     },
   ];
 
@@ -121,10 +122,7 @@ function pageHtml(ott, slug, allLinks) {
 
   const others = allLinks
     .filter((x) => x.slug !== slug)
-    .map(
-      (x) =>
-        `<a class="btn btn-ghost" href="${x.slug}.html">${esc(x.name)} 해지</a>`
-    )
+    .map((x) => `<a class="btn btn-ghost" href="${x.slug}.html">${esc(x.name)} 해지</a>`)
     .join("\n            ");
 
   const logo = ott.logo
@@ -162,7 +160,7 @@ function pageHtml(ott, slug, allLinks) {
     <meta name="twitter:image" content="${BASE}/og-image.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+    <link href="${FONT}" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css?v=${V}" />
     <script type="application/ld+json">${JSON.stringify(breadcrumbLd)}</script>
     <script type="application/ld+json">${JSON.stringify(faqLd)}</script>
@@ -186,31 +184,30 @@ function pageHtml(ott, slug, allLinks) {
         </nav>
 
         <section class="hero" style="padding-top:1.5rem;padding-bottom:1rem;max-width:42rem">
-          <div class="kicker">해지 가이드</div>
+          <div class="kicker">해지 안내</div>
           <div class="result-ott" style="margin-bottom:0.5rem">
             ${logo}
             <h1 style="margin:0;font-size:clamp(1.85rem,5vw,2.8rem)">${esc(ott.name)} <em>해지</em> 방법</h1>
           </div>
           <div class="hero-lead">
             <p>${esc(ott.tagline)}</p>
-            <p>결제처가 다르면 해지 창구도 다릅니다. 아래 중 본인 결제 경로를 고르세요.</p>
+            <p>어디에 결제하셨는지에 따라 해지 화면이 달라요. 아래 중 본인 상황에 맞는 경로를 선택해 주세요.</p>
           </div>
           <div class="cta-row">
-            <a class="btn btn-ghost" href="pay.html">결제처 먼저 확인</a>
-            <a class="btn btn-primary" href="${esc(ott.site)}" target="_blank" rel="noopener">공식 사이트</a>
+            <a class="btn btn-primary" href="${esc(ott.site)}" target="_blank" rel="noopener">공식 사이트 열기</a>
           </div>
         </section>
 
         <section style="padding-top:0;display:grid;gap:1rem;max-width:42rem">
           ${pathsHtml}
           <div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem;font-family:var(--font-display)">메모</h2>
+            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">알아두면 좋은 점</h2>
             <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">
             ${tips}
             </ul>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.75rem;font-size:1.1rem;font-family:var(--font-display)">자주 묻는 질문</h2>
+            <h2 style="margin:0 0 0.75rem;font-size:1.1rem">자주 묻는 질문</h2>
             ${faqMain
               .map(
                 (f) => `<div style="margin-bottom:1rem">
@@ -226,8 +223,8 @@ function pageHtml(ott, slug, allLinks) {
         <section>
           <div class="section-head">
             <div>
-              <h2>다른 서비스 해지</h2>
-              <p>서비스별 고정 안내 페이지입니다.</p>
+              <h2>다른 서비스도 보시겠어요?</h2>
+              <p>원하시는 서비스를 골라 해지 안내로 이동할 수 있어요.</p>
             </div>
             <a class="btn btn-ghost" href="cancel.html">전체 목록</a>
           </div>
@@ -239,7 +236,7 @@ function pageHtml(ott, slug, allLinks) {
     </main>
     <footer class="footer">
       <div class="wrap footer-inner">
-        <p><strong>오티티 해지</strong> · 비공식 참고 가이드. 공식 고객센터 안내가 우선입니다.</p>
+        <p><strong>오티티 해지</strong> · 참고용 안내입니다. 최종 확인은 각사 공식 안내를 우선해 주세요.</p>
         <p class="footer-contact">문의 <a href="mailto:sun84897@gmail.com">sun84897@gmail.com</a></p>
       </div>
     </footer>
@@ -254,25 +251,24 @@ const allLinks = KKUNSUB.otts.map((o) => ({
   slug: SLUG[o.id],
 }));
 
-const outDir = root;
 const sitemapUrls = [
-  { loc: `${BASE}/`, lastmod: "2026-07-27" },
-  { loc: `${BASE}/pay.html`, lastmod: "2026-07-27" },
-  { loc: `${BASE}/cancel.html`, lastmod: "2026-07-27" },
-  { loc: `${BASE}/deals.html`, lastmod: "2026-07-27" },
-  { loc: `${BASE}/compare.html`, lastmod: "2026-07-27" },
+  { loc: `${BASE}/`, lastmod: "2026-07-28" },
+  { loc: `${BASE}/cancel.html`, lastmod: "2026-07-28" },
+  { loc: `${BASE}/deals.html`, lastmod: "2026-07-28" },
+  { loc: `${BASE}/compare.html`, lastmod: "2026-07-28" },
 ];
 
 KKUNSUB.otts.forEach((ott) => {
   const slug = SLUG[ott.id];
   if (!slug) throw new Error("no slug " + ott.id);
-  const html = pageHtml(ott, slug, allLinks);
-  fs.writeFileSync(path.join(outDir, `${slug}.html`), html, "utf8");
-  sitemapUrls.push({ loc: `${BASE}/${slug}.html`, lastmod: "2026-07-27", priority: "0.9" });
+  fs.writeFileSync(path.join(root, `${slug}.html`), pageHtml(ott, slug, allLinks), "utf8");
+  sitemapUrls.push({ loc: `${BASE}/${slug}.html`, lastmod: "2026-07-28" });
   console.log("wrote", slug + ".html");
 });
 
-const sm = `<?xml version="1.0" encoding="UTF-8"?>
+fs.writeFileSync(
+  path.join(root, "sitemap.xml"),
+  `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitemapUrls
   .map(
@@ -283,11 +279,12 @@ ${sitemapUrls
   )
   .join("\n")}
 </urlset>
-`;
-fs.writeFileSync(path.join(outDir, "sitemap.xml"), sm, "utf8");
+`,
+  "utf8"
+);
 
 fs.writeFileSync(
-  path.join(outDir, "js/ott-slugs.js"),
+  path.join(root, "js/ott-slugs.js"),
   `window.KKUNSUB_SLUGS = ${JSON.stringify(
     Object.fromEntries(allLinks.map((x) => [x.id, x.slug + ".html"])),
     null,
@@ -296,4 +293,4 @@ fs.writeFileSync(
   "utf8"
 );
 
-console.log("sitemap urls:", sitemapUrls.length);
+console.log("done", sitemapUrls.length);

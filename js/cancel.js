@@ -51,9 +51,9 @@
         <div class="kicker">해지 가이드</div>
         <div class="result-ott" style="margin-bottom:0.5rem">
           ${headLogo}
-          <h2 style="margin:0;font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-0.04em">${ott.name} 끊는 법</h2>
+          <h2 style="margin:0;font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-0.03em;font-weight:700">${ott.name} 해지 안내</h2>
         </div>
-        <p style="margin:0;color:var(--muted)">${ott.tagline}. 결제했던 경로가 다르면 해지 창구도 다릅니다. 아래 중 본인 결제 경로를 고르세요.</p>
+        <p style="margin:0;color:var(--muted)">${ott.tagline}. 결제하신 곳에 따라 해지 화면이 달라요. 아래에서 본인 결제 경로를 골라 주세요.</p>
         ${paths}
         <div class="panel">
           <h4 style="margin:0 0 0.5rem">메모</h4>

@@ -9,9 +9,9 @@
   --cheap: #d6f26a;
   --glow: #ff8a5c;
   --radius: 18px;
-  --font-display: "Syne", "Pretendard", sans-serif;
-  --font-body: "IBM Plex Sans KR", "Pretendard", sans-serif;
-  --font-price: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
+  --font-display: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-price: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   --max: 1120px;
 }
 
@@ -144,10 +144,10 @@ img {
 .hero h1 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 6.5vw, 3.8rem);
-  line-height: 1.12;
-  letter-spacing: -0.04em;
-  font-weight: 800;
+  font-size: clamp(2.1rem, 6vw, 3.4rem);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  font-weight: 700;
   word-break: keep-all;
   overflow-wrap: break-word;
 }
