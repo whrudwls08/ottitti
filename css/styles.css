@@ -629,6 +629,9 @@ td strong {
   border: 1px dashed rgba(255, 244, 220, 0.2);
   color: var(--muted);
   font-size: 0.88rem;
+  line-height: 1.6;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .cancel-layout {
