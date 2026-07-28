@@ -712,6 +712,32 @@ td strong {
   text-underline-offset: 0.15em;
 }
 
+.policy h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.policy p,
+.policy li {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  word-break: keep-all;
+}
+
+.policy ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.15rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.policy a {
+  color: var(--cheap);
+}
+
 .footer-contact {
   white-space: nowrap;
 }
