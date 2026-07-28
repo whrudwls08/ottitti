@@ -156,3 +156,20 @@ function parseDisneyBundle(html) {
 function ping() {
   Logger.log("ok " + new Date().toISOString());
 }
+
+/** 편집기에서 한 번 실행하면 매일 오전 9시(Asia/Seoul) crawlPublicOtt 트리거가 생깁니다. */
+function createDailyTrigger() {
+  ScriptApp.getProjectTriggers().forEach(function (t) {
+    if (t.getHandlerFunction() === "crawlPublicOtt") ScriptApp.deleteTrigger(t);
+  });
+  ScriptApp.newTrigger("crawlPublicOtt").timeBased().atHour(9).everyDays(1).create();
+  Logger.log("daily crawlPublicOtt trigger created (approx 09:00 project timezone)");
+}
+
+/** 트리거 제거가 필요할 때 실행합니다. */
+function removeDailyTriggers() {
+  ScriptApp.getProjectTriggers().forEach(function (t) {
+    if (t.getHandlerFunction() === "crawlPublicOtt") ScriptApp.deleteTrigger(t);
+  });
+  Logger.log("crawlPublicOtt triggers removed");
+}

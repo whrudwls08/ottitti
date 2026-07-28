@@ -10,7 +10,7 @@ eval(
 );
 
 const BASE = "https://whrudwls08.github.io/ottitti";
-const V = "20260728b";
+const V = "20260728c";
 const FONT =
   "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap";
 
@@ -238,7 +238,7 @@ function pageHtml(ott, slug, allLinks) {
     <footer class="footer">
       <div class="wrap footer-inner">
         <p><strong>오티티 해지</strong> · 참고용 안내입니다. 최종 확인은 각사 공식 안내를 우선해 주세요.</p>
-        <p class="footer-contact">문의 <a href="mailto:sun84897@gmail.com">sun84897@gmail.com</a> · <a href="privacy.html">개인정보처리방침</a></p>
+        <p class="footer-contact">문의 <a href="mailto:sun84897@gmail.com">sun84897@gmail.com</a> · <a href="privacy.html">개인정보처리방침</a> · <a href="terms.html">이용약관</a></p>
       </div>
     </footer>
   </body>
@@ -258,6 +258,10 @@ const sitemapUrls = [
   { loc: `${BASE}/deals.html`, lastmod: "2026-07-28" },
   { loc: `${BASE}/compare.html`, lastmod: "2026-07-28" },
   { loc: `${BASE}/privacy.html`, lastmod: "2026-07-28" },
+  { loc: `${BASE}/terms.html`, lastmod: "2026-07-28" },
+  { loc: `${BASE}/tongsin-ott-haeji.html`, lastmod: "2026-07-28" },
+  { loc: `${BASE}/appstore-ott-haeji.html`, lastmod: "2026-07-28" },
+  { loc: `${BASE}/disney-tving-bundle-haeji.html`, lastmod: "2026-07-28" },
 ];
 
 KKUNSUB.otts.forEach((ott) => {
