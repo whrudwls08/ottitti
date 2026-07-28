@@ -10,7 +10,7 @@ eval(
 );
 
 const BASE = "https://whrudwls08.github.io/ottitti";
-const V = "20260728c";
+const V = "20260728d";
 const FONT =
   "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap";
 
@@ -35,11 +35,11 @@ function esc(s) {
 
 function nav(active) {
   const items = [
-    ["index.html", "홈"],
-    ["cancel.html", "해지 방법"],
-    ["compare.html", "요금 비교"],
-    ["deals.html", "더 싸게"],
-    ["index.html#cheap", "요금 조건"],
+    ["index.html", "??],
+    ["cancel.html", "?��? 방법"],
+    ["compare.html", "?�금 비교"],
+    ["deals.html", "???�게"],
+    ["index.html#cheap", "?�금 조건"],
   ];
   return items
     .map(([href, label]) => {
@@ -51,8 +51,8 @@ function nav(active) {
 
 function pageHtml(ott, slug, allLinks) {
   const url = `${BASE}/${slug}.html`;
-  const title = `${ott.name} 해지 방법 — 오티티 해지`;
-  const desc = `${ott.name} 해지를 도와드릴게요. 웹·앱스토어·통신사 등 결제하신 곳별 절차를 안내합니다.`;
+  const title = `${ott.name} ?��? 방법 ???�티???��?`;
+  const desc = `${ott.name} ?��?�??��??�릴게요. ?�·앱?�토?�·통?�사 ??결제?�신 곳별 ?�차�??�내?�니??`;
 
   const pathsHtml = ott.cancelPaths
     .map((p, i) => {
@@ -64,7 +64,7 @@ function pageHtml(ott, slug, allLinks) {
             ${steps}
           </ol>
           <p style="margin:0.9rem 0 0">
-            <a class="btn btn-ghost" href="${esc(p.official)}" target="_blank" rel="noopener">공식 안내 보기</a>
+            <a class="btn btn-ghost" href="${esc(p.official)}" target="_blank" rel="noopener">공식 ?�내 보기</a>
           </p>
         </section>`;
     })
@@ -79,16 +79,16 @@ function pageHtml(ott, slug, allLinks) {
 
   const faqMain = [
     {
-      q: `${ott.name} 해지는 어디서 하나요?`,
-      a: `${ott.name} 해지는 결제하신 곳(웹, 앱스토어, 통신사, 번들)에 따라 메뉴가 달라요. 아래에서 본인 결제 경로를 골라 따라가 주세요.`,
+      q: `${ott.name} ?��????�디???�나??`,
+      a: `${ott.name} ?��???결제?�신 �??? ?�스?�어, ?�신?? 번들)???�라 메뉴가 ?�라?? ?�래?�서 본인 결제 경로�?골라 ?�라가 주세??`,
     },
     {
-      q: `${ott.name} 앱만 지우면 해지되나요?`,
-      a: `앱만 삭제해서는 구독이 끝나지 않는 경우가 많아요. 결제하신 곳의 구독·멤버십 메뉴에서 해지해 주세요.`,
+      q: `${ott.name} ?�만 지?�면 ?��??�나??`,
+      a: `?�만 ??��?�서??구독???�나지 ?�는 경우가 많아?? 결제?�신 곳의 구독·멤버??메뉴?�서 ?��???주세??`,
     },
     {
-      q: `어디서 결제했는지 모르겠어요`,
-      a: `카드 이용내역, App Store/Google Play 구독 목록, 통신사 명세서를 먼저 확인해 보시면 결제하신 곳을 찾는 데 도움이 됩니다.`,
+      q: `?�디??결제?�는지 모르겠어??,
+      a: `카드 ?�용?�역, App Store/Google Play 구독 목록, ?�신??명세?��? 먼�? ?�인??보시�?결제?�신 곳을 찾는 ???��????�니??`,
     },
   ];
 
@@ -105,7 +105,7 @@ function pageHtml(ott, slug, allLinks) {
   const howToLd = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    name: `${ott.name} 해지 방법`,
+    name: `${ott.name} ?��? 방법`,
     description: desc,
     step: howToSteps.slice(0, 12),
   };
@@ -114,15 +114,15 @@ function pageHtml(ott, slug, allLinks) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "홈", item: `${BASE}/` },
-      { "@type": "ListItem", position: 2, name: "해지 방법", item: `${BASE}/cancel.html` },
-      { "@type": "ListItem", position: 3, name: `${ott.name} 해지`, item: url },
+      { "@type": "ListItem", position: 1, name: "??, item: `${BASE}/` },
+      { "@type": "ListItem", position: 2, name: "?��? 방법", item: `${BASE}/cancel.html` },
+      { "@type": "ListItem", position: 3, name: `${ott.name} ?��?`, item: url },
     ],
   };
 
   const others = allLinks
     .filter((x) => x.slug !== slug)
-    .map((x) => `<a class="btn btn-ghost" href="${x.slug}.html">${esc(x.name)} 해지</a>`)
+    .map((x) => `<a class="btn btn-ghost" href="${x.slug}.html">${esc(x.name)} ?��?</a>`)
     .join("\n            ");
 
   const logo = ott.logo
@@ -150,7 +150,7 @@ function pageHtml(ott, slug, allLinks) {
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <meta property="og:type" content="article" />
     <meta property="og:locale" content="ko_KR" />
-    <meta property="og:site_name" content="오티티 해지" />
+    <meta property="og:site_name" content="?�티???��?" />
     <meta property="og:title" content="${esc(title)}" />
     <meta property="og:description" content="${esc(desc)}" />
     <meta property="og:url" content="${url}" />
@@ -170,7 +170,7 @@ function pageHtml(ott, slug, allLinks) {
   <body>
     <header class="site-header">
       <div class="wrap nav">
-        <a class="brand" href="index.html">오티티 <span>해지</span></a>
+        <a class="brand" href="index.html">?�티??<span>?��?</span></a>
         <nav class="nav-links" aria-label="주요 메뉴">
           ${nav("cancel.html")}
         </nav>
@@ -178,37 +178,37 @@ function pageHtml(ott, slug, allLinks) {
     </header>
     <main>
       <div class="wrap">
-        <nav class="notice" aria-label="탐색경로" style="margin-top:1.25rem">
-          <a href="index.html" style="color:var(--cheap)">홈</a> ·
-          <a href="cancel.html" style="color:var(--cheap)">해지 방법</a> ·
-          <span>${esc(ott.name)} 해지</span>
+        <nav class="notice" aria-label="?�색경로" style="margin-top:1.25rem">
+          <a href="index.html" style="color:var(--cheap)">??/a> ·
+          <a href="cancel.html" style="color:var(--cheap)">?��? 방법</a> ·
+          <span>${esc(ott.name)} ?��?</span>
         </nav>
 
         <section class="hero" style="padding-top:1.5rem;padding-bottom:1rem;max-width:42rem">
-          <div class="kicker">해지 안내</div>
+          <div class="kicker">?��? ?�내</div>
           <div class="result-ott" style="margin-bottom:0.5rem">
             ${logo}
-            <h1 style="margin:0;font-size:clamp(1.85rem,5vw,2.8rem)">${esc(ott.name)} <em>해지</em> 방법</h1>
+            <h1 style="margin:0;font-size:clamp(1.85rem,5vw,2.8rem)">${esc(ott.name)} <em>?��?</em> 방법</h1>
           </div>
           <div class="hero-lead">
             <p>${esc(ott.tagline)}</p>
-            <p>어디에 결제하셨는지에 따라 해지 화면이 달라요. 아래 중 본인 상황에 맞는 경로를 선택해 주세요.</p>
+            <p>?�디??결제?�셨?��????�라 ?��? ?�면???�라?? ?�래 �?본인 ?�황??맞는 경로�??�택??주세??</p>
           </div>
           <div class="cta-row">
-            <a class="btn btn-primary" href="${esc(ott.site)}" target="_blank" rel="noopener">공식 사이트 열기</a>
+            <a class="btn btn-primary" href="${esc(ott.site)}" target="_blank" rel="noopener">공식 ?�이???�기</a>
           </div>
         </section>
 
         <section style="padding-top:0;display:grid;gap:1rem;max-width:42rem">
           ${pathsHtml}
           <div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">알아두면 좋은 점</h2>
+            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">?�아?�면 좋�? ??/h2>
             <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">
             ${tips}
             </ul>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.75rem;font-size:1.1rem">자주 묻는 질문</h2>
+            <h2 style="margin:0 0 0.75rem;font-size:1.1rem">?�주 묻는 질문</h2>
             ${faqMain
               .map(
                 (f) => `<div style="margin-bottom:1rem">
@@ -218,16 +218,16 @@ function pageHtml(ott, slug, allLinks) {
               )
               .join("")}
           </div>
-          <p class="notice">${esc(KKUNSUB.disclaimer)} 참고일: ${esc(KKUNSUB.lastChecked)}</p>
+          <p class="notice">${esc(KKUNSUB.disclaimer)} 참고?? ${esc(KKUNSUB.lastChecked)}</p>
         </section>
 
         <section>
           <div class="section-head">
             <div>
-              <h2>다른 서비스도 보시겠어요?</h2>
-              <p>원하시는 서비스를 골라 해지 안내로 이동할 수 있어요.</p>
+              <h2>?�른 ?�비?�도 보시겠어??</h2>
+              <p>?�하?�는 ?�비?��? 골라 ?��? ?�내�??�동?????�어??</p>
             </div>
-            <a class="btn btn-ghost" href="cancel.html">전체 목록</a>
+            <a class="btn btn-ghost" href="cancel.html">?�체 목록</a>
           </div>
           <div class="cta-row" style="flex-wrap:wrap">
             ${others}
@@ -237,8 +237,8 @@ function pageHtml(ott, slug, allLinks) {
     </main>
     <footer class="footer">
       <div class="wrap footer-inner">
-        <p><strong>오티티 해지</strong> · 참고용 안내입니다. 최종 확인은 각사 공식 안내를 우선해 주세요.</p>
-        <p class="footer-contact">문의 <a href="mailto:sun84897@gmail.com">sun84897@gmail.com</a> · <a href="privacy.html">개인정보처리방침</a> · <a href="terms.html">이용약관</a></p>
+        <p><strong>?�티???��?</strong> · 참고???�내?�니?? 최종 ?�인?� 각사 공식 ?�내�??�선??주세??</p>
+        <p class="footer-contact">문의 <a href="mailto:sun84897@gmail.com">sun84897@gmail.com</a> · <a href="privacy.html">개인?�보처리방침</a> · <a href="terms.html">?�용?��?</a></p>
       </div>
     </footer>
   </body>

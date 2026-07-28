@@ -34,7 +34,37 @@ body {
     radial-gradient(1200px 700px at 85% -10%, rgba(255, 77, 46, 0.22), transparent 55%),
     radial-gradient(900px 600px at -10% 20%, rgba(214, 242, 106, 0.1), transparent 50%),
     linear-gradient(180deg, #0c0e14 0%, var(--ink) 45%, #0a0c10 100%);
-  line-height: 1.55;
+  line-height: 1.65;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+label,
+legend,
+td,
+th,
+.btn,
+.chip,
+.notice,
+.meta,
+.kicker,
+.hero-lead,
+.section-head,
+.footer,
+.policy,
+.result-card,
+.ott-card {
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 body::before {
@@ -59,13 +89,13 @@ img {
 .wrap {
   position: relative;
   z-index: 1;
-  width: min(100% - 2rem, var(--max));
+  width: min(100% - 1.5rem, var(--max));
   margin-inline: auto;
 }
 
 @supports (padding: max(0px)) {
   .wrap {
-    width: min(100% - 2rem, var(--max));
+    width: min(100% - 1.5rem, var(--max));
     padding-left: max(0px, env(safe-area-inset-left));
     padding-right: max(0px, env(safe-area-inset-right));
   }
@@ -96,8 +126,8 @@ img {
   font-family: var(--font-body);
   font-weight: 700;
   font-size: clamp(1.05rem, 3.5vw, 1.28rem);
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
   white-space: nowrap;
 }
 
@@ -144,9 +174,9 @@ img {
 .hero h1 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(2.1rem, 6vw, 3.4rem);
-  line-height: 1.2;
-  letter-spacing: -0.03em;
+  font-size: clamp(1.85rem, 5.5vw, 3.1rem);
+  line-height: 1.28;
+  letter-spacing: -0.02em;
   font-weight: 700;
   word-break: keep-all;
   overflow-wrap: break-word;
@@ -162,6 +192,7 @@ img {
   color: var(--muted);
   font-size: 1.05rem;
   max-width: 36rem;
+  line-height: 1.65;
 }
 
 .cta-row {
@@ -176,12 +207,16 @@ img {
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
-  padding: 0.85rem 1.2rem;
+  padding: 0.85rem 1.15rem;
   min-height: 44px;
   border-radius: 999px;
   border: 1px solid transparent;
   font-weight: 600;
   font-size: 0.95rem;
+  line-height: 1.35;
+  text-align: center;
+  white-space: normal;
+  max-width: 100%;
   cursor: pointer;
   transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
 }
@@ -230,14 +265,16 @@ section {
 .section-head h2 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-  letter-spacing: -0.04em;
+  font-size: clamp(1.35rem, 3.2vw, 2rem);
+  letter-spacing: -0.02em;
+  line-height: 1.35;
 }
 
 .section-head p {
   margin: 0.35rem 0 0;
   color: var(--muted);
   max-width: 36rem;
+  line-height: 1.6;
 }
 
 .panel {
@@ -277,6 +314,10 @@ section {
   padding: 0.55rem 0.9rem;
   cursor: pointer;
   font: inherit;
+  line-height: 1.35;
+  text-align: center;
+  white-space: normal;
+  max-width: 100%;
 }
 
 .chip:hover {
@@ -336,8 +377,9 @@ section {
 .result-card h3 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: 1.7rem;
-  letter-spacing: -0.03em;
+  font-size: clamp(1.25rem, 4vw, 1.65rem);
+  letter-spacing: -0.02em;
+  line-height: 1.35;
 }
 
 .price {
@@ -450,10 +492,11 @@ section {
 
 .hero-lead {
   display: grid;
-  gap: 0.45rem;
+  gap: 0.55rem;
   margin: 0;
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 1.02rem;
+  line-height: 1.65;
   max-width: 36rem;
 }
 
@@ -462,18 +505,21 @@ section {
   color: inherit;
   font-size: inherit;
   max-width: none;
+  line-height: inherit;
 }
 
 .ott-card h3 {
   margin: 0;
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   font-family: var(--font-display);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
 }
 
 .ott-card .meta {
   color: var(--muted);
   font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .ott-card .from {
@@ -654,6 +700,9 @@ td strong {
   border-radius: 12px;
   background: #0d1118;
   border: 1px solid var(--line);
+  line-height: 1.55;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .steps li::before {
@@ -700,6 +749,7 @@ td strong {
 .footer p {
   margin: 0;
   max-width: 42rem;
+  line-height: 1.6;
 }
 
 .footer strong {
@@ -716,6 +766,7 @@ td strong {
   margin: 0 0 0.4rem;
   font-size: 1.05rem;
   font-weight: 600;
+  line-height: 1.4;
 }
 
 .policy p,
@@ -723,8 +774,9 @@ td strong {
   margin: 0;
   color: var(--muted);
   font-size: 0.98rem;
-  line-height: 1.65;
+  line-height: 1.7;
   word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .policy ul {
@@ -739,7 +791,13 @@ td strong {
 }
 
 .footer-contact {
-  white-space: nowrap;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.2rem 0.45rem;
+  white-space: normal;
+  line-height: 1.55;
+  font-size: 0.95rem;
 }
 
 .kicker {
@@ -819,12 +877,21 @@ td strong {
     gap: 1rem;
   }
 
-  .hero h1 {
-    font-size: clamp(2rem, 11vw, 2.8rem);
+  /* 강제 줄바꿈은 좁은 화면에서 어색해서 자연 줄바꿈으로 */
+  .hero h1 br {
+    display: none;
   }
 
-  .hero p {
+  .hero h1 {
+    font-size: clamp(1.7rem, 8.5vw, 2.35rem);
+    line-height: 1.32;
+    letter-spacing: -0.015em;
+  }
+
+  .hero p,
+  .hero-lead {
     font-size: 0.98rem;
+    line-height: 1.65;
   }
 
   .cta-row {
@@ -842,10 +909,16 @@ td strong {
 
   .section-head {
     margin-bottom: 1rem;
+    align-items: start;
   }
 
   .section-head h2 {
-    font-size: 1.45rem;
+    font-size: clamp(1.25rem, 5.5vw, 1.5rem);
+    line-height: 1.35;
+  }
+
+  .section-head p {
+    font-size: 0.95rem;
   }
 
   .panel {
@@ -868,7 +941,7 @@ td strong {
   }
 
   .result-card h3 {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
   }
 
   .table-wrap {
@@ -892,15 +965,34 @@ td strong {
   .footer {
     padding: 1.5rem 0 calc(2rem + env(safe-area-inset-bottom));
   }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .footer-contact {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 380px) {
+  .wrap {
+    width: min(100% - 1.25rem, var(--max));
+  }
+
   .hero h1 {
-    font-size: 1.85rem;
+    font-size: 1.6rem;
   }
 
   .nav-links {
     font-size: 0.78rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.8rem 1rem;
   }
 }
 
