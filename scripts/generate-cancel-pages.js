@@ -133,6 +133,7 @@ function pageHtml(ott, slug, allLinks) {
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6643098025712399" crossorigin="anonymous"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QW08MY30CQ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
