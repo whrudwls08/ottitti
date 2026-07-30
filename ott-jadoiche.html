@@ -13,10 +13,10 @@
       gtag("config", "G-QW08MY30CQ");
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>OTT 자동이체·자동결제 확인·해지 방법 — 오티티 해지</title>
+    <title>OTT 자동이체·결제일·다음 갱신일 확인 — 오티티 해지</title>
     <meta
       name="description"
-      content="넷플릭스·티빙 등 OTT 자동이체·자동결제를 어디서 확인하는지, 페이인포·카드·앱스토어·통신사별로 쉽게 정리했어요"
+      content="OTT 자동이체·자동결제 확인, 다음 결제일·갱신일 보는 법, 결제일 변경 가능 여부를 검색으로 찾아보세요"
     />
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <meta name="theme-color" content="#07080b" />
@@ -25,17 +25,17 @@
     <meta property="og:type" content="article" />
     <meta property="og:locale" content="ko_KR" />
     <meta property="og:site_name" content="오티티 해지" />
-    <meta property="og:title" content="OTT 자동이체·자동결제 확인·해지 방법 — 오티티 해지" />
+    <meta property="og:title" content="OTT 자동이체·결제일·다음 갱신일 확인 — 오티티 해지" />
     <meta
       property="og:description"
-      content="OTT 자동이체·자동결제를 결제 경로별로 확인하고 끊는 방법을 안내합니다."
+      content="OTT 자동이체 확인, 다음 결제일·갱신일, 결제일 변경 안내를 검색으로 찾을 수 있어요."
     />
     <meta property="og:url" content="https://whrudwls08.github.io/ottitti/ott-jadoiche.html" />
     <meta property="og:image" content="https://whrudwls08.github.io/ottitti/og-image.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css?v=20260730a" />
+    <link rel="stylesheet" href="css/styles.css?v=20260730b" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -43,10 +43,18 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "OTT 자동이체는 어디서 확인하나요?",
+            "name": "OTT 다음 결제일은 어디서 보나요?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "웹 직접결제, 앱스토어 구독, 통신사 부가서비스, 카드·계좌 자동납부 중 어디에 연결됐는지에 따라 다릅니다. 카드 이용내역과 payinfo.or.kr 조회가 출발점이 됩니다."
+              "text": "웹 멤버십 화면, App Store/Google Play 구독 상세의 다음 결제일, 통신사 부가서비스 청구 주기, 카드 이용내역의 매월 비슷한 출금일을 확인하면 됩니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "OTT 자동이체 날짜를 바꿀 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "대부분의 OTT는 사용자가 임의로 결제일만 바꾸는 메뉴가 없습니다. 보통 처음 결제한 날짜 기준으로 다음 갱신일이 정해지며, 변경이 필요하면 고객센터·결제처 정책을 확인해야 합니다."
             }
           },
           {
@@ -55,14 +63,6 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "페이인포는 계좌·카드 자동납부 중심이라 앱스토어·통신사 결제는 안 나올 수 있습니다. Apple/Google 구독 목록과 통신사 마이페이지도 함께 확인해 주세요."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "자동이체만 끊으면 구독이 끝나나요?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "결제 수단을 막는 것과 구독 해지는 다를 수 있습니다. 가능하면 결제처의 구독·멤버십 메뉴에서 해지한 뒤, 다음 결제일 전에 한 번 더 확인하는 편이 안전합니다."
             }
           }
         ]
@@ -88,28 +88,78 @@
         <nav class="notice" aria-label="탐색경로" style="margin-top:1.25rem">
           <a href="index.html" style="color:var(--cheap)">홈</a> ·
           <a href="cancel.html" style="color:var(--cheap)">해지 방법</a> ·
-          <span>자동이체·자동결제</span>
+          <span>자동이체·결제일</span>
         </nav>
 
         <section class="hero" style="padding-top:1.5rem;max-width:42rem">
           <div class="kicker">결제 · 자동이체</div>
-          <h1>OTT <em>자동이체</em>·자동결제<br />확인하는 방법</h1>
+          <h1>OTT <em>자동이체</em>·결제일<br />한곳에서 찾기</h1>
           <div class="hero-lead">
-            <p>매달 빠져나가는 넷플릭스·티빙·디즈니+ 요금은 대부분 자동결제예요. 끊으려면 “어디에 연결되어 있는지”부터 보면 됩니다.</p>
-            <p>아래에서 경로별로 조회·해지 순서를 정리해 두었어요.</p>
-          </div>
-          <div class="cta-row">
-            <a class="btn btn-cheap" href="https://www.payinfo.or.kr/" target="_blank" rel="noopener">페이인포 열기</a>
-            <a class="btn btn-ghost" href="cancel.html">서비스별 해지</a>
+            <p>어디에 연결되어 있는지, 다음 결제일·갱신일은 언제인지, 날짜 변경이 되는지까지 아래에서 검색해 보세요.</p>
           </div>
         </section>
 
-        <section style="display:grid;gap:1rem;max-width:42rem;padding-top:0">
-          <article class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.15rem">자동이체라고 부르는 것들</h2>
+        <section style="padding-top:0;max-width:42rem">
+          <form id="jadoiche-search" class="panel search-box" role="search">
+            <label for="jadoiche-q" class="search-label">무엇이 궁금한가요?</label>
+            <div class="search-row">
+              <input
+                id="jadoiche-q"
+                type="search"
+                name="q"
+                placeholder="예: 넷플릭스, 다음 결제일, 페이인포, 날짜 변경"
+                autocomplete="off"
+                enterkeyhint="search"
+              />
+              <button class="btn btn-cheap" type="submit">검색</button>
+            </div>
+            <p class="search-hint">서비스명·키워드로 안내와 해지 페이지를 바로 찾아요.</p>
+            <div id="jadoiche-search-result" class="search-result" aria-live="polite"></div>
+          </form>
+        </section>
+
+        <section style="display:grid;gap:1rem;max-width:42rem;padding-top:0.5rem" id="jadoiche-topics">
+          <article class="panel topic" data-keys="다음결제일 갱신일 결제일 출금일 청구일 언제">
+            <h2 style="margin:0 0 0.5rem;font-size:1.15rem">다음 결제일·갱신일 보는 법</h2>
+            <p style="margin:0 0 0.75rem;color:var(--muted)">“언제 빠져나가나”는 보통 아래 네 곳에서 확인해요.</p>
+            <ol class="steps">
+              <li><strong style="color:var(--text)">OTT 웹/앱</strong> — 계정·멤버십·이용권에 “다음 결제일” 또는 “이용 기간”이 표시되는 경우가 많아요</li>
+              <li><strong style="color:var(--text)">App Store / Google Play</strong> — 구독 → 해당 OTT → <em>다음 결제일</em> 확인</li>
+              <li><strong style="color:var(--text)">통신사</strong> — 부가서비스/구독 상세의 청구 주기·적용일</li>
+              <li><strong style="color:var(--text)">카드·통장</strong> — 최근 2~3개월 같은 금액이 비슷한 날짜에 반복되는지 보기</li>
+            </ol>
+          </article>
+
+          <article class="panel topic" data-keys="날짜변경 결제일변경 이체일변경 변경일 스케줄">
+            <h2 style="margin:0 0 0.5rem;font-size:1.15rem">자동이체 날짜(결제일) 변경</h2>
             <p style="margin:0 0 0.75rem;color:var(--muted)">
-              검색에서 말하는 “오티티 자동이체”는 보통 아래를 한꺼번에 가리켜요.
+              대부분 OTT는 <strong style="color:var(--text)">사용자가 결제일만 골라 바꾸는 메뉴가 없어요.</strong>
+              처음 결제한 날 기준으로 매달 같은 주기(또는 말일 보정)로 갱신되는 경우가 일반적입니다.
             </p>
+            <ul style="margin:0;padding-left:1.1rem;color:var(--muted);display:grid;gap:0.4rem">
+              <li><strong style="color:var(--text)">웹 직접결제</strong> — 플랜 변경·해지 후 재가입 외에는 날짜 변경이 거의 없음. 고객센터 문의가 필요할 수 있어요</li>
+              <li><strong style="color:var(--text)">앱스토어</strong> — 구독 상세에서 다음 결제일만 확인. 임의 변경 UI는 보통 없음</li>
+              <li><strong style="color:var(--text)">통신사</strong> — 요금 청구일과 묶여 있으면 통신사 청구 주기를 따름. 부가서비스 안내에 “적용일”을 보세요</li>
+              <li><strong style="color:var(--text)">페이인포/금융</strong> — 자동납부 해지·재신청은 가능해도, OTT 구독 갱신일과 1:1로 맞춰 주진 않을 수 있어요</li>
+            </ul>
+          </article>
+
+          <article class="panel topic" id="billing-calc" data-keys="계산 다음달 예상 출금 미리보기 달력">
+            <h2 style="margin:0 0 0.5rem;font-size:1.15rem">다음 출금 예상일 계산</h2>
+            <p style="margin:0 0 0.75rem;color:var(--muted)">
+              카드에 찍힌 <strong style="color:var(--text)">최근 출금일</strong>을 넣으면, 같은 날 기준 다음 예상일을 참고로 보여 드려요.
+              (말일·공휴일·재시도 결제로 실제와 다를 수 있어요)
+            </p>
+            <div class="billing-form">
+              <label for="last-charge">최근 출금일</label>
+              <input id="last-charge" type="date" />
+              <button type="button" class="btn btn-primary" id="calc-next">다음 예상일 보기</button>
+            </div>
+            <div id="billing-calc-out" class="result" aria-live="polite"></div>
+          </article>
+
+          <article class="panel topic" data-keys="자동이체 종류 정기결제 cms 인앱">
+            <h2 style="margin:0 0 0.5rem;font-size:1.15rem">자동이체라고 부르는 것들</h2>
             <ul style="margin:0;padding-left:1.1rem;color:var(--muted);display:grid;gap:0.4rem">
               <li>카드 정기결제 (OTT 웹에서 카드 등록)</li>
               <li>계좌 자동이체·CMS (일부 통신사·제휴)</li>
@@ -118,48 +168,39 @@
             </ul>
           </article>
 
-          <article class="panel">
-            <h2 style="margin:0 0 0.75rem;font-size:1.15rem">1) 먼저 결제 흔적 찾기</h2>
+          <article class="panel topic" data-keys="페이인포 payinfo 자동납부 조회">
+            <h2 style="margin:0 0 0.75rem;font-size:1.15rem">페이인포로 자동납부 조회</h2>
             <ol class="steps">
-              <li>최근 1~2개월 카드·통장 내역에서 넷플릭스, 티빙, Disney, Google, Apple, 통신사 항목을 찾습니다</li>
-              <li>금액이 매달 비슷한 날짜에 빠져나가는지 확인합니다</li>
-              <li>가맹점명이 애매하면 앱스토어·통신사 구독 목록과 교차 확인합니다</li>
-            </ol>
-          </article>
-
-          <article class="panel">
-            <h2 style="margin:0 0 0.75rem;font-size:1.15rem">2) 페이인포로 자동납부 조회</h2>
-            <p style="margin:0 0 0.75rem;color:var(--muted)">
-              금융결제원 <strong style="color:var(--text)">페이인포</strong>에서는 계좌 자동이체와 카드 자동납부를 본인인증 후 조회할 수 있어요.
-            </p>
-            <ol class="steps">
-              <li><a href="https://www.payinfo.or.kr/" target="_blank" rel="noopener" style="color:var(--cheap)">payinfo.or.kr</a>에 접속해 본인인증합니다</li>
-              <li>계좌 자동이체 / 카드 자동납부 메뉴를 각각 확인합니다</li>
-              <li>해지·해지신청이 보이면 안내대로 진행한 뒤, OTT 쪽 구독 상태도 한 번 더 봅니다</li>
+              <li><a href="https://www.payinfo.or.kr/" target="_blank" rel="noopener" style="color:var(--cheap)">payinfo.or.kr</a> 본인인증</li>
+              <li>계좌 자동이체 / 카드 자동납부 각각 확인</li>
+              <li>해지 가능한 항목이면 진행 후, OTT 구독 화면도 같이 확인</li>
             </ol>
             <p style="margin:0.9rem 0 0;color:var(--muted);font-size:0.95rem">
-              참고: 인앱결제·일부 해외 가맹점·통신사 결합은 페이인포에 안 나올 수 있어요. 안 보인다고 구독이 없는 건 아닙니다.
+              인앱·일부 해외 가맹점·통신사 결합은 안 나올 수 있어요.
+            </p>
+            <p style="margin:0.75rem 0 0">
+              <a class="btn btn-ghost" href="https://www.payinfo.or.kr/" target="_blank" rel="noopener">페이인포 열기</a>
             </p>
           </article>
 
-          <article class="panel">
-            <h2 style="margin:0 0 0.75rem;font-size:1.15rem">3) 결제 경로별 끊는 곳</h2>
+          <article class="panel topic" data-keys="해지 끊기 경로 웹 앱스토어 통신사 번들">
+            <h2 style="margin:0 0 0.75rem;font-size:1.15rem">결제 경로별 끊는 곳</h2>
             <div class="ott-grid" style="margin-top:0.35rem">
               <div>
                 <h3 style="margin:0 0 0.35rem;font-size:1rem">웹 직접결제</h3>
-                <p style="margin:0;color:var(--muted);font-size:0.95rem">각 OTT 계정 → 멤버십/이용권 → 해지·자동결제 해지</p>
+                <p style="margin:0;color:var(--muted);font-size:0.95rem">멤버십/이용권 → 해지·자동결제 해지</p>
               </div>
               <div>
                 <h3 style="margin:0 0 0.35rem;font-size:1rem">앱스토어</h3>
-                <p style="margin:0;color:var(--muted);font-size:0.95rem">Apple/Google 구독 목록에서 해당 OTT 구독 취소</p>
+                <p style="margin:0;color:var(--muted);font-size:0.95rem">구독 목록에서 취소 · 다음 결제일 확인</p>
               </div>
               <div>
                 <h3 style="margin:0 0 0.35rem;font-size:1rem">통신사</h3>
-                <p style="margin:0;color:var(--muted);font-size:0.95rem">T월드·MyK·U⁺ 부가서비스/구독에서 해지</p>
+                <p style="margin:0;color:var(--muted);font-size:0.95rem">부가서비스/구독에서 해지</p>
               </div>
               <div>
                 <h3 style="margin:0 0 0.35rem;font-size:1rem">번들</h3>
-                <p style="margin:0;color:var(--muted);font-size:0.95rem">번들을 산 쪽(디즈니+/티빙/통신사 등)에서 해지</p>
+                <p style="margin:0;color:var(--muted);font-size:0.95rem">번들을 산 쪽에서 해지</p>
               </div>
             </div>
             <div class="cta-row" style="margin-top:1rem;flex-wrap:wrap">
@@ -169,31 +210,32 @@
             </div>
           </article>
 
-          <article class="panel">
+          <article class="panel topic" data-keys="체크 해지후 확인 재결제">
             <h2 style="margin:0 0 0.5rem;font-size:1.15rem">해지 후 체크</h2>
             <ul style="margin:0;padding-left:1.1rem;color:var(--muted);display:grid;gap:0.4rem">
-              <li>해지는 보통 “다음 갱신 중단”이라, 이미 낸 기간은 시청 가능한 경우가 많아요</li>
-              <li>카드만 폐기하거나 한도만 막아 두면, 결제 실패 알림만 오고 구독이 남을 수 있어요</li>
-              <li>다음 결제일 지나서 출금이 없는지 한 번 더 확인하면 안심이에요</li>
+              <li>해지는 보통 다음 갱신 중단 — 이미 낸 기간은 시청 가능한 경우가 많아요</li>
+              <li>카드만 막아 두면 결제 실패 알림만 오고 구독이 남을 수 있어요</li>
+              <li>다음 예상 결제일 지나서 출금이 없는지 한 번 더 확인하세요</li>
             </ul>
           </article>
 
-          <article class="panel">
+          <article class="panel topic" data-keys="넷플릭스 티빙 디즈니 웨이브 쿠팡 왓챠 유튜브 서비스">
             <h2 style="margin:0 0 0.75rem;font-size:1.15rem">서비스별 자동결제 해지</h2>
-            <p style="margin:0 0 0.75rem;color:var(--muted)">자동결제 메뉴는 서비스마다 이름이 조금 달라요. 아래에서 이어가면 됩니다.</p>
-            <div class="cta-row" style="flex-wrap:wrap">
-              <a class="btn btn-ghost" href="netflix-haeji.html">넷플릭스</a>
-              <a class="btn btn-ghost" href="tving-haeji.html">티빙</a>
-              <a class="btn btn-ghost" href="disneyplus-haeji.html">디즈니+</a>
-              <a class="btn btn-ghost" href="wavve-haeji.html">웨이브</a>
-              <a class="btn btn-ghost" href="coupangplay-haeji.html">쿠팡플레이</a>
-              <a class="btn btn-ghost" href="watcha-haeji.html">왓챠</a>
-              <a class="btn btn-ghost" href="youtube-premium-haeji.html">유튜브 프리미엄</a>
+            <p style="margin:0 0 0.75rem;color:var(--muted)">위에서 검색해도 되고, 아래에서 바로 이동할 수 있어요.</p>
+            <div class="cta-row" style="flex-wrap:wrap" id="service-links">
+              <a class="btn btn-ghost" href="netflix-haeji.html" data-name="넷플릭스 netflix">넷플릭스</a>
+              <a class="btn btn-ghost" href="tving-haeji.html" data-name="티빙 tving">티빙</a>
+              <a class="btn btn-ghost" href="disneyplus-haeji.html" data-name="디즈니 disney">디즈니+</a>
+              <a class="btn btn-ghost" href="wavve-haeji.html" data-name="웨이브 wavve">웨이브</a>
+              <a class="btn btn-ghost" href="coupangplay-haeji.html" data-name="쿠팡플레이 쿠플 coupang">쿠팡플레이</a>
+              <a class="btn btn-ghost" href="watcha-haeji.html" data-name="왓챠 watcha">왓챠</a>
+              <a class="btn btn-ghost" href="youtube-premium-haeji.html" data-name="유튜브 youtube">유튜브 프리미엄</a>
+              <a class="btn btn-ghost" href="appletv-haeji.html" data-name="애플 apple tv">Apple TV+</a>
             </div>
           </article>
 
           <p class="notice">
-            참고용 안내입니다. 자동이체·자동결제 해지·환불 규정은 결제처와 각 OTT 공식 정책이 우선합니다.
+            참고용 안내입니다. 결제일·갱신일·날짜 변경·환불은 결제처와 각 OTT 공식 정책이 우선합니다. 예상일 계산은 참고용이에요.
           </p>
         </section>
       </div>
@@ -209,5 +251,7 @@
         </p>
       </div>
     </footer>
+
+    <script src="js/jadoiche-app.js?v=20260730b"></script>
   </body>
 </html>

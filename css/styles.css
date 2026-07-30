@@ -803,6 +803,97 @@ td strong {
   font-size: 0.95rem;
 }
 
+.search-box {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.search-label {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.search-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.search-row input[type="search"],
+.billing-form input[type="date"] {
+  flex: 1 1 12rem;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0.7rem 0.95rem;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #0d1118;
+  color: var(--text);
+  font: inherit;
+  line-height: 1.4;
+}
+
+.search-row input[type="search"]::placeholder {
+  color: var(--muted);
+}
+
+.search-row input[type="search"]:focus,
+.billing-form input[type="date"]:focus {
+  outline: 2px solid rgba(214, 242, 106, 0.45);
+  outline-offset: 1px;
+}
+
+.search-hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.search-result.show {
+  display: block;
+}
+
+.search-hit-list {
+  list-style: none;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.search-hit-list li {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.search-hit-list a {
+  color: var(--cheap);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.search-hit-list span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.billing-form {
+  display: grid;
+  gap: 0.55rem;
+  max-width: 22rem;
+}
+
+.billing-form label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.topic[hidden],
+#service-links a[hidden] {
+  display: none !important;
+}
+
 .kicker {
   display: inline-flex;
   align-items: center;
