@@ -628,6 +628,18 @@ td strong {
   font-family: var(--font-price);
 }
 
+.cmp-ott-link {
+  color: var(--cheap);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  word-break: keep-all;
+}
+
+.cmp-ott-link:hover {
+  color: var(--text);
+}
+
 .tag {
   display: inline-block;
   padding: 0.15rem 0.45rem;

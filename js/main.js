@@ -94,7 +94,7 @@
 
       root.innerHTML = `
         <div class="compare-toolbar">
-          <p>헤더 클릭으로 정렬 · 현재: <strong style="color:var(--text)">${
+          <p>서비스 이름을 누르면 공식 사이트로 이동해요. 헤더를 누르면 정렬됩니다. 현재: <strong style="color:var(--text)">${
             columns.find((c) => c.key === state.key)?.label || ""
           }</strong> ${state.dir === "asc" ? "오름차순" : "내림차순"}</p>
         </div>
@@ -128,7 +128,7 @@
                   const ads = plan.ads ? '<span class="tag ads">광고</span> ' : "";
                   return `<tr>
                     <td><span class="price-num">${won(plan.price)}</span></td>
-                    <td>${ott.name}</td>
+                    <td><a class="cmp-ott-link" href="${ott.site}" target="_blank" rel="noopener">${ott.name}</a></td>
                     <td>${plan.name}</td>
                     <td>${plan.screens ?? "—"}</td>
                     <td>${plan.quality ?? "—"}</td>
