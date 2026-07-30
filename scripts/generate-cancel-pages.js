@@ -262,6 +262,7 @@ const sitemapUrls = [
   { loc: `${BASE}/tongsin-ott-haeji.html`, lastmod: "2026-07-28" },
   { loc: `${BASE}/appstore-ott-haeji.html`, lastmod: "2026-07-28" },
   { loc: `${BASE}/disney-tving-bundle-haeji.html`, lastmod: "2026-07-28" },
+  { loc: `${BASE}/ott-jadoiche.html`, lastmod: "2026-07-30" },
 ];
 
 KKUNSUB.otts.forEach((ott) => {
