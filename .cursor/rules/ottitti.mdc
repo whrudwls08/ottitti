@@ -1,0 +1,40 @@
+---
+description: ottitti 정적 사이트 컨벤션 — 스택, 톤, URL, 코드 스타일 (워크플로는 하네스 스킬)
+alwaysApply: true
+---
+
+# ottitti 컨벤션
+
+## 스택
+
+정적 HTML + vanilla JS. GitHub Pages. 빌드 없음.
+
+## 데이터
+
+| 소스 | 용도 |
+|------|------|
+| `js/data.js` | OTT plans, cancelPaths, **storeGuides** |
+| `js/deals.js` | 번들·soloRef (정적 seed) |
+| CSV + sheet-loader | 번들 price 런타임 |
+
+OTT plans/cancelPaths 변경 → `generate-cancel-pages.js` → `validate-ottitti.js`
+
+## URL
+
+BASE: `https://whrudwls08.github.io/ottitti`
+
+## 문체
+
+친절한 해요체. 참고용·공식 확인 유지.
+
+## 코드
+
+- IIFE, `window.KKUNSUB*`
+- 가격: `toLocaleString("ko-KR")`
+- 외부 링크: `rel="noopener"`
+
+## 작업
+
+- 최소 diff
+- md 문서·commit은 사용자 요청 시
+- 복합 작업: `.cursor/skills/ottitti-harness/SKILL.md`

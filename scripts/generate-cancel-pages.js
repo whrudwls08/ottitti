@@ -4,13 +4,13 @@
 const fs = require("fs");
 const path = require("path");
 
-const root = "c:/Users/Jo/Downloads/ottitti";
+const root = path.join(__dirname, "..");
 eval(
   fs.readFileSync(path.join(root, "js/data.js"), "utf8").replace("window.KKUNSUB", "global.KKUNSUB")
 );
 
 const BASE = "https://whrudwls08.github.io/ottitti";
-const V = "20260728d";
+const V = "20260831a";
 const FONT =
   "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap";
 
@@ -49,10 +49,36 @@ function nav(active) {
     .join("\n          ");
 }
 
+function defaultFaqs(ott) {
+  return [
+    {
+      q: `${ott.name} 해지는 어디서 하나요?`,
+      a: `${ott.name} 해지는 결제하신 곳(웹, 앱스토어, 통신사, 번들)에 따라 메뉴가 달라요. 아래에서 본인 결제 경로를 골라 따라가 주세요.`,
+    },
+    {
+      q: `${ott.name} 앱만 지우면 해지되나요?`,
+      a: `앱만 삭제해서는 구독이 끝나지 않는 경우가 많아요. 결제하신 곳의 구독·멤버십 메뉴에서 해지해 주세요.`,
+    },
+    {
+      q: `어디서 결제했는지 모르겠어요`,
+      a: `카드 이용내역, App Store/Google Play 구독 목록, 통신사 명세서를 먼저 확인해 보시면 결제하신 곳을 찾는 데 도움이 됩니다.`,
+    },
+  ];
+}
+
+function getFaqs(ott) {
+  return ott.faqs && ott.faqs.length ? ott.faqs : defaultFaqs(ott);
+}
+
 function pageHtml(ott, slug, allLinks) {
   const url = `${BASE}/${slug}.html`;
   const title = `${ott.name} 해지 방법 — 오티티 해지`;
-  const desc = `${ott.name} 해지를 도와드릴게요. 웹·앱스토어·통신사 등 결제하신 곳별 절차를 안내합니다.`;
+  const desc =
+    ott.intro && ott.intro.length > 40
+      ? ott.intro.slice(0, 120) + (ott.intro.length > 120 ? "…" : "")
+      : `${ott.name} 해지를 도와드릴게요. 웹·앱스토어·통신사 등 결제하신 곳별 절차를 안내합니다.`;
+
+  const faqMain = getFaqs(ott);
 
   const pathsHtml = ott.cancelPaths
     .map((p, i) => {
@@ -77,20 +103,17 @@ function pageHtml(ott, slug, allLinks) {
     p.steps.forEach((s) => howToSteps.push({ "@type": "HowToStep", name: s, text: s }));
   });
 
-  const faqMain = [
-    {
-      q: `${ott.name} 해지는 어디서 하나요?`,
-      a: `${ott.name} 해지는 결제하신 곳(웹, 앱스토어, 통신사, 번들)에 따라 메뉴가 달라요. 아래에서 본인 결제 경로를 골라 따라가 주세요.`,
-    },
-    {
-      q: `${ott.name} 앱만 지우면 해지되나요?`,
-      a: `앱만 삭제해서는 구독이 끝나지 않는 경우가 많아요. 결제하신 곳의 구독·멤버십 메뉴에서 해지해 주세요.`,
-    },
-    {
-      q: `어디서 결제했는지 모르겠어요`,
-      a: `카드 이용내역, App Store/Google Play 구독 목록, 통신사 명세서를 먼저 확인해 보시면 결제하신 곳을 찾는 데 도움이 됩니다.`,
-    },
-  ];
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description: desc,
+    inLanguage: "ko-KR",
+    dateModified: KKUNSUB.lastChecked,
+    author: { "@type": "Organization", name: "오티티 해지", url: `${BASE}/about.html` },
+    publisher: { "@type": "Organization", name: "오티티 해지", url: BASE + "/" },
+    mainEntityOfPage: url,
+  };
 
   const faqLd = {
     "@context": "https://schema.org",
@@ -129,6 +152,42 @@ function pageHtml(ott, slug, allLinks) {
     ? `<img class="ott-logo" src="${esc(ott.logo)}" alt="${esc(ott.name)}" width="48" height="48" />`
     : "";
 
+  const introBlock = ott.intro
+    ? `<div class="panel editorial">
+            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">이 가이드에서 다루는 내용</h2>
+            <p style="margin:0;color:var(--muted);line-height:1.65">${esc(ott.intro)}</p>
+          </div>`
+    : "";
+
+  const findPaymentBlock = ott.findPayment
+    ? `<div class="panel">
+            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">결제처 찾는 방법</h2>
+            <p style="margin:0;color:var(--muted);line-height:1.65">${esc(ott.findPayment)}</p>
+          </div>`
+    : "";
+
+  const billingBlock = ott.billingNote
+    ? `<div class="panel">
+            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">해지 후 요금·이용 기간</h2>
+            <p style="margin:0;color:var(--muted);line-height:1.65">${esc(ott.billingNote)}</p>
+          </div>`
+    : "";
+
+  const relatedBlock =
+    ott.relatedGuides && ott.relatedGuides.length
+      ? `<div class="panel">
+            <h2 style="margin:0 0 0.75rem;font-size:1.1rem">관련 안내</h2>
+            <div class="cta-row" style="flex-wrap:wrap">
+              ${ott.relatedGuides
+                .map(
+                  (g) =>
+                    `<a class="btn btn-ghost" href="${esc(g.href)}">${esc(g.label)}</a>`
+                )
+                .join("\n              ")}
+            </div>
+          </div>`
+      : "";
+
   return `<!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -164,6 +223,7 @@ function pageHtml(ott, slug, allLinks) {
     <link href="${FONT}" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css?v=${V}" />
     <script type="application/ld+json">${JSON.stringify(breadcrumbLd)}</script>
+    <script type="application/ld+json">${JSON.stringify(articleLd)}</script>
     <script type="application/ld+json">${JSON.stringify(faqLd)}</script>
     <script type="application/ld+json">${JSON.stringify(howToLd)}</script>
   </head>
@@ -200,7 +260,10 @@ function pageHtml(ott, slug, allLinks) {
         </section>
 
         <section style="padding-top:0;display:grid;gap:1rem;max-width:42rem">
+          ${introBlock}
+          ${findPaymentBlock}
           ${pathsHtml}
+          ${billingBlock}
           <div class="panel">
             <h2 style="margin:0 0 0.5rem;font-size:1.1rem">알아두면 좋은 점</h2>
             <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">
@@ -218,7 +281,8 @@ function pageHtml(ott, slug, allLinks) {
               )
               .join("")}
           </div>
-          <p class="notice">${esc(KKUNSUB.disclaimer)} 참고일: ${esc(KKUNSUB.lastChecked)}</p>
+          ${relatedBlock}
+          <p class="notice">${esc(KKUNSUB.disclaimer)} 참고일: ${esc(KKUNSUB.lastChecked)} · <a href="about.html" style="color:var(--cheap)">운영·편집 정책</a></p>
         </section>
 
         <section>
@@ -238,7 +302,7 @@ function pageHtml(ott, slug, allLinks) {
     <footer class="footer">
       <div class="wrap footer-inner">
         <p><strong>오티티 해지</strong> · 참고용 안내입니다. 최종 확인은 각사 공식 안내를 우선해 주세요.</p>
-        <p class="footer-contact">문의 <a href="mailto:sun84897@gmail.com">sun84897@gmail.com</a> · <a href="privacy.html">개인정보처리방침</a> · <a href="terms.html">이용약관</a></p>
+        <p class="footer-contact">문의 <a href="mailto:sun84897@gmail.com">sun84897@gmail.com</a> · <a href="about.html">사이트 소개</a> · <a href="privacy.html">개인정보처리방침</a> · <a href="terms.html">이용약관</a></p>
       </div>
     </footer>
   </body>
@@ -257,6 +321,7 @@ const sitemapUrls = [
   { loc: `${BASE}/cancel.html`, lastmod: "2026-07-28" },
   { loc: `${BASE}/deals.html`, lastmod: "2026-07-28" },
   { loc: `${BASE}/compare.html`, lastmod: "2026-07-28" },
+  { loc: `${BASE}/about.html`, lastmod: "2026-08-31" },
   { loc: `${BASE}/privacy.html`, lastmod: "2026-07-28" },
   { loc: `${BASE}/terms.html`, lastmod: "2026-07-28" },
   { loc: `${BASE}/tongsin-ott-haeji.html`, lastmod: "2026-07-28" },
