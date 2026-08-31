@@ -224,7 +224,7 @@
       result.classList.add("show");
       result.innerHTML = top
         .map((item, idx) => {
-          const label = idx === 0 ? "우선 후보" : `후보 ${idx + 1}`;
+          const label = idx === 0 ? "참고 후보" : `참고 ${idx + 1}`;
           return `<article class="result-card">
             <div class="label">${label}</div>
             <div class="result-ott">
@@ -233,6 +233,7 @@
             </div>
             <div class="price">${won(item.plan.price)} <small>/월 · ${item.plan.name}</small></div>
             <p style="margin:0;color:var(--muted)">${item.ott.tagline}. ${item.plan.note || item.ott.strengths.join(" · ")}</p>
+            <p style="margin:0.5rem 0 0;font-size:0.9rem;color:var(--muted)">조건·요금은 참고용입니다. 가입·해지 전 공식 요금표를 확인하세요.</p>
             <div class="cta-row">
               <a class="btn btn-primary" href="${(window.KKUNSUB_SLUGS && window.KKUNSUB_SLUGS[item.ott.id]) || "cancel.html?ott=" + item.ott.id}">해지 방법 보기</a>
               <a class="btn btn-ghost" href="${item.ott.site}" target="_blank" rel="noopener">공식 요금 확인</a>

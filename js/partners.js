@@ -4,9 +4,9 @@
  * enabled: false 이면 섹션은 보이되 "공식 페이지" 안내만 합니다.
  */
 window.OTTITTI_AFFILIATE = {
-  enabled: true,
+  enabled: false,
   disclosure:
-    "이 구간의 일부 링크는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받을 수 있습니다.",
+    "제휴 링크를 사용할 경우 관련 법령에 따른 표시를 합니다. 현재는 공식 페이지 안내만 제공합니다.",
   items: [
     {
       title: "쿠팡 와우 · 쿠팡플레이",

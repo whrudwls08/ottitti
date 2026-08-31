@@ -18,7 +18,7 @@
     { q: ["앱스토어", "인앱", "구글플레이", "플레이"], title: "앱스토어 OTT 해지", href: "appstore-ott-haeji.html", blurb: "다음 결제일·구독 취소" },
     { q: ["통신사", "skt", "kt", "lgu"], title: "통신사 OTT 해지", href: "tongsin-ott-haeji.html", blurb: "부가서비스 청구 주기" },
     { q: ["번들"], title: "디즈니+·티빙 번들", href: "disney-tving-bundle-haeji.html", blurb: "번들 결제처에서 해지" },
-    { q: ["결제일", "갱신일", "다음", "출금", "날짜", "변경", "계산"], title: "결제일·갱신일·예상일 계산", href: "#billing-calc", blurb: "보는 법 + 다음 출금 예상" },
+    { q: ["결제일", "갱신일", "다음", "출금", "날짜", "변경"], title: "결제일·갱신일 확인", href: "#jadoiche-topics", blurb: "구독 화면·명세서에서 확인" },
     { q: ["자동이체", "자동결제"], title: "자동이체 종류·해지 경로", href: "#jadoiche-topics", blurb: "이 페이지 안내" },
   ];
 
@@ -112,62 +112,5 @@
       input.value = params.get("q");
       runSearch(input.value);
     }
-  }
-
-  function addMonthsSameDay(d, months) {
-    var y = d.getFullYear();
-    var m = d.getMonth() + months;
-    var day = d.getDate();
-    var last = new Date(y, m + 1, 0).getDate();
-    return new Date(y, m, Math.min(day, last));
-  }
-
-  function fmt(d) {
-    return (
-      d.getFullYear() +
-      "년 " +
-      (d.getMonth() + 1) +
-      "월 " +
-      d.getDate() +
-      "일 (" +
-      ["일", "월", "화", "수", "목", "금", "토"][d.getDay()] +
-      ")"
-    );
-  }
-
-  var lastInput = document.getElementById("last-charge");
-  var calcBtn = document.getElementById("calc-next");
-  var calcOut = document.getElementById("billing-calc-out");
-
-  if (calcBtn && lastInput && calcOut) {
-    calcBtn.addEventListener("click", function () {
-      if (!lastInput.value) {
-        calcOut.classList.add("show");
-        calcOut.innerHTML = '<div class="result-card"><p>최근 출금일을 선택해 주세요.</p></div>';
-        return;
-      }
-      var last = new Date(lastInput.value + "T12:00:00");
-      var next1 = addMonthsSameDay(last, 1);
-      var next2 = addMonthsSameDay(last, 2);
-      var today = new Date();
-      today.setHours(12, 0, 0, 0);
-      var upcoming = next1 >= today ? next1 : next2;
-      var after = upcoming.getTime() === next1.getTime() ? next2 : addMonthsSameDay(last, 3);
-      calcOut.classList.add("show");
-      calcOut.innerHTML =
-        '<div class="result-card">' +
-        '<p class="label">참고용 예상</p>' +
-        "<h3 style=\"margin:0;font-size:1.25rem\">다가오는 예상 출금일</h3>" +
-        '<p style="margin:0.35rem 0 0;font-size:1.35rem;color:var(--cheap);font-weight:700">' +
-        fmt(upcoming) +
-        "</p>" +
-        '<p style="margin:0.75rem 0 0;color:var(--muted)">최근 출금 ' +
-        fmt(last) +
-        " 기준 · 그다음 " +
-        fmt(after) +
-        "</p>" +
-        '<p style="margin:0.5rem 0 0;color:var(--muted);font-size:0.92rem">실제 결제는 재시도·시차·말일 보정으로 하루 이틀 차이날 수 있어요. 확정은 구독 화면·카드내역을 보세요.</p>' +
-        "</div>";
-    });
   }
 })();

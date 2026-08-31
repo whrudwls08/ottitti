@@ -18,10 +18,6 @@
       name="description"
       content="넷플릭스·티빙·디즈니+ 등 OTT 해지 방법을 결제처별로 정리했습니다. 앱스토어·통신사·번들 결제도 단계별로 안내합니다."
     />
-    <meta
-      name="keywords"
-      content="OTT 해지, 넷플릭스 해지, 티빙 해지, 디즈니플러스 해지, 웨이브 해지, 쿠팡플레이 해지, 오티티 해지"
-    />
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <meta name="google-site-verification" content="m7qhAV4NTRW97rxwU9WuLVNx9mqmM3G54bjV_uZ09H4" />
     <meta name="naver-site-verification" content="d7fe6c41af0b756874797be92a0afb46ef261da7" />
@@ -52,7 +48,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css?v=20260831b" />
+    <link rel="stylesheet" href="css/styles.css?v=20260831c" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -74,7 +70,7 @@
             "contactPoint": {
               "@type": "ContactPoint",
               "email": "sun84897@gmail.com",
-              "contactType": "customer support",
+              "contactType": "general inquiry",
               "availableLanguage": "Korean"
             }
           },
@@ -142,6 +138,9 @@
 
     <main>
       <div class="wrap">
+        <p class="notice" style="margin-top:1rem;margin-bottom:0">
+          <strong>비공식 참고 사이트</strong> — 각 OTT·통신사·스토어와 무관하며, 공식 고객센터를 대신하지 않습니다. 해지·환불은 각사·결제처 공식 안내를 우선 확인하세요.
+        </p>
         <section class="hero fade-up">
           <div class="kicker">OTT 해지 안내</div>
           <h1>OTT 해지 방법 — <em>결제처별</em> 안내</h1>
@@ -220,6 +219,47 @@
           <p class="notice" data-disclaimer></p>
         </section>
 
+        <section id="route-guide">
+          <div class="section-head">
+            <div>
+              <h2>결제처 빠르게 찾기</h2>
+              <p>카드·명세·앱 화면에 보이는 이름으로 해지 창구를 추정해 보세요.</p>
+            </div>
+          </div>
+          <div class="panel" style="overflow-x:auto">
+            <table style="width:100%;border-collapse:collapse;font-size:0.95rem">
+              <thead>
+                <tr style="text-align:left;border-bottom:1px solid var(--line)">
+                  <th style="padding:0.5rem 0.75rem">명세·화면에 보이는 것</th>
+                  <th style="padding:0.5rem 0.75rem">해지를 확인할 곳</th>
+                </tr>
+              </thead>
+              <tbody style="color:var(--muted)">
+                <tr style="border-bottom:1px solid var(--line)">
+                  <td style="padding:0.65rem 0.75rem">Apple · iTunes · App Store</td>
+                  <td style="padding:0.65rem 0.75rem">iPhone 설정 → Apple ID → 구독 · <a href="appstore-ott-haeji.html" style="color:var(--cheap)">앱스토어 안내</a></td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--line)">
+                  <td style="padding:0.65rem 0.75rem">Google Play · Google One</td>
+                  <td style="padding:0.65rem 0.75rem">Play 스토어 → 결제 및 구독 → 구독</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--line)">
+                  <td style="padding:0.65rem 0.75rem">SKT · KT · LG U+ · 부가서비스</td>
+                  <td style="padding:0.65rem 0.75rem">통신사 앱·웹 구독·부가서비스 · <a href="tongsin-ott-haeji.html" style="color:var(--cheap)">통신사 안내</a></td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--line)">
+                  <td style="padding:0.65rem 0.75rem">넷플릭스·티빙·디즈니+ 등 OTT 이름</td>
+                  <td style="padding:0.65rem 0.75rem">해당 OTT 웹·앱 멤버십·이용권 (없으면 위 스토어·통신사 확인)</td>
+                </tr>
+                <tr>
+                  <td style="padding:0.65rem 0.75rem">쿠팡 · 로켓와우 · Pass</td>
+                  <td style="padding:0.65rem 0.75rem">쿠팡 마이쿠팡·쿠팡플레이 구독 · <a href="coupangplay-haeji.html" style="color:var(--cheap)">쿠팡플레이 안내</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
         <section id="checklist">
           <div class="section-head">
             <div>
@@ -239,42 +279,16 @@
         <section>
           <div class="section-head">
             <div>
-              <h2>해지 전에 한 번만 확인해요</h2>
-              <p>이 두 가지만 보시면 대부분 헤매지 않으세요.</p>
+              <h2>해지했는데도 돈이 빠져나갈 때</h2>
+              <p>아래 경우를 순서대로 점검해 보세요.</p>
             </div>
           </div>
-          <div class="ott-grid">
-            <article class="panel">
-              <h3 style="margin-top:0">1. 어디에 결제했는지</h3>
-              <p style="color:var(--muted);margin:0">웹 직접결제, 앱스토어, 통신사·번들 — 결제하신 곳이 다르면 해지 메뉴도 달라요.</p>
-            </article>
-            <article class="panel">
-              <h3 style="margin-top:0">2. 자동이체·자동결제</h3>
-              <p style="color:var(--muted);margin:0 0 0.75rem">페이인포·카드내역·앱스토어·통신사에서 매달 빠져나가는 결제를 찾는 방법</p>
-              <a class="btn btn-ghost" href="ott-jadoiche.html">자동이체 확인 안내</a>
-            </article>
-          </div>
-        </section>
-
-        <section>
-          <div class="section-head">
-            <div>
-              <h2>이 사이트는 어떻게 쓰면 좋을까요</h2>
-              <p>복사·붙여넣기만 한 짧은 안내가 아니라, 서비스·결제 경로별로 직접 정리한 가이드예요.</p>
-            </div>
-          </div>
-          <article class="panel" style="max-width:42rem;display:grid;gap:0.85rem">
-            <p style="margin:0;color:var(--muted);line-height:1.7">
-              OTT 해지는 <strong>어디에 결제했는지</strong>가 가장 중요해요. 같은 넷플릭스라도
-              netflix.com 직접결제, App Store, 통신사 결합에 따라 해지 메뉴가 완전히 달라집니다.
-              오티티 해지는 서비스마다 <strong>결제처 찾는 방법</strong>, <strong>경로별 단계</strong>,
-              <strong>해지 후 요금·이용 기간</strong>, <strong>서비스별 FAQ</strong>를 나눠 두었어요.
-            </p>
-            <p style="margin:0;color:var(--muted);line-height:1.7">
-              안내는 각사 공식 FAQ·고객센터를 우선 참고해 작성하며, UI·요금은 수시로 바뀔 수
-              있습니다. 작성·갱신 방식과 면책은
-              <a href="about.html" style="color:var(--cheap)">사이트 소개</a>에서 확인하실 수 있어요.
-            </p>
+          <article class="panel" style="max-width:42rem;display:grid;gap:0.75rem">
+            <p style="margin:0;color:var(--muted);line-height:1.65"><strong style="color:var(--text)">1. 해지 예약인지 확인</strong> — ‘다음 결제부터 중단’이면 이번 달·이번 주기는 정상 청구될 수 있어요. 해지 확인 화면 문구를 다시 읽어 주세요.</p>
+            <p style="margin:0;color:var(--muted);line-height:1.65"><strong style="color:var(--text)">2. 다른 결제처에 중복 구독</strong> — 예: 웹에서 해지했는데 App Store 구독이 남아 있거나, 프로필마다 다른 계정으로 결제된 경우.</p>
+            <p style="margin:0;color:var(--muted);line-height:1.65"><strong style="color:var(--text)">3. 번들·가족·통신사</strong> — 대표 회선·가족 요금제·디즈니+·티빙 번들은 한쪽만 끊어도 청구가 남을 수 있어요.</p>
+            <p style="margin:0;color:var(--muted);line-height:1.65"><strong style="color:var(--text)">4. 카드 정지 ≠ 구독 해지</strong> — 카드 분실·한도 초과로 결제가 실패해도 구독 자체는 유지되는 경우가 많습니다. 구독·멤버십 메뉴에서 해지해야 해요.</p>
+            <p style="margin:0"><a class="btn btn-ghost" href="ott-jadoiche.html">자동이체·구독 목록 확인</a></p>
           </article>
         </section>
 
@@ -324,8 +338,8 @@
       </div>
     </footer>
 
-    <script src="js/data.js?v=20260831b"></script>
-    <script src="js/ott-slugs.js?v=20260831b"></script>
-    <script src="js/main.js?v=20260831b"></script>
+    <script src="js/data.js?v=20260831c"></script>
+    <script src="js/ott-slugs.js?v=20260831c"></script>
+    <script src="js/main.js?v=20260831c"></script>
   </body>
 </html>

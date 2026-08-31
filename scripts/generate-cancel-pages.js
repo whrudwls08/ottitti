@@ -10,7 +10,7 @@ eval(
 );
 
 const BASE = "https://whrudwls08.github.io/ottitti";
-const V = "20260831b";
+const V = "20260831c";
 const LASTMOD = "2026-08-31";
 const OG_IMAGE = `${BASE}/og-image.webp`;
 const FONT =
@@ -220,6 +220,19 @@ function pageHtml(ott, slug, allLinks) {
           </div>`
     : "";
 
+  const mistakes = (ott.mistakes || []).map((m) => `<li>${esc(m)}</li>`).join("\n              ");
+
+  const mistakesBlock = mistakes
+    ? `<div class="panel">
+            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">자주 하는 실수</h2>
+            <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">
+              ${mistakes}
+            </ul>
+          </div>`
+    : "";
+
+  const unofficialNotice = `<p class="notice" style="margin:0 0 1rem">비공식 참고 사이트입니다. ${esc(ott.name)}·통신사·스토어 공식 고객센터를 대신하지 않으며, 해지·환불 결과를 보장하지 않습니다.</p>`;
+
   const relatedLinks = [];
   const seenHref = new Set();
   [...PAYMENT_ROUTES, ...(ott.relatedGuides || [])].forEach((g) => {
@@ -310,15 +323,17 @@ function pageHtml(ott, slug, allLinks) {
             <p>어디에 결제하셨는지에 따라 해지 화면이 달라요. 아래 중 본인 상황에 맞는 경로를 선택해 주세요.</p>
           </div>
           <div class="cta-row">
-            <a class="btn btn-primary" href="${esc(ott.site)}" target="_blank" rel="noopener">공식 사이트 열기</a>
+            <a class="btn btn-primary" href="${esc(ott.site)}" target="_blank" rel="noopener">${esc(ott.name)} 공식 사이트</a>
           </div>
         </section>
 
         <section style="padding-top:0;display:grid;gap:1rem;max-width:42rem">
+          ${unofficialNotice}
           ${introBlock}
           ${findPaymentBlock}
           ${pathsHtml}
           ${billingBlock}
+          ${mistakesBlock}
           <div class="panel">
             <h2 style="margin:0 0 0.5rem;font-size:1.1rem">알아두면 좋은 점</h2>
             <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">

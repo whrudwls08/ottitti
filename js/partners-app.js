@@ -1,7 +1,7 @@
 (function () {
   var conf = window.OTTITTI_AFFILIATE;
   var root = document.getElementById("affiliate-partners");
-  if (!conf || !root) return;
+  if (!conf || !root || !conf.enabled) return;
 
   var cards = (conf.items || [])
     .map(function (item) {
