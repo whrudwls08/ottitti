@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -31,7 +31,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css?v=20260831c" />
+    <link rel="stylesheet" href="css/styles.css?v=20260831d" />
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://whrudwls08.github.io/ottitti/"},{"@type":"ListItem","position":2,"name":"해지 방법","item":"https://whrudwls08.github.io/ottitti/cancel.html"},{"@type":"ListItem","position":3,"name":"왓챠 해지","item":"https://whrudwls08.github.io/ottitti/watcha-haeji.html"}]}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"왓챠 해지 방법 | 웹·앱스토어","description":"왓챠 직접결제와 App Store·Google Play 인앱 구독 해지 방법입니다.","inLanguage":"ko-KR","dateModified":"2026-08-31","author":{"@type":"Organization","name":"오티티 해지","url":"https://whrudwls08.github.io/ottitti/about.html"},"publisher":{"@type":"Organization","name":"오티티 해지","url":"https://whrudwls08.github.io/ottitti/"},"mainEntityOfPage":"https://whrudwls08.github.io/ottitti/watcha-haeji.html"}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"왓챠 메뉴 이름이 안내와 달라요","acceptedAnswer":{"@type":"Answer","text":"앱 개편으로 ‘이용권’ ‘구독’ ‘결제’ 등 라벨이 바뀔 수 있어요. 공식 앱·웹의 계정·결제 관련 메뉴를 순서대로 확인해 주세요."}},{"@type":"Question","name":"스토어에서 가입했는데 왓챠에서 해지할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"스토어 결제분은 Apple·Google 구독 관리에서 취소하는 경우가 많습니다. 왓챠 앱에 해지 버튼이 없을 수 있어요."}},{"@type":"Question","name":"베이직·프리미엄 해지 방법이 다른가요?","acceptedAnswer":{"@type":"Answer","text":"해지 경로는 결제처 기준입니다. 본인이 가입한 이용권·정기결제 해지 메뉴를 찾으면 됩니다."}},{"@type":"Question","name":"환불·잔여 기간은?","acceptedAnswer":{"@type":"Answer","text":"환불 가능 여부·잔여 시청 기간은 왓챠·스토어 약관과 해지 확인 화면에 표시됩니다. 해지 전 문구를 확인해 주세요."}}]}</script>
@@ -52,16 +52,16 @@
     <main>
       <div class="wrap">
         <nav class="notice" aria-label="탐색경로" style="margin-top:1.25rem">
-          <a href="index.html" style="color:var(--cheap)">홈</a> ·
-          <a href="cancel.html" style="color:var(--cheap)">해지 방법</a> ·
+          <a href="index.html" class="text-link">홈</a> ·
+          <a href="cancel.html" class="text-link">해지 방법</a> ·
           <span>왓챠 해지</span>
         </nav>
 
         <section class="hero" style="padding-top:1.5rem;padding-bottom:1rem;max-width:42rem">
           <div class="kicker">해지 안내</div>
-          <div class="result-ott" style="margin-bottom:0.5rem">
+          <div class="result-ott hero-cancel">
             <img class="ott-logo" src="img/otts/watcha.svg" alt="왓챠" width="48" height="48" loading="lazy" />
-            <h1 style="margin:0;font-size:clamp(1.85rem,5vw,2.8rem)">왓챠 <em>해지</em> 방법</h1>
+            <h1>왓챠 <em>해지</em> 방법</h1>
           </div>
           <div class="hero-lead">
             <p>취향·독립·예술 영화</p>
@@ -72,80 +72,82 @@
           </div>
         </section>
 
-        <section style="padding-top:0;display:grid;gap:1rem;max-width:42rem">
-          <p class="notice" style="margin:0 0 1rem">비공식 참고 사이트입니다. 왓챠·통신사·스토어 공식 고객센터를 대신하지 않으며, 해지·환불 결과를 보장하지 않습니다.</p>
+        <section class="content-stack" style="padding-top:0">
+          <p class="notice notice-inline">비공식 참고 사이트입니다. 왓챠·통신사·스토어 공식 고객센터를 대신하지 않으며, 해지·환불 결과를 보장하지 않습니다.</p>
           <div class="panel editorial">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">이 가이드에서 다루는 내용</h2>
-            <p style="margin:0;color:var(--muted);line-height:1.65">왓챠는 watcha.com·앱 직접결제와 Apple·Google 스토어 경로가 있습니다. 계정·이용권 메뉴에서 정기결제 해지를 찾고, 없으면 스토어 구독 목록을 확인하세요.</p>
+            <h2 class="subhead">이 가이드에서 다루는 내용</h2>
+            <p class="prose">왓챠는 watcha.com·앱 직접결제와 Apple·Google 스토어 경로가 있습니다. 계정·이용권 메뉴에서 정기결제 해지를 찾고, 없으면 스토어 구독 목록을 확인하세요.</p>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">결제처 찾는 방법</h2>
-            <p style="margin:0;color:var(--muted);line-height:1.65">왓챠 앱/웹 → 계정·이용권·결제에 등록된 수단을 확인합니다. 카드 명세가 ‘Apple’ ‘Google’이면 스토어 구독 관리로 이동하세요.</p>
+            <h2 class="subhead">결제처 찾는 방법</h2>
+            <p class="prose">왓챠 앱/웹 → 계정·이용권·결제에 등록된 수단을 확인합니다. 카드 명세가 ‘Apple’ ‘Google’이면 스토어 구독 관리로 이동하세요.</p>
           </div>
           
         <section class="panel path-block" id="path-0">
-          <h2 style="margin:0 0 0.75rem;font-size:1.15rem">왓챠 직접결제</h2>
+          <h2>왓챠 직접결제</h2>
           <ol class="steps">
             <li>watcha.com 또는 앱 로그인</li>
             <li>계정/이용권·결제 메뉴에서 정기결제 해지</li>
             <li>메뉴명·경로는 UI 변경 가능성이 있어 공식 화면 기준을 따름</li>
           </ol>
-          <p style="margin:0.9rem 0 0">
+          <p class="panel-actions">
             <a class="btn btn-ghost" href="https://watcha.com/" target="_blank" rel="noopener">공식 안내 보기</a>
           </p>
         </section>
 
         <section class="panel path-block" id="path-1">
-          <h2 style="margin:0 0 0.75rem;font-size:1.15rem">스토어 결제</h2>
+          <h2>스토어 결제</h2>
           <ol class="steps">
             <li>Apple/Google 구독에서 왓챠 취소</li>
           </ol>
-          <p style="margin:0.9rem 0 0">
+          <p class="panel-actions">
             <a class="btn btn-ghost" href="https://support.google.com/googleplay/answer/7018481?hl=ko" target="_blank" rel="noopener">공식 안내 보기</a>
           </p>
         </section>
           <div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">해지 후 요금·이용 기간</h2>
-            <p style="margin:0;color:var(--muted);line-height:1.65">직접결제 해지는 보통 다음 갱신부터 자동결제가 멈추고, 잔여 이용 기간은 정책에 따릅니다. 스토어 결제는 Apple·Google 환불·잔여일 규정을 확인하세요.</p>
+            <h2 class="subhead">해지 후 요금·이용 기간</h2>
+            <p class="prose">직접결제 해지는 보통 다음 갱신부터 자동결제가 멈추고, 잔여 이용 기간은 정책에 따릅니다. 스토어 결제는 Apple·Google 환불·잔여일 규정을 확인하세요.</p>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">자주 하는 실수</h2>
-            <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">
+            <h2 class="subhead">자주 하는 실수</h2>
+            <ul class="list-plain">
               <li>왓챠 앱에서 해지를 찾다 포기 → 실제로는 App Store·Play 구독인 경우</li>
               <li>프로필 공유만 받은 계정에서 해지 시도</li>
             </ul>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">알아두면 좋은 점</h2>
-            <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">
+            <h2 class="subhead">알아두면 좋은 점</h2>
+            <ul class="list-plain">
             <li>요금제·상품 구성은 watcha.com에서 최신 상태를 확인하세요.</li>
             </ul>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.75rem;font-size:1.1rem">자주 묻는 질문</h2>
-            <div style="margin-bottom:1rem">
-              <h3 style="margin:0 0 0.35rem;font-size:1rem">왓챠 메뉴 이름이 안내와 달라요</h3>
-              <p style="margin:0;color:var(--muted)">앱 개편으로 ‘이용권’ ‘구독’ ‘결제’ 등 라벨이 바뀔 수 있어요. 공식 앱·웹의 계정·결제 관련 메뉴를 순서대로 확인해 주세요.</p>
-            </div><div style="margin-bottom:1rem">
-              <h3 style="margin:0 0 0.35rem;font-size:1rem">스토어에서 가입했는데 왓챠에서 해지할 수 있나요?</h3>
-              <p style="margin:0;color:var(--muted)">스토어 결제분은 Apple·Google 구독 관리에서 취소하는 경우가 많습니다. 왓챠 앱에 해지 버튼이 없을 수 있어요.</p>
-            </div><div style="margin-bottom:1rem">
-              <h3 style="margin:0 0 0.35rem;font-size:1rem">베이직·프리미엄 해지 방법이 다른가요?</h3>
-              <p style="margin:0;color:var(--muted)">해지 경로는 결제처 기준입니다. 본인이 가입한 이용권·정기결제 해지 메뉴를 찾으면 됩니다.</p>
-            </div><div style="margin-bottom:1rem">
-              <h3 style="margin:0 0 0.35rem;font-size:1rem">환불·잔여 기간은?</h3>
-              <p style="margin:0;color:var(--muted)">환불 가능 여부·잔여 시청 기간은 왓챠·스토어 약관과 해지 확인 화면에 표시됩니다. 해지 전 문구를 확인해 주세요.</p>
+            <h2>자주 묻는 질문</h2>
+            <div class="faq-list">
+            <div class="faq-item">
+              <h3>왓챠 메뉴 이름이 안내와 달라요</h3>
+              <p class="prose">앱 개편으로 ‘이용권’ ‘구독’ ‘결제’ 등 라벨이 바뀔 수 있어요. 공식 앱·웹의 계정·결제 관련 메뉴를 순서대로 확인해 주세요.</p>
+            </div><div class="faq-item">
+              <h3>스토어에서 가입했는데 왓챠에서 해지할 수 있나요?</h3>
+              <p class="prose">스토어 결제분은 Apple·Google 구독 관리에서 취소하는 경우가 많습니다. 왓챠 앱에 해지 버튼이 없을 수 있어요.</p>
+            </div><div class="faq-item">
+              <h3>베이직·프리미엄 해지 방법이 다른가요?</h3>
+              <p class="prose">해지 경로는 결제처 기준입니다. 본인이 가입한 이용권·정기결제 해지 메뉴를 찾으면 됩니다.</p>
+            </div><div class="faq-item">
+              <h3>환불·잔여 기간은?</h3>
+              <p class="prose">환불 가능 여부·잔여 시청 기간은 왓챠·스토어 약관과 해지 확인 화면에 표시됩니다. 해지 전 문구를 확인해 주세요.</p>
+            </div>
             </div>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.75rem;font-size:1.1rem">결제 경로·관련 안내</h2>
+            <h2>결제 경로·관련 안내</h2>
             <div class="cta-row" style="flex-wrap:wrap">
               <a class="btn btn-ghost" href="appstore-ott-haeji.html">앱스토어 OTT 해지</a>
               <a class="btn btn-ghost" href="tongsin-ott-haeji.html">통신사 OTT 해지</a>
               <a class="btn btn-ghost" href="ott-jadoiche.html">OTT 자동이체 확인</a>
             </div>
           </div>
-          <p class="notice">비공식 참고 안내입니다. 각 OTT·통신사·스토어와 제휴·대리 관계가 없으며, 표시 요금·절차는 작성 시점 기준입니다. 가입·해지·환불은 각사·결제처 공식 안내를 우선 확인하세요. 참고일: 2026-08-31 · <a href="about.html" style="color:var(--cheap)">운영·편집 정책</a></p>
+          <p class="notice">비공식 참고 안내입니다. 각 OTT·통신사·스토어와 제휴·대리 관계가 없으며, 표시 요금·절차는 작성 시점 기준입니다. 가입·해지·환불은 각사·결제처 공식 안내를 우선 확인하세요. 참고일: 2026-08-31 · <a href="about.html" class="text-link">운영·편집 정책</a></p>
         </section>
 
         <section>

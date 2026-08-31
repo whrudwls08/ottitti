@@ -10,7 +10,7 @@ eval(
 );
 
 const BASE = "https://whrudwls08.github.io/ottitti";
-const V = "20260831c";
+const V = "20260831d";
 const LASTMOD = "2026-08-31";
 const OG_IMAGE = `${BASE}/og-image.webp`;
 const FONT =
@@ -132,11 +132,11 @@ function pageHtml(ott, slug, allLinks) {
       const steps = p.steps.map((s) => `<li>${esc(s)}</li>`).join("\n            ");
       return `
         <section class="panel path-block" id="path-${i}">
-          <h2 style="margin:0 0 0.75rem;font-size:1.15rem">${esc(p.path)}</h2>
+          <h2>${esc(p.path)}</h2>
           <ol class="steps">
             ${steps}
           </ol>
-          <p style="margin:0.9rem 0 0">
+          <p class="panel-actions">
             <a class="btn btn-ghost" href="${esc(p.official)}" target="_blank" rel="noopener">공식 안내 보기</a>
           </p>
         </section>`;
@@ -201,22 +201,22 @@ function pageHtml(ott, slug, allLinks) {
 
   const introBlock = ott.intro
     ? `<div class="panel editorial">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">이 가이드에서 다루는 내용</h2>
-            <p style="margin:0;color:var(--muted);line-height:1.65">${esc(ott.intro)}</p>
+            <h2 class="subhead">이 가이드에서 다루는 내용</h2>
+            <p class="prose">${esc(ott.intro)}</p>
           </div>`
     : "";
 
   const findPaymentBlock = ott.findPayment
     ? `<div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">결제처 찾는 방법</h2>
-            <p style="margin:0;color:var(--muted);line-height:1.65">${esc(ott.findPayment)}</p>
+            <h2 class="subhead">결제처 찾는 방법</h2>
+            <p class="prose">${esc(ott.findPayment)}</p>
           </div>`
     : "";
 
   const billingBlock = ott.billingNote
     ? `<div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">해지 후 요금·이용 기간</h2>
-            <p style="margin:0;color:var(--muted);line-height:1.65">${esc(ott.billingNote)}</p>
+            <h2 class="subhead">해지 후 요금·이용 기간</h2>
+            <p class="prose">${esc(ott.billingNote)}</p>
           </div>`
     : "";
 
@@ -224,14 +224,14 @@ function pageHtml(ott, slug, allLinks) {
 
   const mistakesBlock = mistakes
     ? `<div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">자주 하는 실수</h2>
-            <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">
+            <h2 class="subhead">자주 하는 실수</h2>
+            <ul class="list-plain">
               ${mistakes}
             </ul>
           </div>`
     : "";
 
-  const unofficialNotice = `<p class="notice" style="margin:0 0 1rem">비공식 참고 사이트입니다. ${esc(ott.name)}·통신사·스토어 공식 고객센터를 대신하지 않으며, 해지·환불 결과를 보장하지 않습니다.</p>`;
+  const unofficialNotice = `<p class="notice notice-inline">비공식 참고 사이트입니다. ${esc(ott.name)}·통신사·스토어 공식 고객센터를 대신하지 않으며, 해지·환불 결과를 보장하지 않습니다.</p>`;
 
   const relatedLinks = [];
   const seenHref = new Set();
@@ -244,7 +244,7 @@ function pageHtml(ott, slug, allLinks) {
 
   const relatedBlock = relatedLinks.length
       ? `<div class="panel">
-            <h2 style="margin:0 0 0.75rem;font-size:1.1rem">결제 경로·관련 안내</h2>
+            <h2>결제 경로·관련 안내</h2>
             <div class="cta-row" style="flex-wrap:wrap">
               ${relatedLinks
                 .map(
@@ -307,16 +307,16 @@ function pageHtml(ott, slug, allLinks) {
     <main>
       <div class="wrap">
         <nav class="notice" aria-label="탐색경로" style="margin-top:1.25rem">
-          <a href="index.html" style="color:var(--cheap)">홈</a> ·
-          <a href="cancel.html" style="color:var(--cheap)">해지 방법</a> ·
+          <a href="index.html" class="text-link">홈</a> ·
+          <a href="cancel.html" class="text-link">해지 방법</a> ·
           <span>${esc(ott.name)} 해지</span>
         </nav>
 
         <section class="hero" style="padding-top:1.5rem;padding-bottom:1rem;max-width:42rem">
           <div class="kicker">해지 안내</div>
-          <div class="result-ott" style="margin-bottom:0.5rem">
+          <div class="result-ott hero-cancel">
             ${logo}
-            <h1 style="margin:0;font-size:clamp(1.85rem,5vw,2.8rem)">${esc(ott.name)} <em>해지</em> 방법</h1>
+            <h1>${esc(ott.name)} <em>해지</em> 방법</h1>
           </div>
           <div class="hero-lead">
             <p>${esc(ott.tagline)}</p>
@@ -327,7 +327,7 @@ function pageHtml(ott, slug, allLinks) {
           </div>
         </section>
 
-        <section style="padding-top:0;display:grid;gap:1rem;max-width:42rem">
+        <section class="content-stack" style="padding-top:0">
           ${unofficialNotice}
           ${introBlock}
           ${findPaymentBlock}
@@ -335,24 +335,26 @@ function pageHtml(ott, slug, allLinks) {
           ${billingBlock}
           ${mistakesBlock}
           <div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">알아두면 좋은 점</h2>
-            <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">
+            <h2 class="subhead">알아두면 좋은 점</h2>
+            <ul class="list-plain">
             ${tips}
             </ul>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.75rem;font-size:1.1rem">자주 묻는 질문</h2>
+            <h2>자주 묻는 질문</h2>
+            <div class="faq-list">
             ${faqMain
               .map(
-                (f) => `<div style="margin-bottom:1rem">
-              <h3 style="margin:0 0 0.35rem;font-size:1rem">${esc(f.q)}</h3>
-              <p style="margin:0;color:var(--muted)">${esc(f.a)}</p>
+                (f) => `<div class="faq-item">
+              <h3>${esc(f.q)}</h3>
+              <p class="prose">${esc(f.a)}</p>
             </div>`
               )
               .join("")}
+            </div>
           </div>
           ${relatedBlock}
-          <p class="notice">${esc(KKUNSUB.disclaimer)} 참고일: ${esc(KKUNSUB.lastChecked)} · <a href="about.html" style="color:var(--cheap)">운영·편집 정책</a></p>
+          <p class="notice">${esc(KKUNSUB.disclaimer)} 참고일: ${esc(KKUNSUB.lastChecked)} · <a href="about.html" class="text-link">운영·편집 정책</a></p>
         </section>
 
         <section>

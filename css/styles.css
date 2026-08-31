@@ -9,9 +9,10 @@
   --cheap: #d6f26a;
   --glow: #ff8a5c;
   --radius: 18px;
-  --font-display: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-  --font-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-  --font-price: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-display: var(--font);
+  --font-body: var(--font);
+  --font-price: var(--font);
   --max: 1120px;
 }
 
@@ -30,6 +31,7 @@ body {
   min-height: 100vh;
   color: var(--text);
   font-family: var(--font-body);
+  font-weight: 400;
   background:
     radial-gradient(1200px 700px at 85% -10%, rgba(255, 77, 46, 0.22), transparent 55%),
     radial-gradient(900px 600px at -10% 20%, rgba(214, 242, 106, 0.1), transparent 50%),
@@ -133,7 +135,7 @@ img {
 
 .brand span {
   color: var(--cut);
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .nav-links {
@@ -266,6 +268,7 @@ section {
   margin: 0;
   font-family: var(--font-display);
   font-size: clamp(1.35rem, 3.2vw, 2rem);
+  font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.35;
 }
@@ -369,7 +372,7 @@ section {
 .result-card .label {
   color: var(--cheap);
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -441,12 +444,17 @@ section {
 .ott-grid > .panel > h3 {
   margin: 0 0 0.5rem;
   min-height: 2.7em;
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-family: var(--font-display);
   line-height: 1.35;
 }
 
 .ott-grid > .panel > p {
   flex: 1 1 auto;
   margin: 0 0 0.75rem;
+  color: var(--muted);
+  line-height: 1.55;
 }
 
 .ott-grid > .panel > .btn,
@@ -484,7 +492,7 @@ section {
   display: grid;
   place-items: center;
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 0.85rem;
   color: #fff;
 }
@@ -535,7 +543,8 @@ section {
 
 .ott-card h3 {
   margin: 0;
-  font-size: 1.12rem;
+  font-size: 1.05rem;
+  font-weight: 600;
   font-family: var(--font-display);
   letter-spacing: -0.015em;
   line-height: 1.35;
@@ -549,7 +558,7 @@ section {
 
 .ott-card .from {
   margin-top: auto;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .ott-card .actions {
@@ -939,6 +948,164 @@ td strong {
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.02em;
+}
+
+/* Typography — panel · guide · FAQ */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+.hero-sub {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.45;
+}
+
+.hero-lead .hero-sub {
+  color: var(--text);
+}
+
+.content-stack {
+  display: grid;
+  gap: 1rem;
+  max-width: 42rem;
+}
+
+.content-narrow {
+  max-width: 42rem;
+}
+
+.panel h2,
+.path-block h2,
+.topic h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.panel h2.subhead,
+.editorial h2 {
+  margin-bottom: 0.5rem;
+}
+
+.panel h3,
+.topic h3,
+.faq-item h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.prose {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.list-plain {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  display: grid;
+  gap: 0.4rem;
+}
+
+.panel-actions {
+  margin: 0.9rem 0 0;
+}
+
+.faq-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.prose-steps {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.prose-step {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.prose-step strong {
+  color: var(--text);
+}
+
+.hero-cancel h1 {
+  margin: 0;
+  font-size: clamp(1.85rem, 5vw, 2.8rem);
+  font-weight: 700;
+}
+
+.notice-top {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.notice-inline {
+  margin: 0.75rem 0 0;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.route-table-wrap {
+  overflow-x: auto;
+}
+
+.route-table tbody {
+  color: var(--muted);
+}
+
+.checklist-steps {
+  max-width: 42rem;
+  margin: 0;
+  padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.deal-card h3,
+.deals-panel h3 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.deals-meta,
+.deals-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.deals-note {
+  margin-top: 0.5rem;
+}
+
+.deals-note strong {
+  color: var(--text);
+}
+
+.text-link {
+  color: var(--cheap);
 }
 
 .fade-up {

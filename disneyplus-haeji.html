@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -31,7 +31,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css?v=20260831c" />
+    <link rel="stylesheet" href="css/styles.css?v=20260831d" />
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://whrudwls08.github.io/ottitti/"},{"@type":"ListItem","position":2,"name":"해지 방법","item":"https://whrudwls08.github.io/ottitti/cancel.html"},{"@type":"ListItem","position":3,"name":"디즈니+ 해지","item":"https://whrudwls08.github.io/ottitti/disneyplus-haeji.html"}]}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"디즈니플러스 해지 방법 | 앱스토어·통신사","description":"디즈니+ 직접결제, App Store·Google Play, 통신사·티빙 번들 결제별 해지 방법을 정리했습니다.","inLanguage":"ko-KR","dateModified":"2026-08-31","author":{"@type":"Organization","name":"오티티 해지","url":"https://whrudwls08.github.io/ottitti/about.html"},"publisher":{"@type":"Organization","name":"오티티 해지","url":"https://whrudwls08.github.io/ottitti/"},"mainEntityOfPage":"https://whrudwls08.github.io/ottitti/disneyplus-haeji.html"}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"디즈니+ 사이트에 해지 버튼이 없어요","acceptedAnswer":{"@type":"Answer","text":"통신사·티빙·IPTV 등 파트너 결제일 수 있어요. 디즈니+ 고객센터 ‘제3자 구독’ 안내와 본인 결제처를 확인하세요."}},{"@type":"Question","name":"티빙·웨이브 번들은 어디서 해지하나요?","acceptedAnswer":{"@type":"Answer","text":"번들을 결제한 곳(디즈니+·티빙·통신사 등)에서 해지합니다. 한쪽만 해지하면 다른 서비스가 남을 수 있어요."}},{"@type":"Question","name":"스탠다드·프리미엄 해지가 다른가요?","acceptedAnswer":{"@type":"Answer","text":"해지 창구는 결제처 기준입니다. 요금제 이름과 관계없이 구독·멤버십 취소 메뉴를 이용하세요."}},{"@type":"Question","name":"환불은 되나요?","acceptedAnswer":{"@type":"Answer","text":"취소·환불 정책은 디즈니+ 공식 cancellation-and-refund-policy를 확인하세요. 결제처·프로모션에 따라 다릅니다."}}]}</script>
@@ -52,16 +52,16 @@
     <main>
       <div class="wrap">
         <nav class="notice" aria-label="탐색경로" style="margin-top:1.25rem">
-          <a href="index.html" style="color:var(--cheap)">홈</a> ·
-          <a href="cancel.html" style="color:var(--cheap)">해지 방법</a> ·
+          <a href="index.html" class="text-link">홈</a> ·
+          <a href="cancel.html" class="text-link">해지 방법</a> ·
           <span>디즈니+ 해지</span>
         </nav>
 
         <section class="hero" style="padding-top:1.5rem;padding-bottom:1rem;max-width:42rem">
           <div class="kicker">해지 안내</div>
-          <div class="result-ott" style="margin-bottom:0.5rem">
+          <div class="result-ott hero-cancel">
             <img class="ott-logo" src="img/otts/disney.svg" alt="디즈니+" width="48" height="48" loading="lazy" />
-            <h1 style="margin:0;font-size:clamp(1.85rem,5vw,2.8rem)">디즈니+ <em>해지</em> 방법</h1>
+            <h1>디즈니+ <em>해지</em> 방법</h1>
           </div>
           <div class="hero-lead">
             <p>디즈니·마블·픽사·스타워즈</p>
@@ -72,75 +72,77 @@
           </div>
         </section>
 
-        <section style="padding-top:0;display:grid;gap:1rem;max-width:42rem">
-          <p class="notice" style="margin:0 0 1rem">비공식 참고 사이트입니다. 디즈니+·통신사·스토어 공식 고객센터를 대신하지 않으며, 해지·환불 결과를 보장하지 않습니다.</p>
+        <section class="content-stack" style="padding-top:0">
+          <p class="notice notice-inline">비공식 참고 사이트입니다. 디즈니+·통신사·스토어 공식 고객센터를 대신하지 않으며, 해지·환불 결과를 보장하지 않습니다.</p>
           <div class="panel editorial">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">이 가이드에서 다루는 내용</h2>
-            <p style="margin:0;color:var(--muted);line-height:1.65">디즈니+는 disneyplus.com 직접결제와 티빙·웨이브 번들, 통신사·IPTV 제휴가 많습니다. account/cancel-subscription에 접속해 해지 버튼이 없으면 ‘타사·파트너 결제’로 가입한 경우예요.</p>
+            <h2 class="subhead">이 가이드에서 다루는 내용</h2>
+            <p class="prose">디즈니+는 disneyplus.com 직접결제와 티빙·웨이브 번들, 통신사·IPTV 제휴가 많습니다. account/cancel-subscription에 접속해 해지 버튼이 없으면 ‘타사·파트너 결제’로 가입한 경우예요.</p>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">결제처 찾는 방법</h2>
-            <p style="margin:0;color:var(--muted);line-height:1.65">디즈니+ 웹 → 계정 → 구독·결제 정보에서 결제 수단·파트너를 확인하세요. 티빙·통신사 번들이면 번들 해지 안내와 결제처 앱을 함께 봐 주세요.</p>
+            <h2 class="subhead">결제처 찾는 방법</h2>
+            <p class="prose">디즈니+ 웹 → 계정 → 구독·결제 정보에서 결제 수단·파트너를 확인하세요. 티빙·통신사 번들이면 번들 해지 안내와 결제처 앱을 함께 봐 주세요.</p>
           </div>
           
         <section class="panel path-block" id="path-0">
-          <h2 style="margin:0 0 0.75rem;font-size:1.15rem">디즈니+ 직접결제</h2>
+          <h2>디즈니+ 직접결제</h2>
           <ol class="steps">
             <li>www.disneyplus.com/account/cancel-subscription 접속(로그인)</li>
             <li>멤버십 취소 클릭 후 절차 완료</li>
             <li>달리 공지되지 않는 한, 자동갱신 중단 후 현재 결제 주기 종료 시 발효(디즈니+ 공식 취소·환불 정책)</li>
           </ol>
-          <p style="margin:0.9rem 0 0">
+          <p class="panel-actions">
             <a class="btn btn-ghost" href="https://www.disneyplus.com/ko-kr/welcome/cancellation-and-refund-policy" target="_blank" rel="noopener">공식 안내 보기</a>
           </p>
         </section>
 
         <section class="panel path-block" id="path-1">
-          <h2 style="margin:0 0 0.75rem;font-size:1.15rem">타사·통신·번들</h2>
+          <h2>타사·통신·번들</h2>
           <ol class="steps">
             <li>통신사·IPTV·티빙 등 파트너 결제이면 파트너에서 해지</li>
             <li>디즈니+ 계정에 해지 버튼이 없으면 결제처를 먼저 확인</li>
           </ol>
-          <p style="margin:0.9rem 0 0">
+          <p class="panel-actions">
             <a class="btn btn-ghost" href="https://help.disneyplus.com/article/disneyplus-en-kr-third-party-subscription" target="_blank" rel="noopener">공식 안내 보기</a>
           </p>
         </section>
           <div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">해지 후 요금·이용 기간</h2>
-            <p style="margin:0;color:var(--muted);line-height:1.65">디즈니+ 공식 취소·환불 정책상, 달리 안내되지 않으면 자동갱신 중단 후 현재 결제 주기 종료 시 해지가 발효됩니다. 무료체험·프로모션은 즉시 종료될 수 있어요.</p>
+            <h2 class="subhead">해지 후 요금·이용 기간</h2>
+            <p class="prose">디즈니+ 공식 취소·환불 정책상, 달리 안내되지 않으면 자동갱신 중단 후 현재 결제 주기 종료 시 해지가 발효됩니다. 무료체험·프로모션은 즉시 종료될 수 있어요.</p>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">자주 하는 실수</h2>
-            <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">
+            <h2 class="subhead">자주 하는 실수</h2>
+            <ul class="list-plain">
               <li>디즈니+ 웹에 해지가 없는데 포기 → 티빙·통신사·IPTV 결제처 미확인</li>
               <li>번들 중 한 서비스만 해지하고 나머지 구독·청구가 남음</li>
             </ul>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">알아두면 좋은 점</h2>
-            <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">
+            <h2 class="subhead">알아두면 좋은 점</h2>
+            <ul class="list-plain">
             <li>번들은 ‘어디서 결제했는지’가 해지 창구입니다.</li>
             <li>무료체험/프로모션으로 구독한 경우 취소가 즉시 발효될 수 있습니다(공식 정책).</li>
             </ul>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.75rem;font-size:1.1rem">자주 묻는 질문</h2>
-            <div style="margin-bottom:1rem">
-              <h3 style="margin:0 0 0.35rem;font-size:1rem">디즈니+ 사이트에 해지 버튼이 없어요</h3>
-              <p style="margin:0;color:var(--muted)">통신사·티빙·IPTV 등 파트너 결제일 수 있어요. 디즈니+ 고객센터 ‘제3자 구독’ 안내와 본인 결제처를 확인하세요.</p>
-            </div><div style="margin-bottom:1rem">
-              <h3 style="margin:0 0 0.35rem;font-size:1rem">티빙·웨이브 번들은 어디서 해지하나요?</h3>
-              <p style="margin:0;color:var(--muted)">번들을 결제한 곳(디즈니+·티빙·통신사 등)에서 해지합니다. 한쪽만 해지하면 다른 서비스가 남을 수 있어요.</p>
-            </div><div style="margin-bottom:1rem">
-              <h3 style="margin:0 0 0.35rem;font-size:1rem">스탠다드·프리미엄 해지가 다른가요?</h3>
-              <p style="margin:0;color:var(--muted)">해지 창구는 결제처 기준입니다. 요금제 이름과 관계없이 구독·멤버십 취소 메뉴를 이용하세요.</p>
-            </div><div style="margin-bottom:1rem">
-              <h3 style="margin:0 0 0.35rem;font-size:1rem">환불은 되나요?</h3>
-              <p style="margin:0;color:var(--muted)">취소·환불 정책은 디즈니+ 공식 cancellation-and-refund-policy를 확인하세요. 결제처·프로모션에 따라 다릅니다.</p>
+            <h2>자주 묻는 질문</h2>
+            <div class="faq-list">
+            <div class="faq-item">
+              <h3>디즈니+ 사이트에 해지 버튼이 없어요</h3>
+              <p class="prose">통신사·티빙·IPTV 등 파트너 결제일 수 있어요. 디즈니+ 고객센터 ‘제3자 구독’ 안내와 본인 결제처를 확인하세요.</p>
+            </div><div class="faq-item">
+              <h3>티빙·웨이브 번들은 어디서 해지하나요?</h3>
+              <p class="prose">번들을 결제한 곳(디즈니+·티빙·통신사 등)에서 해지합니다. 한쪽만 해지하면 다른 서비스가 남을 수 있어요.</p>
+            </div><div class="faq-item">
+              <h3>스탠다드·프리미엄 해지가 다른가요?</h3>
+              <p class="prose">해지 창구는 결제처 기준입니다. 요금제 이름과 관계없이 구독·멤버십 취소 메뉴를 이용하세요.</p>
+            </div><div class="faq-item">
+              <h3>환불은 되나요?</h3>
+              <p class="prose">취소·환불 정책은 디즈니+ 공식 cancellation-and-refund-policy를 확인하세요. 결제처·프로모션에 따라 다릅니다.</p>
+            </div>
             </div>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.75rem;font-size:1.1rem">결제 경로·관련 안내</h2>
+            <h2>결제 경로·관련 안내</h2>
             <div class="cta-row" style="flex-wrap:wrap">
               <a class="btn btn-ghost" href="appstore-ott-haeji.html">앱스토어 OTT 해지</a>
               <a class="btn btn-ghost" href="tongsin-ott-haeji.html">통신사 OTT 해지</a>
@@ -148,7 +150,7 @@
               <a class="btn btn-ghost" href="disney-tving-bundle-haeji.html">디즈니+·티빙 번들</a>
             </div>
           </div>
-          <p class="notice">비공식 참고 안내입니다. 각 OTT·통신사·스토어와 제휴·대리 관계가 없으며, 표시 요금·절차는 작성 시점 기준입니다. 가입·해지·환불은 각사·결제처 공식 안내를 우선 확인하세요. 참고일: 2026-08-31 · <a href="about.html" style="color:var(--cheap)">운영·편집 정책</a></p>
+          <p class="notice">비공식 참고 안내입니다. 각 OTT·통신사·스토어와 제휴·대리 관계가 없으며, 표시 요금·절차는 작성 시점 기준입니다. 가입·해지·환불은 각사·결제처 공식 안내를 우선 확인하세요. 참고일: 2026-08-31 · <a href="about.html" class="text-link">운영·편집 정책</a></p>
         </section>
 
         <section>

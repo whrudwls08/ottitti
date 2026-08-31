@@ -44,11 +44,11 @@
         const pct = solo.sum ? Math.round((save / solo.sum) * 100) : 0;
         return `<article class="panel deal-card">
           <div class="tag best">공식 번들</div>
-          <h3 style="margin:0.5rem 0 0.25rem;font-family:var(--font-display)">${b.name}</h3>
-          <p style="margin:0;color:var(--muted);font-size:0.9rem">${b.planNote}</p>
+          <h3>${b.name}</h3>
+          <p class="deals-meta">${b.planNote}</p>
           <div class="price" style="margin-top:0.75rem">${won(b.price)} <small>/월</small></div>
-          <p style="margin:0.5rem 0 0;color:var(--muted)">개별 스탠다드 합산 참고 ${won(solo.sum)} → 약 ${won(save)} (${pct}%) 절감 가능(참고)</p>
-          <p style="margin:0.75rem 0 0">
+          <p class="deals-note">개별 스탠다드 합산 참고 ${won(solo.sum)} → 약 ${won(save)} (${pct}%) 절감 가능(참고)</p>
+          <p class="panel-actions">
             <a class="btn btn-ghost" href="${b.sourceUrl}" target="_blank" rel="noopener">${b.sourceLabel}에서 확인</a>
           </p>
         </article>`;
@@ -61,11 +61,11 @@
     if (!el) return;
     el.innerHTML = D.pathGuides
       .map(
-        (g) => `<article class="panel">
-          <h3 style="margin:0 0 0.35rem;font-family:var(--font-display)">${g.title}</h3>
-          <p style="margin:0 0 0.5rem">${g.summary}</p>
-          <p style="margin:0;color:var(--muted);font-size:0.9rem"><strong style="color:var(--text)">적용</strong> ${g.when}</p>
-          <p style="margin:0.35rem 0 0;color:var(--muted);font-size:0.9rem"><strong style="color:var(--text)">다음 단계</strong> ${g.action}</p>
+        (g) => `<article class="panel deals-panel">
+          <h3>${g.title}</h3>
+          <p class="prose">${g.summary}</p>
+          <p class="deals-note"><strong>적용</strong> ${g.when}</p>
+          <p class="deals-note"><strong>다음 단계</strong> ${g.action}</p>
         </article>`
       )
       .join("");
@@ -76,9 +76,9 @@
     if (!el) return;
     el.innerHTML = D.shoppingSafeTips
       .map(
-        (t) => `<article class="panel">
-          <h3 style="margin:0 0 0.35rem;font-family:var(--font-display)">${t.title}</h3>
-          <p style="margin:0;color:var(--muted)">${t.body}</p>
+        (t) => `<article class="panel deals-panel">
+          <h3>${t.title}</h3>
+          <p class="prose">${t.body}</p>
         </article>`
       )
       .join("");
@@ -100,7 +100,7 @@
     cards.push(`<article class="result-card">
       <div class="label">개별 구독 합산(참고)</div>
       <div class="price">${won(solo.sum)} <small>/월</small></div>
-      <ul style="margin:0.5rem 0 0;padding-left:1.1rem;color:var(--muted)">
+      <ul class="list-plain" style="margin-top:0.5rem">
         ${solo.lines.map((l) => `<li>${l.name} ${l.plan} ${won(l.price)}</li>`).join("")}
       </ul>
     </article>`);
@@ -118,23 +118,23 @@
       const total = bundleHit.bundle.price + extraSum;
       const vsSolo = solo.sum - total;
       cards.push(`<article class="result-card">
-        <div class="label">우선 후보 · 공식 번들</div>
-        <h3 style="margin:0">${bundleHit.bundle.name}</h3>
+        <div class="label">참고 후보 · 공식 번들</div>
+        <h3>${bundleHit.bundle.name}</h3>
         <div class="price">${won(bundleHit.bundle.price)} <small>/월 번들</small></div>
-        <p style="margin:0;color:var(--muted)">번들 대상 개별 합산 ${won(bundleHit.soloSum)} 대비 약 ${won(bundleHit.save)} 절감(참고)</p>
+        <p class="prose">번들 대상 개별 합산 ${won(bundleHit.soloSum)} 대비 약 ${won(bundleHit.save)} 절감(참고)</p>
         ${
           extraLines.length
-            ? `<p style="margin:0.5rem 0 0;color:var(--muted)">번들 외 추가: ${extraLines.join(", ")} → 합계 참고 <strong class="price-num">${won(total)}</strong></p>`
-            : `<p style="margin:0.5rem 0 0;color:var(--muted)">선택 서비스가 번들로 커버됩니다. 개별 합산 대비 약 <strong class="price-num">${won(vsSolo)}</strong> 유리할 수 있습니다.</p>`
+            ? `<p class="deals-note">번들 외 추가: ${extraLines.join(", ")} → 합계 참고 <strong class="price-num">${won(total)}</strong></p>`
+            : `<p class="deals-note">선택 서비스가 번들로 커버됩니다. 개별 합산 대비 약 <strong class="price-num">${won(vsSolo)}</strong> 유리할 수 있습니다.</p>`
         }
-        <div class="cta-row" style="margin-top:0.75rem">
+        <div class="cta-row panel-actions">
           <a class="btn btn-primary" href="${bundleHit.bundle.sourceUrl}" target="_blank" rel="noopener">공식 번들 안내</a>
         </div>
       </article>`);
     } else {
       cards.push(`<article class="result-card">
         <div class="label">번들</div>
-        <p style="margin:0;color:var(--muted)">선택 조합에 해당하는 등록된 공식 번들이 없습니다. 광고형·통신사 결합·연간 경로를 아래 가이드에서 확인하세요.</p>
+        <p class="prose">선택 조합에 해당하는 등록된 공식 번들이 없습니다. 광고형·통신사 결합·연간 경로를 아래 가이드에서 확인하세요.</p>
       </article>`);
     }
 
@@ -142,14 +142,14 @@
       cards.push(`<article class="result-card">
         <div class="label">광고형 경로</div>
         <div class="price">${won(D.soloRef.tving_ad.price)} <small>/월 · 광고형 스탠다드(참고)</small></div>
-        <p style="margin:0;color:var(--muted)">광고를 허용하면 스탠다드 ${won(D.soloRef.tving.price)}보다 고정비가 낮을 수 있습니다. 공식에서 가입 가능 여부를 확인하세요.</p>
+        <p class="prose">광고를 허용하면 스탠다드 ${won(D.soloRef.tving.price)}보다 고정비가 낮을 수 있습니다. 공식에서 가입 가능 여부를 확인하세요.</p>
       </article>`);
     }
     if (selected.length === 1 && selected[0] === "netflix") {
       cards.push(`<article class="result-card">
         <div class="label">광고형 경로</div>
         <div class="price">${won(D.soloRef.netflix_ad.price)} <small>/월 · 광고형 스탠다드(참고)</small></div>
-        <p style="margin:0;color:var(--muted)">광고 허용 시 스탠다드 ${won(D.soloRef.netflix.price)} 대비 절감 여지가 있습니다. 공식에서 확인하세요.</p>
+        <p class="prose">광고 허용 시 스탠다드 ${won(D.soloRef.netflix.price)} 대비 절감 여지가 있습니다. 공식에서 확인하세요.</p>
       </article>`);
     }
 

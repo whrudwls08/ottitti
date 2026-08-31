@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -31,7 +31,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css?v=20260831c" />
+    <link rel="stylesheet" href="css/styles.css?v=20260831d" />
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://whrudwls08.github.io/ottitti/"},{"@type":"ListItem","position":2,"name":"해지 방법","item":"https://whrudwls08.github.io/ottitti/cancel.html"},{"@type":"ListItem","position":3,"name":"쿠팡플레이 해지","item":"https://whrudwls08.github.io/ottitti/coupangplay-haeji.html"}]}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"쿠팡플레이 해지 방법 | 와우 멤버십·앱","description":"쿠팡 와우 멤버십·쿠팡플레이 앱·웹 결제별 해지 경로를 정리했습니다.","inLanguage":"ko-KR","dateModified":"2026-08-31","author":{"@type":"Organization","name":"오티티 해지","url":"https://whrudwls08.github.io/ottitti/about.html"},"publisher":{"@type":"Organization","name":"오티티 해지","url":"https://whrudwls08.github.io/ottitti/"},"mainEntityOfPage":"https://whrudwls08.github.io/ottitti/coupangplay-haeji.html"}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"와우 해지하면 쿠팡플레이도 같이 끊기나요?","acceptedAnswer":{"@type":"Answer","text":"와우 멤버십에 포함된 쿠팡플레이 혜택은 와우 해지와 함께 종료되는 구조입니다. Pass 등 별도 유료 상품은 별도 해지가 필요할 수 있어요."}},{"@type":"Question","name":"쿠팡플레이 앱만 지워도 결제가 멈추나요?","acceptedAnswer":{"@type":"Answer","text":"앱 삭제만으로는 와우·Pass 자동결제가 중단되지 않습니다. 쿠팡 또는 쿠팡플레이의 멤버십·구독 메뉴에서 해지해 주세요."}},{"@type":"Question","name":"패스와 와우 중 무엇을 먼저 해지해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"와우 해지 전 Pass 해지가 필요할 수 있습니다. 마이쿠팡·쿠팡플레이 화면에서 본인에게 Pass가 있는지 먼저 확인하는 편이 안전해요."}},{"@type":"Question","name":"해지 후에도 영상을 볼 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"이미 결제한 기간·와우 혜택 잔여일은 쿠팡 정책에 따릅니다. 해지는 ‘다음 갱신 중단’인지 ‘즉시 종료’인지 FAQ에서 확인해 주세요."}}]}</script>
@@ -52,16 +52,16 @@
     <main>
       <div class="wrap">
         <nav class="notice" aria-label="탐색경로" style="margin-top:1.25rem">
-          <a href="index.html" style="color:var(--cheap)">홈</a> ·
-          <a href="cancel.html" style="color:var(--cheap)">해지 방법</a> ·
+          <a href="index.html" class="text-link">홈</a> ·
+          <a href="cancel.html" class="text-link">해지 방법</a> ·
           <span>쿠팡플레이 해지</span>
         </nav>
 
         <section class="hero" style="padding-top:1.5rem;padding-bottom:1rem;max-width:42rem">
           <div class="kicker">해지 안내</div>
-          <div class="result-ott" style="margin-bottom:0.5rem">
+          <div class="result-ott hero-cancel">
             <img class="ott-logo" src="img/otts/coupangplay.svg" alt="쿠팡플레이" width="48" height="48" loading="lazy" />
-            <h1 style="margin:0;font-size:clamp(1.85rem,5vw,2.8rem)">쿠팡플레이 <em>해지</em> 방법</h1>
+            <h1>쿠팡플레이 <em>해지</em> 방법</h1>
           </div>
           <div class="hero-lead">
             <p>와우 멤버십에 붙는 가성비 스트리밍</p>
@@ -72,84 +72,86 @@
           </div>
         </section>
 
-        <section style="padding-top:0;display:grid;gap:1rem;max-width:42rem">
-          <p class="notice" style="margin:0 0 1rem">비공식 참고 사이트입니다. 쿠팡플레이·통신사·스토어 공식 고객센터를 대신하지 않으며, 해지·환불 결과를 보장하지 않습니다.</p>
+        <section class="content-stack" style="padding-top:0">
+          <p class="notice notice-inline">비공식 참고 사이트입니다. 쿠팡플레이·통신사·스토어 공식 고객센터를 대신하지 않으며, 해지·환불 결과를 보장하지 않습니다.</p>
           <div class="panel editorial">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">이 가이드에서 다루는 내용</h2>
-            <p style="margin:0;color:var(--muted);line-height:1.65">쿠팡플레이는 단독 앱 구독보다 로켓와우·쿠팡플레이 패스(Pass)와 묶인 경우가 많아요. 와우 해지와 Pass 해지 순서가 다를 수 있으니, 본인 계정에 어떤 상품이 붙어 있는지 먼저 확인하는 것이 좋습니다.</p>
+            <h2 class="subhead">이 가이드에서 다루는 내용</h2>
+            <p class="prose">쿠팡플레이는 단독 앱 구독보다 로켓와우·쿠팡플레이 패스(Pass)와 묶인 경우가 많아요. 와우 해지와 Pass 해지 순서가 다를 수 있으니, 본인 계정에 어떤 상품이 붙어 있는지 먼저 확인하는 것이 좋습니다.</p>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">결제처 찾는 방법</h2>
-            <p style="margin:0;color:var(--muted);line-height:1.65">카드·계좌 명세에 ‘쿠팡’ ‘로켓와우’가 보이면 쿠팡 쪽 결제예요. 쿠팡플레이만 쓰는데 와우가 없다면 Pass 별도 구독을 의심해 보세요. 페이인포에서 ‘쿠팡’ 자동납부도 함께 확인할 수 있습니다.</p>
+            <h2 class="subhead">결제처 찾는 방법</h2>
+            <p class="prose">카드·계좌 명세에 ‘쿠팡’ ‘로켓와우’가 보이면 쿠팡 쪽 결제예요. 쿠팡플레이만 쓰는데 와우가 없다면 Pass 별도 구독을 의심해 보세요. 페이인포에서 ‘쿠팡’ 자동납부도 함께 확인할 수 있습니다.</p>
           </div>
           
         <section class="panel path-block" id="path-0">
-          <h2 style="margin:0 0 0.75rem;font-size:1.15rem">로켓와우 멤버십</h2>
+          <h2>로켓와우 멤버십</h2>
           <ol class="steps">
             <li>쿠팡 앱/웹 로그인</li>
             <li>마이쿠팡 → 와우 멤버십</li>
             <li>해지하기 진행</li>
             <li>와우에 포함된 쿠팡플레이 혜택도 함께 종료되는 구조입니다(쿠팡 공식 FAQ)</li>
           </ol>
-          <p style="margin:0.9rem 0 0">
+          <p class="panel-actions">
             <a class="btn btn-ghost" href="https://news.coupang.com/archives/64216/" target="_blank" rel="noopener">공식 안내 보기</a>
           </p>
         </section>
 
         <section class="panel path-block" id="path-1">
-          <h2 style="margin:0 0 0.75rem;font-size:1.15rem">쿠팡플레이 패스(Pass)가 있는 경우</h2>
+          <h2>쿠팡플레이 패스(Pass)가 있는 경우</h2>
           <ol class="steps">
             <li>와우를 해지하려면 먼저 패스(Pass) 구독을 해지해야 할 수 있습니다(쿠팡 공식 FAQ)</li>
             <li>패스 해지: 쿠팡에서 와우 해지 시 함께, 또는 쿠팡플레이 앱에서 별도 해지</li>
             <li>본인 계정에 패스가 있는지는 쿠팡플레이/와우 화면에서 확인</li>
           </ol>
-          <p style="margin:0.9rem 0 0">
+          <p class="panel-actions">
             <a class="btn btn-ghost" href="https://news.coupang.com/archives/64216/" target="_blank" rel="noopener">공식 안내 보기</a>
           </p>
         </section>
           <div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">해지 후 요금·이용 기간</h2>
-            <p style="margin:0;color:var(--muted);line-height:1.65">와우·Pass 해지 후에도 이미 결제된 잔여 기간·환불은 쿠팡 공식 FAQ 기준입니다. 무료체험 중 해지는 체험 종료일에 적용되는 경우가 많아요.</p>
+            <h2 class="subhead">해지 후 요금·이용 기간</h2>
+            <p class="prose">와우·Pass 해지 후에도 이미 결제된 잔여 기간·환불은 쿠팡 공식 FAQ 기준입니다. 무료체험 중 해지는 체험 종료일에 적용되는 경우가 많아요.</p>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">자주 하는 실수</h2>
-            <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">
+            <h2 class="subhead">자주 하는 실수</h2>
+            <ul class="list-plain">
               <li>쿠팡플레이 앱만 삭제하고 와우·Pass 자동결제는 그대로 둠</li>
               <li>Pass가 있는데 와우만 먼저 해지하려다 순서 오류</li>
             </ul>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">알아두면 좋은 점</h2>
-            <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">
+            <h2 class="subhead">알아두면 좋은 점</h2>
+            <ul class="list-plain">
             <li>일반 와우 혜택의 쿠팡플레이와, 별도 ‘패스’ 구독은 해지 순서가 다를 수 있습니다.</li>
             <li>무료체험 중에는 즉시 해지가 안 되고 체험 종료일에 해지되는 경우가 있습니다(쿠팡 FAQ).</li>
             </ul>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.75rem;font-size:1.1rem">자주 묻는 질문</h2>
-            <div style="margin-bottom:1rem">
-              <h3 style="margin:0 0 0.35rem;font-size:1rem">와우 해지하면 쿠팡플레이도 같이 끊기나요?</h3>
-              <p style="margin:0;color:var(--muted)">와우 멤버십에 포함된 쿠팡플레이 혜택은 와우 해지와 함께 종료되는 구조입니다. Pass 등 별도 유료 상품은 별도 해지가 필요할 수 있어요.</p>
-            </div><div style="margin-bottom:1rem">
-              <h3 style="margin:0 0 0.35rem;font-size:1rem">쿠팡플레이 앱만 지워도 결제가 멈추나요?</h3>
-              <p style="margin:0;color:var(--muted)">앱 삭제만으로는 와우·Pass 자동결제가 중단되지 않습니다. 쿠팡 또는 쿠팡플레이의 멤버십·구독 메뉴에서 해지해 주세요.</p>
-            </div><div style="margin-bottom:1rem">
-              <h3 style="margin:0 0 0.35rem;font-size:1rem">패스와 와우 중 무엇을 먼저 해지해야 하나요?</h3>
-              <p style="margin:0;color:var(--muted)">와우 해지 전 Pass 해지가 필요할 수 있습니다. 마이쿠팡·쿠팡플레이 화면에서 본인에게 Pass가 있는지 먼저 확인하는 편이 안전해요.</p>
-            </div><div style="margin-bottom:1rem">
-              <h3 style="margin:0 0 0.35rem;font-size:1rem">해지 후에도 영상을 볼 수 있나요?</h3>
-              <p style="margin:0;color:var(--muted)">이미 결제한 기간·와우 혜택 잔여일은 쿠팡 정책에 따릅니다. 해지는 ‘다음 갱신 중단’인지 ‘즉시 종료’인지 FAQ에서 확인해 주세요.</p>
+            <h2>자주 묻는 질문</h2>
+            <div class="faq-list">
+            <div class="faq-item">
+              <h3>와우 해지하면 쿠팡플레이도 같이 끊기나요?</h3>
+              <p class="prose">와우 멤버십에 포함된 쿠팡플레이 혜택은 와우 해지와 함께 종료되는 구조입니다. Pass 등 별도 유료 상품은 별도 해지가 필요할 수 있어요.</p>
+            </div><div class="faq-item">
+              <h3>쿠팡플레이 앱만 지워도 결제가 멈추나요?</h3>
+              <p class="prose">앱 삭제만으로는 와우·Pass 자동결제가 중단되지 않습니다. 쿠팡 또는 쿠팡플레이의 멤버십·구독 메뉴에서 해지해 주세요.</p>
+            </div><div class="faq-item">
+              <h3>패스와 와우 중 무엇을 먼저 해지해야 하나요?</h3>
+              <p class="prose">와우 해지 전 Pass 해지가 필요할 수 있습니다. 마이쿠팡·쿠팡플레이 화면에서 본인에게 Pass가 있는지 먼저 확인하는 편이 안전해요.</p>
+            </div><div class="faq-item">
+              <h3>해지 후에도 영상을 볼 수 있나요?</h3>
+              <p class="prose">이미 결제한 기간·와우 혜택 잔여일은 쿠팡 정책에 따릅니다. 해지는 ‘다음 갱신 중단’인지 ‘즉시 종료’인지 FAQ에서 확인해 주세요.</p>
+            </div>
             </div>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.75rem;font-size:1.1rem">결제 경로·관련 안내</h2>
+            <h2>결제 경로·관련 안내</h2>
             <div class="cta-row" style="flex-wrap:wrap">
               <a class="btn btn-ghost" href="appstore-ott-haeji.html">앱스토어 OTT 해지</a>
               <a class="btn btn-ghost" href="tongsin-ott-haeji.html">통신사 OTT 해지</a>
               <a class="btn btn-ghost" href="ott-jadoiche.html">OTT 자동이체 확인</a>
             </div>
           </div>
-          <p class="notice">비공식 참고 안내입니다. 각 OTT·통신사·스토어와 제휴·대리 관계가 없으며, 표시 요금·절차는 작성 시점 기준입니다. 가입·해지·환불은 각사·결제처 공식 안내를 우선 확인하세요. 참고일: 2026-08-31 · <a href="about.html" style="color:var(--cheap)">운영·편집 정책</a></p>
+          <p class="notice">비공식 참고 안내입니다. 각 OTT·통신사·스토어와 제휴·대리 관계가 없으며, 표시 요금·절차는 작성 시점 기준입니다. 가입·해지·환불은 각사·결제처 공식 안내를 우선 확인하세요. 참고일: 2026-08-31 · <a href="about.html" class="text-link">운영·편집 정책</a></p>
         </section>
 
         <section>

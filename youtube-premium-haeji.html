@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -31,7 +31,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css?v=20260831c" />
+    <link rel="stylesheet" href="css/styles.css?v=20260831d" />
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://whrudwls08.github.io/ottitti/"},{"@type":"ListItem","position":2,"name":"해지 방법","item":"https://whrudwls08.github.io/ottitti/cancel.html"},{"@type":"ListItem","position":3,"name":"유튜브 프리미엄 해지","item":"https://whrudwls08.github.io/ottitti/youtube-premium-haeji.html"}]}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"유튜브 프리미엄 해지 | 앱스토어·Google","description":"유튜브 프리미엄·유튜브 뮤직 포함, Apple·Google 결제별 해지 단계입니다.","inLanguage":"ko-KR","dateModified":"2026-08-31","author":{"@type":"Organization","name":"오티티 해지","url":"https://whrudwls08.github.io/ottitti/about.html"},"publisher":{"@type":"Organization","name":"오티티 해지","url":"https://whrudwls08.github.io/ottitti/"},"mainEntityOfPage":"https://whrudwls08.github.io/ottitti/youtube-premium-haeji.html"}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"유튜브 앱만 지우면 Premium이 해지되나요?","acceptedAnswer":{"@type":"Answer","text":"앱 삭제만으로는 Premium·Play·Apple 구독이 취소되지 않습니다. 구독 관리 메뉴에서 취소해 주세요."}},{"@type":"Question","name":"가족 요금제는 누가 해지하나요?","acceptedAnswer":{"@type":"Answer","text":"Premium 가족 요금제를 결제·관리하는 Google 계정(관리자)에서 멤버십을 취소합니다."}},{"@type":"Question","name":"Play와 YouTube 웹 중 어디서 결제했는지 모르겠어요","acceptedAnswer":{"@type":"Answer","text":"paid_memberships와 Play 구독 목록을 모두 확인하세요. 둘 다 없으면 Apple 구독도 확인해 보세요."}},{"@type":"Question","name":"YouTube Music만 따로 해지할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"상품 구성( Premium 단독·Music 포함 등)에 따라 다릅니다. 본인 memberships 화면에 표시된 항목을 기준으로 취소하세요."}}]}</script>
@@ -52,16 +52,16 @@
     <main>
       <div class="wrap">
         <nav class="notice" aria-label="탐색경로" style="margin-top:1.25rem">
-          <a href="index.html" style="color:var(--cheap)">홈</a> ·
-          <a href="cancel.html" style="color:var(--cheap)">해지 방법</a> ·
+          <a href="index.html" class="text-link">홈</a> ·
+          <a href="cancel.html" class="text-link">해지 방법</a> ·
           <span>유튜브 프리미엄 해지</span>
         </nav>
 
         <section class="hero" style="padding-top:1.5rem;padding-bottom:1rem;max-width:42rem">
           <div class="kicker">해지 안내</div>
-          <div class="result-ott" style="margin-bottom:0.5rem">
+          <div class="result-ott hero-cancel">
             <img class="ott-logo" src="img/otts/youtube.svg" alt="유튜브 프리미엄" width="48" height="48" loading="lazy" />
-            <h1 style="margin:0;font-size:clamp(1.85rem,5vw,2.8rem)">유튜브 프리미엄 <em>해지</em> 방법</h1>
+            <h1>유튜브 프리미엄 <em>해지</em> 방법</h1>
           </div>
           <div class="hero-lead">
             <p>광고 제거·백그라운드·뮤직</p>
@@ -72,92 +72,94 @@
           </div>
         </section>
 
-        <section style="padding-top:0;display:grid;gap:1rem;max-width:42rem">
-          <p class="notice" style="margin:0 0 1rem">비공식 참고 사이트입니다. 유튜브 프리미엄·통신사·스토어 공식 고객센터를 대신하지 않으며, 해지·환불 결과를 보장하지 않습니다.</p>
+        <section class="content-stack" style="padding-top:0">
+          <p class="notice notice-inline">비공식 참고 사이트입니다. 유튜브 프리미엄·통신사·스토어 공식 고객센터를 대신하지 않으며, 해지·환불 결과를 보장하지 않습니다.</p>
           <div class="panel editorial">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">이 가이드에서 다루는 내용</h2>
-            <p style="margin:0;color:var(--muted);line-height:1.65">유튜브 프리미엄은 Google·YouTube 직접결제, Google Play, Apple 구독, 가족 요금제 등 경로가 다양해요. youtube.com/paid_memberships에서 본인 Google 계정 구독을 확인하고, 없으면 Play·Apple 구독 목록을 봐 주세요.</p>
+            <h2 class="subhead">이 가이드에서 다루는 내용</h2>
+            <p class="prose">유튜브 프리미엄은 Google·YouTube 직접결제, Google Play, Apple 구독, 가족 요금제 등 경로가 다양해요. youtube.com/paid_memberships에서 본인 Google 계정 구독을 확인하고, 없으면 Play·Apple 구독 목록을 봐 주세요.</p>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">결제처 찾는 방법</h2>
-            <p style="margin:0;color:var(--muted);line-height:1.65">paid_memberships 페이지에 Premium이 보이면 Google/YouTube 직접결제입니다. 없으면 Play 스토어 → 구독, 또는 iPhone 설정 → Apple ID → 구독에서 YouTube Premium을 찾으세요.</p>
+            <h2 class="subhead">결제처 찾는 방법</h2>
+            <p class="prose">paid_memberships 페이지에 Premium이 보이면 Google/YouTube 직접결제입니다. 없으면 Play 스토어 → 구독, 또는 iPhone 설정 → Apple ID → 구독에서 YouTube Premium을 찾으세요.</p>
           </div>
           
         <section class="panel path-block" id="path-0">
-          <h2 style="margin:0 0 0.75rem;font-size:1.15rem">YouTube/Google 직접 결제</h2>
+          <h2>YouTube/Google 직접 결제</h2>
           <ol class="steps">
             <li>youtube.com/paid_memberships 접속(해당 Google 계정 로그인)</li>
             <li>YouTube Premium → 멤버십 관리</li>
             <li>구독 취소/비활성화 확인</li>
           </ol>
-          <p style="margin:0.9rem 0 0">
+          <p class="panel-actions">
             <a class="btn btn-ghost" href="https://www.youtube.com/paid_memberships" target="_blank" rel="noopener">공식 안내 보기</a>
           </p>
         </section>
 
         <section class="panel path-block" id="path-1">
-          <h2 style="margin:0 0 0.75rem;font-size:1.15rem">Google Play 결제</h2>
+          <h2>Google Play 결제</h2>
           <ol class="steps">
             <li>Play 스토어 → 결제 및 구독 → 구독</li>
             <li>YouTube Premium 취소</li>
             <li>앱 삭제만으로는 구독이 취소되지 않습니다(Google Play 공식)</li>
           </ol>
-          <p style="margin:0.9rem 0 0">
+          <p class="panel-actions">
             <a class="btn btn-ghost" href="https://support.google.com/googleplay/answer/7018481?hl=ko" target="_blank" rel="noopener">공식 안내 보기</a>
           </p>
         </section>
 
         <section class="panel path-block" id="path-2">
-          <h2 style="margin:0 0 0.75rem;font-size:1.15rem">Apple로 결제한 경우</h2>
+          <h2>Apple로 결제한 경우</h2>
           <ol class="steps">
             <li>설정 → Apple ID → 구독에서 YouTube Premium 취소</li>
           </ol>
-          <p style="margin:0.9rem 0 0">
+          <p class="panel-actions">
             <a class="btn btn-ghost" href="https://support.apple.com/ko-kr/HT202039" target="_blank" rel="noopener">공식 안내 보기</a>
           </p>
         </section>
           <div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">해지 후 요금·이용 기간</h2>
-            <p style="margin:0;color:var(--muted);line-height:1.65">Google·Apple 구독 취소는 보통 현재 기간 종료까지 이용 가능하고 다음 주기부터 청구가 멈춥니다. 가족 요금제는 관리자(결제 계정)가 취소합니다.</p>
+            <h2 class="subhead">해지 후 요금·이용 기간</h2>
+            <p class="prose">Google·Apple 구독 취소는 보통 현재 기간 종료까지 이용 가능하고 다음 주기부터 청구가 멈춥니다. 가족 요금제는 관리자(결제 계정)가 취소합니다.</p>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">자주 하는 실수</h2>
-            <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">
+            <h2 class="subhead">자주 하는 실수</h2>
+            <ul class="list-plain">
               <li>유튜브 앱 삭제만 하고 Google·Apple 구독은 유지</li>
               <li>가족요금 관리자가 아닌 멤버 계정에서 해지 시도</li>
             </ul>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.5rem;font-size:1.1rem">알아두면 좋은 점</h2>
-            <ul style="margin:0;padding-left:1.1rem;color:var(--muted)">
+            <h2 class="subhead">알아두면 좋은 점</h2>
+            <ul class="list-plain">
             <li>OTT와 성격이 다르지만 월 고정비에서 자주 겹칩니다. 결제 경로별로 해지 창구가 갈립니다.</li>
             </ul>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.75rem;font-size:1.1rem">자주 묻는 질문</h2>
-            <div style="margin-bottom:1rem">
-              <h3 style="margin:0 0 0.35rem;font-size:1rem">유튜브 앱만 지우면 Premium이 해지되나요?</h3>
-              <p style="margin:0;color:var(--muted)">앱 삭제만으로는 Premium·Play·Apple 구독이 취소되지 않습니다. 구독 관리 메뉴에서 취소해 주세요.</p>
-            </div><div style="margin-bottom:1rem">
-              <h3 style="margin:0 0 0.35rem;font-size:1rem">가족 요금제는 누가 해지하나요?</h3>
-              <p style="margin:0;color:var(--muted)">Premium 가족 요금제를 결제·관리하는 Google 계정(관리자)에서 멤버십을 취소합니다.</p>
-            </div><div style="margin-bottom:1rem">
-              <h3 style="margin:0 0 0.35rem;font-size:1rem">Play와 YouTube 웹 중 어디서 결제했는지 모르겠어요</h3>
-              <p style="margin:0;color:var(--muted)">paid_memberships와 Play 구독 목록을 모두 확인하세요. 둘 다 없으면 Apple 구독도 확인해 보세요.</p>
-            </div><div style="margin-bottom:1rem">
-              <h3 style="margin:0 0 0.35rem;font-size:1rem">YouTube Music만 따로 해지할 수 있나요?</h3>
-              <p style="margin:0;color:var(--muted)">상품 구성( Premium 단독·Music 포함 등)에 따라 다릅니다. 본인 memberships 화면에 표시된 항목을 기준으로 취소하세요.</p>
+            <h2>자주 묻는 질문</h2>
+            <div class="faq-list">
+            <div class="faq-item">
+              <h3>유튜브 앱만 지우면 Premium이 해지되나요?</h3>
+              <p class="prose">앱 삭제만으로는 Premium·Play·Apple 구독이 취소되지 않습니다. 구독 관리 메뉴에서 취소해 주세요.</p>
+            </div><div class="faq-item">
+              <h3>가족 요금제는 누가 해지하나요?</h3>
+              <p class="prose">Premium 가족 요금제를 결제·관리하는 Google 계정(관리자)에서 멤버십을 취소합니다.</p>
+            </div><div class="faq-item">
+              <h3>Play와 YouTube 웹 중 어디서 결제했는지 모르겠어요</h3>
+              <p class="prose">paid_memberships와 Play 구독 목록을 모두 확인하세요. 둘 다 없으면 Apple 구독도 확인해 보세요.</p>
+            </div><div class="faq-item">
+              <h3>YouTube Music만 따로 해지할 수 있나요?</h3>
+              <p class="prose">상품 구성( Premium 단독·Music 포함 등)에 따라 다릅니다. 본인 memberships 화면에 표시된 항목을 기준으로 취소하세요.</p>
+            </div>
             </div>
           </div>
           <div class="panel">
-            <h2 style="margin:0 0 0.75rem;font-size:1.1rem">결제 경로·관련 안내</h2>
+            <h2>결제 경로·관련 안내</h2>
             <div class="cta-row" style="flex-wrap:wrap">
               <a class="btn btn-ghost" href="appstore-ott-haeji.html">앱스토어 OTT 해지</a>
               <a class="btn btn-ghost" href="tongsin-ott-haeji.html">통신사 OTT 해지</a>
               <a class="btn btn-ghost" href="ott-jadoiche.html">OTT 자동이체 확인</a>
             </div>
           </div>
-          <p class="notice">비공식 참고 안내입니다. 각 OTT·통신사·스토어와 제휴·대리 관계가 없으며, 표시 요금·절차는 작성 시점 기준입니다. 가입·해지·환불은 각사·결제처 공식 안내를 우선 확인하세요. 참고일: 2026-08-31 · <a href="about.html" style="color:var(--cheap)">운영·편집 정책</a></p>
+          <p class="notice">비공식 참고 안내입니다. 각 OTT·통신사·스토어와 제휴·대리 관계가 없으며, 표시 요금·절차는 작성 시점 기준입니다. 가입·해지·환불은 각사·결제처 공식 안내를 우선 확인하세요. 참고일: 2026-08-31 · <a href="about.html" class="text-link">운영·편집 정책</a></p>
         </section>
 
         <section>
