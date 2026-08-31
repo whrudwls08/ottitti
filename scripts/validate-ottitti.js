@@ -151,8 +151,8 @@ corePages.forEach((file) => {
   }
 });
 
-if (!fs.existsSync(path.join(root, "og-image.png"))) {
-  warn("og-image.png not found in project root (referenced by meta tags)");
+if (!fs.existsSync(path.join(root, "og-image.webp"))) {
+  warn("og-image.webp not found in project root (referenced by meta tags)");
 }
 
 if (warnings.length) {

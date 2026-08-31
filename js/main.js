@@ -34,7 +34,7 @@
           </div>
           <div class="from">월 <span class="price-num">${won(cheapest.price)}</span>~ <small style="color:var(--muted);font-weight:500">${cheapest.name}</small></div>
           <div class="actions">
-            <a href="${(window.KKUNSUB_SLUGS && window.KKUNSUB_SLUGS[ott.id]) || "cancel.html?ott=" + ott.id}">해지 방법</a>
+            <a href="${(window.KKUNSUB_SLUGS && window.KKUNSUB_SLUGS[ott.id]) || "cancel.html?ott=" + ott.id}">${ott.name} 해지</a>
             <a href="${ott.site}" target="_blank" rel="noopener">공식 사이트</a>
           </div>
         </article>`;

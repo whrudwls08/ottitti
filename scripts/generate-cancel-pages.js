@@ -10,7 +10,9 @@ eval(
 );
 
 const BASE = "https://whrudwls08.github.io/ottitti";
-const V = "20260831a";
+const V = "20260831b";
+const LASTMOD = "2026-08-31";
+const OG_IMAGE = `${BASE}/og-image.webp`;
 const FONT =
   "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap";
 
@@ -33,13 +35,56 @@ function esc(s) {
     .replace(/"/g, "&quot;");
 }
 
+const SEO = {
+  netflix: {
+    title: "넷플릭스 해지 방법 | 직접결제·앱스토어·통신사",
+    description:
+      "netflix.com 직접결제, App Store, Google Play, 통신사·네이버 멤버십별 넷플릭스 해지 단계를 정리했습니다. 해지 버튼이 없을 때 확인법 포함.",
+  },
+  tving: {
+    title: "티빙 해지 방법 | 웹·앱스토어·통신사·번들",
+    description:
+      "티빙 직접결제, 인앱 구독, SKT·KT·LGU+ 결합, 디즈니+ 번들별 해지 경로와 주의사항을 단계별로 안내합니다.",
+  },
+  disney: {
+    title: "디즈니플러스 해지 방법 | 앱스토어·통신사",
+    description:
+      "디즈니+ 직접결제, App Store·Google Play, 통신사·티빙 번들 결제별 해지 방법을 정리했습니다.",
+  },
+  wavve: {
+    title: "웨이브 해지 방법 | 웹·앱스토어·통신사",
+    description: "웨이브 직접결제, 인앱 구독, 통신사 부가서비스별 해지 단계와 해지 후 이용 기간 안내입니다.",
+  },
+  coupangplay: {
+    title: "쿠팡플레이 해지 방법 | 와우 멤버십·앱",
+    description: "쿠팡 와우 멤버십·쿠팡플레이 앱·웹 결제별 해지 경로를 정리했습니다.",
+  },
+  watcha: {
+    title: "왓챠 해지 방법 | 웹·앱스토어",
+    description: "왓챠 직접결제와 App Store·Google Play 인앱 구독 해지 방법입니다.",
+  },
+  youtube: {
+    title: "유튜브 프리미엄 해지 | 앱스토어·Google",
+    description: "유튜브 프리미엄·유튜브 뮤직 포함, Apple·Google 결제별 해지 단계입니다.",
+  },
+  appletv: {
+    title: "Apple TV+ 해지 방법 | 아이폰·맥·앱스토어",
+    description: "Apple TV+ App Store 구독 해지와 가족 공유 계정 주의사항을 안내합니다.",
+  },
+};
+
+const PAYMENT_ROUTES = [
+  { label: "앱스토어 OTT 해지", href: "appstore-ott-haeji.html" },
+  { label: "통신사 OTT 해지", href: "tongsin-ott-haeji.html" },
+  { label: "OTT 자동이체 확인", href: "ott-jadoiche.html" },
+];
+
 function nav(active) {
   const items = [
     ["index.html", "홈"],
     ["cancel.html", "해지 방법"],
     ["compare.html", "요금 비교"],
     ["deals.html", "더 싸게"],
-    ["index.html#cheap", "요금 조건"],
   ];
   return items
     .map(([href, label]) => {
@@ -72,11 +117,13 @@ function getFaqs(ott) {
 
 function pageHtml(ott, slug, allLinks) {
   const url = `${BASE}/${slug}.html`;
-  const title = `${ott.name} 해지 방법 — 오티티 해지`;
+  const seo = SEO[ott.id] || {};
+  const title = seo.title || `${ott.name} 해지 방법 | 웹·앱스토어·통신사`;
   const desc =
-    ott.intro && ott.intro.length > 40
+    seo.description ||
+    (ott.intro && ott.intro.length > 40
       ? ott.intro.slice(0, 120) + (ott.intro.length > 120 ? "…" : "")
-      : `${ott.name} 해지를 도와드릴게요. 웹·앱스토어·통신사 등 결제하신 곳별 절차를 안내합니다.`;
+      : `${ott.name} 해지를 웹·앱스토어·통신사 결제처별로 안내합니다.`);
 
   const faqMain = getFaqs(ott);
 
@@ -149,7 +196,7 @@ function pageHtml(ott, slug, allLinks) {
     .join("\n            ");
 
   const logo = ott.logo
-    ? `<img class="ott-logo" src="${esc(ott.logo)}" alt="${esc(ott.name)}" width="48" height="48" />`
+    ? `<img class="ott-logo" src="${esc(ott.logo)}" alt="${esc(ott.name)}" width="48" height="48" loading="lazy" />`
     : "";
 
   const introBlock = ott.intro
@@ -173,12 +220,20 @@ function pageHtml(ott, slug, allLinks) {
           </div>`
     : "";
 
-  const relatedBlock =
-    ott.relatedGuides && ott.relatedGuides.length
+  const relatedLinks = [];
+  const seenHref = new Set();
+  [...PAYMENT_ROUTES, ...(ott.relatedGuides || [])].forEach((g) => {
+    if (!seenHref.has(g.href)) {
+      seenHref.add(g.href);
+      relatedLinks.push(g);
+    }
+  });
+
+  const relatedBlock = relatedLinks.length
       ? `<div class="panel">
-            <h2 style="margin:0 0 0.75rem;font-size:1.1rem">관련 안내</h2>
+            <h2 style="margin:0 0 0.75rem;font-size:1.1rem">결제 경로·관련 안내</h2>
             <div class="cta-row" style="flex-wrap:wrap">
-              ${ott.relatedGuides
+              ${relatedLinks
                 .map(
                   (g) =>
                     `<a class="btn btn-ghost" href="${esc(g.href)}">${esc(g.label)}</a>`
@@ -213,11 +268,11 @@ function pageHtml(ott, slug, allLinks) {
     <meta property="og:title" content="${esc(title)}" />
     <meta property="og:description" content="${esc(desc)}" />
     <meta property="og:url" content="${url}" />
-    <meta property="og:image" content="${BASE}/og-image.png" />
+    <meta property="og:image" content="${OG_IMAGE}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${esc(title)}" />
     <meta name="twitter:description" content="${esc(desc)}" />
-    <meta name="twitter:image" content="${BASE}/og-image.png" />
+    <meta name="twitter:image" content="${OG_IMAGE}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="${FONT}" rel="stylesheet" />
@@ -317,24 +372,24 @@ const allLinks = KKUNSUB.otts.map((o) => ({
 }));
 
 const sitemapUrls = [
-  { loc: `${BASE}/`, lastmod: "2026-07-28" },
-  { loc: `${BASE}/cancel.html`, lastmod: "2026-07-28" },
-  { loc: `${BASE}/deals.html`, lastmod: "2026-07-28" },
-  { loc: `${BASE}/compare.html`, lastmod: "2026-07-28" },
-  { loc: `${BASE}/about.html`, lastmod: "2026-08-31" },
-  { loc: `${BASE}/privacy.html`, lastmod: "2026-07-28" },
-  { loc: `${BASE}/terms.html`, lastmod: "2026-07-28" },
-  { loc: `${BASE}/tongsin-ott-haeji.html`, lastmod: "2026-07-28" },
-  { loc: `${BASE}/appstore-ott-haeji.html`, lastmod: "2026-07-28" },
-  { loc: `${BASE}/disney-tving-bundle-haeji.html`, lastmod: "2026-07-28" },
-  { loc: `${BASE}/ott-jadoiche.html`, lastmod: "2026-07-30" },
+  { loc: `${BASE}/`, lastmod: LASTMOD },
+  { loc: `${BASE}/cancel.html`, lastmod: LASTMOD },
+  { loc: `${BASE}/deals.html`, lastmod: LASTMOD },
+  { loc: `${BASE}/compare.html`, lastmod: LASTMOD },
+  { loc: `${BASE}/about.html`, lastmod: LASTMOD },
+  { loc: `${BASE}/privacy.html`, lastmod: LASTMOD },
+  { loc: `${BASE}/terms.html`, lastmod: LASTMOD },
+  { loc: `${BASE}/tongsin-ott-haeji.html`, lastmod: LASTMOD },
+  { loc: `${BASE}/appstore-ott-haeji.html`, lastmod: LASTMOD },
+  { loc: `${BASE}/disney-tving-bundle-haeji.html`, lastmod: LASTMOD },
+  { loc: `${BASE}/ott-jadoiche.html`, lastmod: LASTMOD },
 ];
 
 KKUNSUB.otts.forEach((ott) => {
   const slug = SLUG[ott.id];
   if (!slug) throw new Error("no slug " + ott.id);
   fs.writeFileSync(path.join(root, `${slug}.html`), pageHtml(ott, slug, allLinks), "utf8");
-  sitemapUrls.push({ loc: `${BASE}/${slug}.html`, lastmod: "2026-07-28" });
+  sitemapUrls.push({ loc: `${BASE}/${slug}.html`, lastmod: LASTMOD });
   console.log("wrote", slug + ".html");
 });
 
