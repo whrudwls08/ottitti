@@ -217,9 +217,20 @@ window.KKUNSUB = {
           steps: [
             "iPhone 설정 → Apple ID(이름) → 구독",
             "Apple TV+ 선택 → 구독 취소",
-            "또는 account.apple.com 구독 관리",
+            "또는 account.apple.com → 구독 관리",
+            "Apple TV 앱 삭제만으로는 구독이 취소되지 않음",
           ],
           official: "https://support.apple.com/ko-kr/HT202039",
+        },
+        {
+          path: "통신사·제휴·번들 포함",
+          steps: [
+            "설정 → Apple ID → 구독에 Apple TV+가 없으면 통신사·OTT 번들 가능성",
+            "통신사 앱 부가서비스·구독·제휴 메뉴에서 Apple TV+ 또는 패키지명 확인",
+            "해당 결제처에서 해지·해지 예약",
+            "번들 전체 해지 후 필요한 서비스만 다시 가입하는 경우가 많음",
+          ],
+          official: "https://whrudwls08.github.io/ottitti/tongsin-ott-haeji.html",
         },
       ],
       tips: ["다른 서비스 번들에 포함돼 있으면 Apple이 아닌 결제처에서 해지해야 할 수 있습니다."],
@@ -251,7 +262,10 @@ window.KKUNSUB = {
           a: "환불 가능 여부는 Apple 지원·구매 내역 기준입니다. 해지와 환불은 별개일 수 있어요.",
         },
       ],
-      relatedGuides: [{ label: "App Store 구독 해지", href: "appstore-ott-haeji.html" }],
+      relatedGuides: [
+        { label: "App Store 구독 해지", href: "appstore-ott-haeji.html" },
+        { label: "통신사 OTT 해지", href: "tongsin-ott-haeji.html" },
+      ],
     },
     {
       id: "netflix",
@@ -482,13 +496,20 @@ window.KKUNSUB = {
           official: "https://watcha.com/",
         },
         {
-          path: "스토어 결제",
-          steps: ["Apple/Google 구독에서 왓챠 취소"],
+          path: "스토어 결제 (Apple · Google Play)",
+          steps: [
+            "iPhone·iPad: 설정 → Apple ID(이름) → 구독 → 왓챠 → 구독 취소",
+            "Android: Play 스토어 → 프로필 → 결제 및 구독 → 구독 → 왓챠 → 취소",
+            "왓챠 앱에 해지 버튼이 없어도 정상(스토어 결제인 경우)",
+            "가족·다른 Apple/Google 계정 결제 여부 확인",
+          ],
           official: "https://support.google.com/googleplay/answer/7018481?hl=ko",
         },
       ],
       tips: [
         "요금제·상품 구성은 watcha.com에서 최신 상태를 확인하세요.",
+        "카드 명세에 Apple·Google이 찍히면 watcha.com이 아니라 스토어 구독에서 해지하세요.",
+        "이용권·구독·결제 등 메뉴명은 앱 개편으로 바뀔 수 있어요.",
       ],
       mistakes: [
         "왓챠 앱에서 해지를 찾다 포기 → 실제로는 App Store·Play 구독인 경우",
@@ -518,7 +539,10 @@ window.KKUNSUB = {
           a: "환불 가능 여부·잔여 시청 기간은 왓챠·스토어 약관과 해지 확인 화면에 표시됩니다. 해지 전 문구를 확인해 주세요.",
         },
       ],
-      relatedGuides: [{ label: "앱스토어·Play 구독", href: "appstore-ott-haeji.html" }],
+      relatedGuides: [
+        { label: "앱스토어·Play 구독", href: "appstore-ott-haeji.html" },
+        { label: "자동이체·구독 확인", href: "ott-jadoiche.html" },
+      ],
     },
     {
       id: "disney",

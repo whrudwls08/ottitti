@@ -46,16 +46,57 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "name": "OTT 해지 방법 목록",
-        "url": "https://whrudwls08.github.io/ottitti/cancel.html",
-        "isPartOf": {
-          "@type": "WebSite",
-          "name": "오티티 해지",
-          "url": "https://whrudwls08.github.io/ottitti/"
-        },
-        "description": "넷플릭스·티빙·웨이브·디즈니+·쿠팡플레이 등 국내 OTT 해지 가이드 전체 목록",
-        "inLanguage": "ko-KR"
+        "@graph": [
+          {
+            "@type": "CollectionPage",
+            "name": "OTT 해지 방법 목록",
+            "url": "https://whrudwls08.github.io/ottitti/cancel.html",
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": "오티티 해지",
+              "url": "https://whrudwls08.github.io/ottitti/"
+            },
+            "description": "넷플릭스·티빙·웨이브·디즈니+·쿠팡플레이 등 국내 OTT 해지 가이드 전체 목록",
+            "inLanguage": "ko-KR"
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "OTT 해지는 앱에서 하나요, 결제처에서 하나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "웹·앱스토어·통신사·번들 중 어디에 결제했는지에 따라 다릅니다. OTT 앱에 해지 버튼이 없으면 App Store·Google Play 구독 또는 통신사 부가서비스를 먼저 확인하세요."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "여러 OTT를 한 번에 해지할 수 있나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "결제처마다 따로 해지해야 합니다. 넷플릭스는 스토어, 티빙은 통신사처럼 경로가 섞여 있으면 각각 취소해야 합니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "해지 목록에서 어떤 페이지로 가야 하나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "서비스 이름(넷플릭스·티빙 등)을 알면 해당 haeji 페이지로, 결제 경로만 알면 앱스토어·통신사·번들·자동이체 허브 페이지로 이동하면 됩니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "앱만 삭제했는데 계속 결제돼요",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "앱 삭제만으로는 구독이 끊기지 않는 경우가 많습니다. 카드 명세·스토어 구독·통신사 명세에서 결제처를 찾은 뒤 그쪽에서 해지하세요."
+                }
+              }
+            ]
+          }
+        ]
       }
     </script>
   </head>
@@ -82,6 +123,78 @@
             <p>웹·앱스토어·통신사·번들 중 어디에 결제했는지에 따라 해지 방법이 달라요.</p>
             <p class="notice notice-inline">비공식 참고 사이트입니다. 각 OTT·통신사 공식 안내를 우선해 주세요.</p>
           </div>
+        </section>
+
+        <section style="padding-top:0">
+          <article class="panel content-narrow">
+            <h2 class="subhead">먼저 결제처부터 확인해요</h2>
+            <p class="prose">
+              같은 넷플릭스라도 netflix.com 직접결제, App Store, SKT·KT·LGU+ 부가서비스, 디즈니+·티빙 번들에 따라
+              <strong>해지 메뉴 위치가 완전히 달라요.</strong> OTT 앱에 ‘해지’가 없다면 잘못된 앱이 아니라
+              결제 파트너 쪽에서 끊어야 하는 경우가 많습니다.
+            </p>
+            <p class="prose" style="margin-top:0.75rem">
+              카드·통장 명세에 <strong>Apple</strong>·<strong>Google</strong>·<strong>SKT/KT/LGU+</strong>·OTT 이름이
+              어떻게 찍히는지 먼저 보시고, 아래 표와 맞춰 보세요.
+            </p>
+          </article>
+        </section>
+
+        <section style="padding-top:0">
+          <div class="section-head">
+            <div>
+              <h2>결제처 빠르게 찾기</h2>
+              <p>명세·앱 화면 표기 → 해지 창구</p>
+            </div>
+          </div>
+          <div class="panel route-table-wrap content-narrow">
+            <table class="route-table">
+              <thead>
+                <tr>
+                  <th>명세·화면</th>
+                  <th>해지 확인</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Apple · App Store</td>
+                  <td>설정 → Apple ID → 구독 · <a href="appstore-ott-haeji.html" class="text-link">앱스토어 안내</a></td>
+                </tr>
+                <tr>
+                  <td>Google Play</td>
+                  <td>Play 스토어 → 결제 및 구독 → 구독</td>
+                </tr>
+                <tr>
+                  <td>SKT · KT · LG U+</td>
+                  <td>통신사 앱 부가서비스 · <a href="tongsin-ott-haeji.html" class="text-link">통신사 안내</a></td>
+                </tr>
+                <tr>
+                  <td>디즈니+·티빙 번들</td>
+                  <td><a href="disney-tving-bundle-haeji.html" class="text-link">번들 해지</a> (가입 결제처)</td>
+                </tr>
+                <tr>
+                  <td>OTT 이름 직접 표기</td>
+                  <td>해당 OTT 웹·앱 멤버십 (없으면 위 경로)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-head">
+            <div>
+              <h2>해지 전 5단계</h2>
+              <p>아래 순서를 건너뛰면 재결제·중복 구독이 남는 경우가 많아요.</p>
+            </div>
+          </div>
+          <ol class="panel steps checklist-steps content-narrow">
+            <li><strong>결제처 확인</strong> — 카드·통신사 명세, App Store/Google Play, <a href="ott-jadoiche.html" class="text-link">페이인포</a></li>
+            <li><strong>해지 창구</strong> — OTT 앱이 아니라 결제한 곳의 구독·부가서비스</li>
+            <li><strong>다음 결제일</strong> — 해지 예약인지, 잔여 이용 기간 문구 확인</li>
+            <li><strong>번들·가족</strong> — 대표 회선·디즈니+·티빙 번들 영향</li>
+            <li><strong>한 달 뒤 재확인</strong> — 명세·구독 목록에 같은 금액이 없는지</li>
+          </ol>
         </section>
 
         <section style="padding-top:0">
@@ -187,6 +300,33 @@
               <p class="meta">페이인포·카드·앱스토어 자동결제</p>
               <a class="btn btn-ghost" href="ott-jadoiche.html">자동이체 안내</a>
             </article>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-head">
+            <div>
+              <h2>자주 묻는 질문</h2>
+              <p>목록 페이지에서도 자주 나오는 질문이에요.</p>
+            </div>
+          </div>
+          <div class="panel content-narrow faq-list">
+            <div class="faq-item">
+              <h3>OTT 해지는 앱에서 하나요, 결제처에서 하나요?</h3>
+              <p class="prose">웹 직접결제면 OTT 멤버십·이용권, 스토어 결제면 Apple/Google 구독, 통신사·번들이면 해당 앱·웹 부가서비스에서 해지하는 경우가 많아요.</p>
+            </div>
+            <div class="faq-item">
+              <h3>여러 OTT를 한 번에 해지할 수 있나요?</h3>
+              <p class="prose">아니요. 서비스마다, 심지어 같은 서비스라도 결제처가 다르면 각각 취소해야 합니다. 명세서에 OTT가 여러 줄이면 중복 가입을 의심해 보세요.</p>
+            </div>
+            <div class="faq-item">
+              <h3>앱만 삭제했는데 계속 결제돼요</h3>
+              <p class="prose">앱 삭제 ≠ 구독 해지입니다. <a href="ott-jadoiche.html" class="text-link">자동이체·구독 목록</a>에서 매월 빠져나가는 항목을 찾아 결제처에서 해지하세요.</p>
+            </div>
+            <div class="faq-item">
+              <h3>갈아타려면 해지 순서는?</h3>
+              <p class="prose">새 OTT 가입 전 <strong>기존 구독 해지·다음 결제일</strong>을 확인하세요. 번들·통신사 결합은 <a href="deals.html" class="text-link">더 싸게</a> 페이지와 <a href="compare.html" class="text-link">요금 비교</a>를 함께 보시면 도움이 됩니다.</p>
+            </div>
           </div>
         </section>
       </div>

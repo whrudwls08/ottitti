@@ -50,12 +50,53 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "OTT 요금 비교표",
-        "url": "https://whrudwls08.github.io/ottitti/compare.html",
-        "isPartOf": { "@type": "WebSite", "name": "오티티 해지", "url": "https://whrudwls08.github.io/ottitti/" },
-        "description": "국내 OTT 월요금 참고 비교표",
-        "inLanguage": "ko-KR"
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "name": "OTT 요금 비교표",
+            "url": "https://whrudwls08.github.io/ottitti/compare.html",
+            "isPartOf": { "@type": "WebSite", "name": "오티티 해지", "url": "https://whrudwls08.github.io/ottitti/" },
+            "description": "국내 OTT 월요금 참고 비교표",
+            "inLanguage": "ko-KR"
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "비교표 금액은 어떤 기준인가요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "웹 직접결제 기준 참고값입니다. App Store·Google Play·통신사·번들·광고형·와우 포함 등은 표와 다를 수 있어요."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "갈아탈 때 해지는 언제 하나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "새 OTT 가입 전 기존 구독의 다음 결제일·해지 예약을 확인하세요. 번들·통신사 결합은 결제처에서 따로 해지해야 합니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "넷플릭스와 디즈니+를 같이 쓸 만한가요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "해외 시리즈·오리지널이 겹치는 구간이 많아요. 시즌 단위로 한 곳만 쓰는 편이 중복 비용을 줄이기 쉽습니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "더 싼 조합은 어디서 보나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "광고형·공식 번들·통신사 결합은 더 싸게 페이지에서 경로를 비교할 수 있어요. 해지 창구는 결제처마다 다릅니다."
+                }
+              }
+            ]
+          }
+        ]
       }
     </script>
   </head>
@@ -99,6 +140,41 @@
         <section>
           <div class="section-head">
             <div>
+              <h2>서비스별 한 줄 정리</h2>
+              <p>요금만이 아니라 콘텐츠·결제 경로도 함께 보세요.</p>
+            </div>
+          </div>
+          <div class="ott-grid">
+            <article class="panel">
+              <h3>넷플릭스</h3>
+              <p class="prose">글로벌·K-오리지널 중심. 광고형부터 4K 프리미엄까지 단계가 많고, App Store·통신사 결제도 흔해요. 해지는 <a href="netflix-haeji.html" class="text-link">결제처별</a>로 달라요.</p>
+            </article>
+            <article class="panel">
+              <h3>티빙</h3>
+              <p class="prose">국내 예능·스포츠·실시간 TV 강점. 디즈니+·웨이브 번들·통신사 결합이 많아서 웹 요금과 실제 청구가 다를 수 있어요.</p>
+            </article>
+            <article class="panel">
+              <h3>웨이브</h3>
+              <p class="prose">KBS·MBC·SBS 등 지상파·드라마 아카이브. 단독·번들·통신사 부가서비스로 가입 경로가 나뉩니다.</p>
+            </article>
+            <article class="panel">
+              <h3>디즈니+</h3>
+              <p class="prose">디즈니·마블·픽사 IP. 티빙·웨이브와 공식 번들이 있어 ‘디즈니+ 앱’이 아닌 <a href="disney-tving-bundle-haeji.html" class="text-link">번들 결제처</a>에서 해지해야 할 때가 많아요.</p>
+            </article>
+            <article class="panel">
+              <h3>쿠팡플레이</h3>
+              <p class="prose">와우 멤버십·쿠팡플레이 패스·단독 앱 등 가입 형태가 다양해요. 쿠팡 앱·멤버십에서 해지 경로를 확인하세요.</p>
+            </article>
+            <article class="panel">
+              <h3>왓챠 · Apple TV+ · 유튜브</h3>
+              <p class="prose">왓챠는 큐레이션·독립 영화, Apple TV+는 Apple ID 구독, 유튜브 프리미엄은 Google·Apple 결제가 흔해요. 표 아래 <a href="cancel.html" class="text-link">해지 목록</a>에서 서비스별 페이지를 보세요.</p>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-head">
+            <div>
               <h2>체감 최저 조합 (참고)</h2>
               <p>단정 추천이 아니라, 자주 나오는 패턴입니다.</p>
             </div>
@@ -106,21 +182,48 @@
           <div class="ott-grid">
             <article class="panel">
               <span class="tag best">초저가</span>
-              <h3 style="font-family:var(--font-body)">쿠플(와우/광고형) + 필요할 때만 티빙 광고형</h3>
+              <h3>쿠플(와우/광고형) + 필요할 때만 티빙 광고형</h3>
               <p style="color:var(--muted);margin:0">고정비 최소. 시즌·야구 때만 티빙 켰다 끊기.</p>
             </article>
             <article class="panel">
               <span class="tag">해외 시리즈</span>
-              <h3 style="font-family:var(--font-body)">넷플 광고형 또는 디즈니+ 스탠다드</h3>
+              <h3>넷플 광고형 또는 디즈니+ 스탠다드</h3>
               <p style="color:var(--muted);margin:0">둘 다 들고 있으면 중복 구간 많음. 한 시즌 한 곳.</p>
             </article>
             <article class="panel">
               <span class="tag">가족 4K</span>
-              <h3 style="font-family:var(--font-body)">프리미엄 1개만</h3>
+              <h3>프리미엄 1개만</h3>
               <p style="color:var(--muted);margin:0">4K+4대를 여러 곳에 열면 바로 월 3만+. 메인 1 + 광고형 1이 보통 이득.</p>
             </article>
           </div>
           <p class="notice" data-disclaimer></p>
+        </section>
+
+        <section>
+          <div class="section-head">
+            <div>
+              <h2>자주 묻는 질문</h2>
+              <p>요금 비교·갈아타기 전에 자주 나오는 질문이에요.</p>
+            </div>
+          </div>
+          <div class="panel content-narrow faq-list">
+            <div class="faq-item">
+              <h3>비교표 금액은 어떤 기준인가요?</h3>
+              <p class="prose">웹 직접결제 기준 참고값이에요. App Store·통신사·번들·광고형·와우 포함 등은 표와 다를 수 있으니 각사 공식 요금표를 함께 확인해 주세요.</p>
+            </div>
+            <div class="faq-item">
+              <h3>갈아탈 때 해지는 언제 하나요?</h3>
+              <p class="prose">새 OTT 가입 전 <strong>기존 구독의 다음 결제일</strong>을 확인하세요. 번들·통신사 결합은 <a href="deals.html" class="text-link">더 싸게</a>에서 가입처를 보고, 해지는 그 결제처에서 진행해요.</p>
+            </div>
+            <div class="faq-item">
+              <h3>넷플릭스와 디즈니+를 같이 쓸 만한가요?</h3>
+              <p class="prose">해외 시리즈·오리지널이 겹치는 구간이 많아요. 시즌 단위로 한 곳만 쓰는 편이 중복 비용을 줄이기 쉽습니다.</p>
+            </div>
+            <div class="faq-item">
+              <h3>더 싼 조합은 어디서 보나요?</h3>
+              <p class="prose">광고형·공식 번들·통신사 결합은 <a href="deals.html" class="text-link">더 싸게</a> 페이지에서 경로를 비교할 수 있어요. 해지 창구는 결제처마다 다릅니다.</p>
+            </div>
+          </div>
         </section>
       </div>
     </main>
@@ -135,8 +238,8 @@
       </div>
     </footer>
 
-    <script src="js/data.js?v=20260730d"></script>
-    <script src="js/ott-slugs.js?v=20260730d"></script>
-    <script src="js/main.js?v=20260730d"></script>
+    <script src="js/data.js?v=20260831d"></script>
+    <script src="js/ott-slugs.js?v=20260831d"></script>
+    <script src="js/main.js?v=20260831d"></script>
   </body>
 </html>
