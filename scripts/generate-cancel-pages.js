@@ -77,12 +77,16 @@ const PAYMENT_ROUTES = [
   { label: "앱스토어 OTT 해지", href: "appstore-ott-haeji.html" },
   { label: "통신사 OTT 해지", href: "tongsin-ott-haeji.html" },
   { label: "OTT 자동이체 확인", href: "ott-jadoiche.html" },
+  { label: "카드 명세 표기 읽기", href: "ott-gyeoljae-pyogi.html" },
+  { label: "해지 버튼이 없을 때", href: "ott-haeji-anboil-ttae.html" },
+  { label: "중복 결제 점검", href: "ott-jungbok-gyeoljae.html" },
 ];
 
 function nav(active) {
   const items = [
     ["index.html", "홈"],
     ["cancel.html", "해지 방법"],
+    ["guides.html", "가이드"],
     ["compare.html", "요금 비교"],
     ["deals.html", "더 싸게"],
   ];
@@ -391,6 +395,7 @@ const allLinks = KKUNSUB.otts.map((o) => ({
 const sitemapUrls = [
   { loc: `${BASE}/`, lastmod: LASTMOD },
   { loc: `${BASE}/cancel.html`, lastmod: LASTMOD },
+  { loc: `${BASE}/guides.html`, lastmod: LASTMOD },
   { loc: `${BASE}/deals.html`, lastmod: LASTMOD },
   { loc: `${BASE}/compare.html`, lastmod: LASTMOD },
   { loc: `${BASE}/about.html`, lastmod: LASTMOD },
@@ -400,6 +405,12 @@ const sitemapUrls = [
   { loc: `${BASE}/appstore-ott-haeji.html`, lastmod: LASTMOD },
   { loc: `${BASE}/disney-tving-bundle-haeji.html`, lastmod: LASTMOD },
   { loc: `${BASE}/ott-jadoiche.html`, lastmod: LASTMOD },
+  { loc: `${BASE}/ott-gyeoljae-pyogi.html`, lastmod: LASTMOD },
+  { loc: `${BASE}/ott-haeji-anboil-ttae.html`, lastmod: LASTMOD },
+  { loc: `${BASE}/ott-jungbok-gyeoljae.html`, lastmod: LASTMOD },
+  { loc: `${BASE}/ott-hwanbul.html`, lastmod: LASTMOD },
+  { loc: `${BASE}/ott-mujo-chehum.html`, lastmod: LASTMOD },
+  { loc: `${BASE}/ott-gyejeong-gongyu.html`, lastmod: LASTMOD },
 ];
 
 KKUNSUB.otts.forEach((ott) => {

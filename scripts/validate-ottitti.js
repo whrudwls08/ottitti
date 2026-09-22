@@ -139,6 +139,13 @@ const corePages = [
   "appstore-ott-haeji.html",
   "disney-tving-bundle-haeji.html",
   "ott-jadoiche.html",
+  "guides.html",
+  "ott-gyeoljae-pyogi.html",
+  "ott-haeji-anboil-ttae.html",
+  "ott-jungbok-gyeoljae.html",
+  "ott-hwanbul.html",
+  "ott-mujo-chehum.html",
+  "ott-gyejeong-gongyu.html",
 ];
 
 corePages.forEach((file) => {
