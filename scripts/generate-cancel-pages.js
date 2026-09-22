@@ -11,7 +11,7 @@ eval(
 
 const BASE = "https://whrudwls08.github.io/ottitti";
 const V = "20260922a";
-const LASTMOD = "2026-08-31";
+const LASTMOD = "2026-09-22";
 const OG_IMAGE = `${BASE}/og-image.webp`;
 
 const SLUG = {
