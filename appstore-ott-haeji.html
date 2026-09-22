@@ -43,13 +43,62 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "HowTo",
-        "name": "앱스토어 OTT 해지 방법",
-        "description": "App Store 또는 Google Play로 결제한 OTT 구독 해지 안내",
-        "step": [
-          { "@type": "HowToStep", "name": "결제 스토어 확인", "text": "카드 내역 또는 스토어 구독 목록에서 Apple/Google 결제를 확인합니다" },
-          { "@type": "HowToStep", "name": "구독 메뉴 이동", "text": "App Store 구독 또는 Google Play 결제·구독으로 이동합니다" },
-          { "@type": "HowToStep", "name": "해당 OTT 선택 후 취소", "text": "구독 취소·해지를 완료합니다" }
+        "@graph": [
+          {
+            "@type": "HowTo",
+            "name": "앱스토어 OTT 해지 방법",
+            "description": "App Store 또는 Google Play로 결제한 OTT 구독 해지 안내",
+            "step": [
+              { "@type": "HowToStep", "name": "결제 스토어 확인", "text": "카드 내역 또는 스토어 구독 목록에서 Apple/Google 결제를 확인합니다" },
+              { "@type": "HowToStep", "name": "구독 메뉴 이동", "text": "App Store 구독 또는 Google Play 결제·구독으로 이동합니다" },
+              { "@type": "HowToStep", "name": "해당 OTT 선택 후 취소", "text": "구독 취소·해지를 완료합니다" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "앱을 지웠는데 왜 계속 결제되나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "앱 삭제와 구독 해지는 별개입니다. 스토어 구독은 앱이 없어도 계속 갱신되므로 App Store 또는 Google Play 구독 목록에서 직접 취소해야 결제가 멈춥니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "스토어 구독 목록에 아무것도 없는데 결제가 계속돼요",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "다른 Apple ID·Google 계정으로 가입했거나, Android로 가입한 뒤 iPhone으로 바꾼 경우, 가족 공유 대표 계정 결제일 수 있습니다. 명세서에 Apple·Google 표기가 없다면 웹 직접결제·통신사·번들 결제를 확인하세요."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "스토어 결제 OTT는 해지하면 환불도 되나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "구독 취소는 다음 갱신을 멈추는 절차이고 환불은 별도 요청입니다. 스토어 결제는 환불 창구도 Apple·Google이며, 승인 기준은 각 스토어 정책에 따릅니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "구독을 취소하면 바로 못 보게 되나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "보통 이미 결제한 기간이 끝날 때까지 이용할 수 있고 그 이후 갱신이 멈춥니다. 구독 화면에 남은 이용 기간이 표시되는 경우가 많습니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "아이폰인데 Google Play로 결제됐을 수도 있나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "가능합니다. OTT 앱을 Android에서 가입했거나 Google 계정으로 결제한 경우 iPhone을 쓰더라도 Play 구독으로 관리해야 합니다."
+                }
+              }
+            ]
+          }
         ]
       }
     </script>
@@ -119,10 +168,41 @@
 
           <article class="panel">
             <h2>확인할 점</h2>
-            <ul style="margin:0;padding-left:1.1rem;color:var(--muted);display:grid;gap:0.4rem">
+            <ul class="list-plain">
               <li>가족 공유·다른 Apple/Google 계정으로 결제됐을 수 있어요</li>
               <li>해지 후에도 이미 결제한 기간까지는 이용 가능한 경우가 많아요</li>
               <li>환불은 스토어 정책에 따르며, 해지와는 별개일 수 있어요</li>
+              <li>앱을 삭제해도 구독은 남아 있어서 계속 청구될 수 있어요</li>
+              <li>인앱 결제 금액이 OTT 웹 요금과 다르게 표시되는 경우가 있어요</li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h2>‘해지’와 ‘환불’은 다른 절차예요</h2>
+            <p class="prose">
+              구독 취소는 <strong>다음 갱신을 멈추는 것</strong>이고, 이미 빠져나간 금액을 돌려받는 건 환불 요청이라는 별도 절차예요.
+              둘을 같은 화면에서 처리한다고 생각해서 취소만 하고 기다리면, 이번 달 결제분은 그대로 남습니다.
+            </p>
+            <p class="prose" style="margin-top:0.6rem">
+              스토어 결제는 환불 창구도 OTT가 아니라 <strong>Apple·Google 쪽</strong>이에요. OTT 고객센터에 문의하면 스토어로 안내받는 경우가 많으니,
+              결제가 스토어로 잡혀 있다면 처음부터 스토어의 구매 내역·문제 신고 경로로 요청하시는 게 빠릅니다.
+              승인 여부와 기준은 각 스토어 정책에 따르며, 요청이 항상 받아들여지는 것은 아니에요.
+            </p>
+            <p class="prose" style="margin-top:0.6rem">
+              환불 절차와 준비물은 <a href="ott-hwanbul.html" class="text-link">환불 문의 가이드</a>에 따로 정리해 두었어요.
+            </p>
+          </article>
+
+          <article class="panel">
+            <h2>구독 목록에 아무것도 없을 때</h2>
+            <p class="prose" style="margin-bottom:0.85rem">
+              스토어 구독 목록이 비어 있는데 결제가 계속된다면, 대부분 아래 중 하나예요. 위에서부터 차례로 확인해 보세요.
+            </p>
+            <ul class="list-plain">
+              <li><strong>다른 계정</strong> — 예전에 쓰던 Apple ID·Google 계정으로 가입했을 수 있어요. 기기에 로그인된 계정과 결제 계정이 다를 수 있습니다.</li>
+              <li><strong>다른 OS</strong> — Android로 가입한 뒤 iPhone으로 바꾼 경우, 구독은 계속 Play에 남아 있어요.</li>
+              <li><strong>가족 공유</strong> — 가족 대표 계정으로 결제되면 본인 기기 구독 목록에는 안 보입니다.</li>
+              <li><strong>스토어 결제가 아님</strong> — 웹 직접결제, <a href="tongsin-ott-haeji.html" class="text-link">통신사</a>, <a href="disney-tving-bundle-haeji.html" class="text-link">번들</a>일 수 있어요. 명세서에 Apple·Google 표기가 없다면 이쪽입니다.</li>
             </ul>
           </article>
 
@@ -138,18 +218,30 @@
 
           <article class="panel">
             <h2>자주 묻는 질문</h2>
-            <div style="display:grid;gap:1rem">
+            <div class="faq-list">
               <div>
                 <h3>아이폰인데 Play로 결제됐을 수도 있나요?</h3>
-                <p style="margin:0;color:var(--muted)">가능해요. OTT 앱을 Android 폰으로 가입했거나 Google 계정으로 결제한 경우 iPhone에서도 Play 구독으로 관리해야 합니다.</p>
+                <p class="prose">가능해요. OTT 앱을 Android 폰으로 가입했거나 Google 계정으로 결제한 경우 iPhone에서도 Play 구독으로 관리해야 합니다.</p>
               </div>
               <div>
                 <h3>무료 체험 중 해지하면?</h3>
-                <p style="margin:0;color:var(--muted)">스토어·프로모션에 따라 체험 종료 전 취소해야 과금이 안 되는 경우가 많아요. 구독 화면의 ‘다음 결제일’을 꼭 확인하세요.</p>
+                <p class="prose">스토어·프로모션에 따라 체험 종료 전 취소해야 과금이 안 되는 경우가 많아요. 구독 화면의 ‘다음 결제일’을 꼭 확인하세요.</p>
               </div>
               <div>
                 <h3>가족 공유 Apple ID로 결제됐어요</h3>
-                <p style="margin:0;color:var(--muted)">구독을 결제한 Apple ID(가족 organiser)에서 취소해야 합니다. 본인 기기 설정에 구독이 없으면 organiser에게 요청하세요.</p>
+                <p class="prose">구독을 결제한 Apple ID(가족 organiser)에서 취소해야 합니다. 본인 기기 설정에 구독이 없으면 organiser에게 요청하세요.</p>
+              </div>
+              <div>
+                <h3>구독을 취소하면 바로 못 보게 되나요?</h3>
+                <p class="prose">보통은 이미 결제한 기간이 끝날 때까지 볼 수 있고, 그 이후에 갱신이 멈춥니다. 구독 화면에 남은 이용 기간이 표시되는 경우가 많으니 함께 확인해 보세요.</p>
+              </div>
+              <div>
+                <h3>앱을 지웠는데 왜 계속 결제되나요?</h3>
+                <p class="prose">앱 삭제와 구독 해지는 별개예요. 스토어 구독은 앱이 없어도 계속 갱신되기 때문에, 구독 목록에서 직접 취소해야 결제가 멈춥니다.</p>
+              </div>
+              <div>
+                <h3>결제 계정 비밀번호를 잊어서 로그인이 안 돼요</h3>
+                <p class="prose">구독을 취소하려면 결제한 계정에 접근해야 해서, 먼저 각 스토어의 계정 복구 절차를 진행하시는 게 순서예요. 급하게 결제를 막아야 한다면 카드사에 결제 수단 관련 문의를 병행하는 방법도 있지만, 구독 자체는 계정에서 취소해야 정리됩니다.</p>
               </div>
             </div>
           </article>
@@ -162,6 +254,16 @@
               <a class="btn btn-ghost" href="disneyplus-haeji.html">디즈니+</a>
               <a class="btn btn-ghost" href="youtube-premium-haeji.html">유튜브 프리미엄</a>
               <a class="btn btn-ghost" href="appletv-haeji.html">Apple TV+</a>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h2>함께 보면 좋은 가이드</h2>
+            <div class="cta-row" style="flex-wrap:wrap">
+              <a class="btn btn-ghost" href="ott-gyeoljae-pyogi.html">결제 표기 사전</a>
+              <a class="btn btn-ghost" href="ott-mujo-chehum.html">무료 체험 자동결제</a>
+              <a class="btn btn-ghost" href="ott-gyejeong-gongyu.html">계정 공유와 해지</a>
+              <a class="btn btn-ghost" href="ott-jungbok-gyeoljae.html">중복 결제 점검</a>
             </div>
           </article>
 
