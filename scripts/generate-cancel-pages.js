@@ -10,11 +10,9 @@ eval(
 );
 
 const BASE = "https://whrudwls08.github.io/ottitti";
-const V = "20260831d";
+const V = "20260922a";
 const LASTMOD = "2026-08-31";
 const OG_IMAGE = `${BASE}/og-image.webp`;
-const FONT =
-  "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap";
 
 const SLUG = {
   coupangplay: "coupangplay-haeji",
@@ -290,9 +288,6 @@ function pageHtml(ott, slug, allLinks) {
     <meta name="twitter:title" content="${esc(title)}" />
     <meta name="twitter:description" content="${esc(desc)}" />
     <meta name="twitter:image" content="${OG_IMAGE}" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="${FONT}" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css?v=${V}" />
     <script type="application/ld+json">${JSON.stringify(breadcrumbLd)}</script>
     <script type="application/ld+json">${JSON.stringify(articleLd)}</script>

@@ -9,7 +9,7 @@
   --cheap: #d6f26a;
   --glow: #ff8a5c;
   --radius: 18px;
-  --font: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font: "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, -apple-system, sans-serif;
   --font-display: var(--font);
   --font-body: var(--font);
   --font-price: var(--font);
